@@ -67,6 +67,23 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
   margin-bottom: 2.5rem;
 }
 
+/* Filters */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; margin: -1rem 0 2.5rem; }
+.filters button {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  padding: 0.2rem 0;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.filters button:hover { color: var(--text); }
+.filters button.active { color: var(--text); border-color: var(--text); }
+.card[hidden] { display: none; }
+
 /* Project grid */
 .grid {
   display: grid;

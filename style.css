@@ -158,12 +158,17 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .back { display: inline-block; margin-bottom: 1.75rem; text-decoration: none; font-style: italic; opacity: 0.75; }
 .back:hover { opacity: 1; }
 .article-hero { cursor: zoom-in; }
-.article-hero img { width: 100%; max-height: 80vh; object-fit: cover; border-radius: var(--radius); display: block; }
+.article-hero { text-align: center; }
+.article-hero img { max-width: 100%; max-height: 80vh; width: auto; height: auto; object-fit: contain; border-radius: var(--radius); display: inline-block; vertical-align: top; }
 .article-head { text-align: center; margin: 2.5rem 0 2rem; }
 .article-head h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 700; line-height: 1.05; }
 .article-sub { margin-top: 0.5rem; font-size: 1.15rem; font-style: italic; text-transform: lowercase; opacity: 0.85; }
 .article-body { max-width: 38rem; margin: 0 auto 4rem; font-size: 1.12rem; line-height: 1.75; }
 .article-body p + p { margin-top: 1.1rem; }
+.article-details { max-width: 38rem; margin: -2rem auto 4rem; display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1.5rem; font-size: 1rem; }
+.article-details[hidden] { display: none; }
+.article-details dt { font-family: var(--title); font-weight: 600; text-transform: lowercase; }
+.article-details dd { font-style: italic; }
 .article-label { font-size: 1.3rem; font-weight: 600; text-align: center; margin-bottom: 1.75rem; }
 .article-label[hidden] { display: none; }
 .article-gallery { columns: 2 280px; column-gap: 1.25rem; }

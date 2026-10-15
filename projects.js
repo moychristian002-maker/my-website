@@ -6,9 +6,14 @@ const categories = ["Apparel & Objects", "Architecture", "Graphic & Interaction"
 const projects = [
   {
     title: "Britpop in the Streets",
-    tag: "Design Perspectives · Design in London Exhibition",
+    tag: "LADES4143 Design Perspectives · Design in London Exhibition",
     category: "Apparel & Objects",
     folder: "design-perspectives-britpop-jeans",
+    details: [
+      ["course", "LADES4143 Design Perspectives"],
+      ["professor", "Tom Critchley"],
+      ["materials", "Thrifted jeans, tie, acrylic paint and medium, keychains and pant charms, needle and thread, transfer paper"],
+    ],
     images: [
       "20251016-131807414-ios.jpg", "design-perspectives-exhibition.jpg", "pants.jpg", "20251015-162148581-ios.jpg",
       "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg", "20251016-025707684-ios.jpg",
@@ -221,7 +226,7 @@ const colorWorlds = {
 // Short write-up shown on each project's page. Separate paragraphs with a blank line ("\n\n").
 const descriptions = {
   "design-perspectives-britpop-jeans":
-    "A pair of customized jeans made for the Design in London exhibition in my Design Perspectives course. The piece looks at 1990s Britpop and the way it spilled onto London's streets, from band patches and the Union Jack to school ties worn as belts.\n\nI started with a mood board of Britpop street style, then sketched the design and cut, stitched and painted each detail by hand: Oasis and Blur patches, a Union Jack applique, painted side stripes and \"Design in London\" lettering down the leg, finished with layered pearls and chains.",
+    "Made for \"Design in London,\" an ungraded exhibition for my Design Perspectives lecture that highlighted material culture and curation. Alongside the piece, I wrote its museum label:\n\nEmerging from the 1990s Britpop and swagger of Cool Britannia, \"Britpop in the Streets\" reimagines the rebellious confidence of a generation through a contemporary lens. The distressed denim, patched with frayed motifs of the rival bands Oasis and Blur and a Union Jack, recalls the working-class pride and unfiltered attitude that defined the movement. The striped burgundy tie adds a note of rebellion against conformity, an echo of the sharp yet chaotic fashion contrasts of the time.\n\nBands like Oasis and Blur did not only define the sound of Britpop; they shaped its visual language. Oasis represented the \"northern grit\" of Manchester's working-class bravado, and Blur embodied \"southern cool,\" the sharp, art-school irony of London. That tension showed up in London's fashion scene as a mix of tailoring and streetwear, rebellion and reinvention. London in this period blurred the lines between music, art and style, turning youth culture into couture.\n\nChains of pearls and silver hardware carry the same spirit of experimentation and chaotic fashion. It stands as a wearable piece of London's creative energy, where music and design continue to collide and evolve.",
   "olivia-dean-shirt":
     "Hand-embroidered T-shirts made to wear to an Olivia Dean concert in New York. Each shirt carries a lyric stitched in my own handwriting, \"love's never wasted\" and \"when it's shared, mmm,\" so the two read as a pair.\n\nI wrote the lyrics out by hand, transferred them onto the shirts and embroidered them using a hoop, with \"Olivia Dean New York 2026\" stitched on the back.",
   "custom-denim":

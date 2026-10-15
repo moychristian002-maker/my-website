@@ -22,6 +22,17 @@ const body = document.getElementById("body");
   body.appendChild(el);
 });
 
+// Optional facts (course, professor, materials), shown as a short list under the write-up.
+const details = document.getElementById("details");
+(p.details || []).forEach(([term, value]) => {
+  const dt = document.createElement("dt");
+  const dd = document.createElement("dd");
+  dt.textContent = term;
+  dd.textContent = value;
+  details.append(dt, dd);
+});
+if (p.details) details.hidden = false;
+
 // Remaining images become the process gallery; each opens full-size.
 const gallery = document.getElementById("gallery");
 const rest = p.images.slice(1);

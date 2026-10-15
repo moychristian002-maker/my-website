@@ -231,7 +231,7 @@ const descriptions = {
   "custom-basketball":
     "A personalized Wilson basketball, hand-painted with characters and bubble lettering. The illustrations wrap around the ball's panels so it reads from every angle.",
   "custom-totes":
-    "A set of hand-drawn tote bags, each designed around a different college: Wheaton, Johns Hopkins, Grove City and more. I drew every design by hand, matching each school\x27s logo, mascot or colors.\n\nThe first photo shows the designs in progress; the rest are the finished bags.",
+    "A set of hand-drawn tote bags, each designed around a different college: Wheaton, Johns Hopkins, Grove City and more. I drew every design by hand, matching each school's logo, mascot or colors.\n\nThe first photo shows the designs in progress; the rest are the finished bags.",
   "dickies-workshop":
     "Made at a Dickies 247 customization workshop. I designed the layout of my own shirt from a set of Dickies patches and transfers, then applied them with a heat press.\n\nThe challenge was composition: arranging logos, icons and type into a balanced layout that still felt like mine.",
   "architecture-pavilion":

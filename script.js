@@ -4,8 +4,8 @@ const categories = ["Apparel & Objects", "Architecture", "Graphic & Interaction"
 
 const projects = [
   {
-    title: "Britpop Jeans",
-    tag: "Design Perspectives · Design in London",
+    title: "Britpop in the Streets",
+    tag: "Design Perspectives · Design in London Exhibition",
     category: "Apparel & Objects",
     folder: "design-perspectives-britpop-jeans",
     images: [
@@ -61,8 +61,8 @@ const projects = [
     ],
   },
   {
-    title: "Dickies Workshop",
-    tag: "Apparel · Workshop",
+    title: "Custom Shirt",
+    tag: "Dickies 247 Workshop",
     category: "Apparel & Objects",
     folder: "dickies-workshop",
     images: ["img-1364.jpg", "img-1366.jpg", "img-1374.jpg", "img-4699.jpg"],
@@ -88,8 +88,8 @@ const projects = [
     ],
   },
   {
-    title: "ArcStart: Basswood Model",
-    tag: "Architecture · University of Michigan",
+    title: "Basswood Model",
+    tag: "University of Michigan · ArcStart",
     category: "Architecture",
     folder: "arcstart-basswood",
     images: [
@@ -159,8 +159,8 @@ const projects = [
     images: ["copy-of-img-5242.jpg", "copy-of-img-5299.jpg"],
   },
   {
-    title: "Sports Photography",
-    tag: "Photography",
+    title: "The Basics of Volley",
+    tag: "Northeastern Women’s Volleyball",
     category: "Photography",
     folder: "photography-sports",
     images: [
@@ -171,8 +171,8 @@ const projects = [
     ],
   },
   {
-    title: "Flânerie",
-    tag: "Making Things Studio · Photo Essay",
+    title: "The Art of Flânerie",
+    tag: "ARTF1110 Making Things",
     category: "Photography",
     folder: "making-things-flanerie",
     images: [
@@ -182,8 +182,8 @@ const projects = [
     ],
   },
   {
-    title: "Seven Sisters",
-    tag: "Photography · England",
+    title: "Seven Sisters Cliffs",
+    tag: "Taken on Sony Cybershot",
     category: "Photography",
     folder: "photography-seven-sisters",
     images: [
@@ -194,11 +194,37 @@ const projects = [
   },
 ];
 
+// Each project's "color world" (gallery background, text color), pulled from its own palette.
+// Projects not listed here fall back to the black & white base.
+const colorWorlds = {
+  "design-perspectives-britpop-jeans": ["#eff2f7", "#c4161c"],
+  "olivia-dean-shirt": ["#f4efe6", "#2b2b2b"],
+  "custom-denim": ["#dde5ee", "#2c4a6e"],
+  "senior-shirt": ["#eef1ea", "#3f6b4a"],
+  "custom-basketball": ["#f4e7da", "#a8481a"],
+  "custom-totes": ["#f4eee2", "#4a6d8c"],
+  "dickies-workshop": ["#57260f", "#dba66c"],
+  "architecture-pavilion": ["#ece6da", "#6e5530"],
+  "architecture-cube": ["#111111", "#d9c9a3"],
+  "arcstart-basswood": ["#f1ede6", "#5a4a38"],
+  "arcstart-3d-forms": ["#e9e5ee", "#6b3f8c"],
+  "designing-interactive-experiences": ["#0b0b10", "#a58cff"],
+  "graphics-volleyball": ["#c41414", "#ffffff"],
+  "graphics-ukrainian-melodies": ["#f3ecd9", "#1f4e8c"],
+  "graphics": ["#2d2a35", "#f2a679"],
+  "tedx": ["#111111", "#e62b1e"],
+  "photography-sports": ["#c41414", "#ffffff"],
+  "making-things-flanerie": ["#eceee6", "#3d4a1f"],
+  "photography-seven-sisters": ["#2b2b2b", "#f5d9b5"],
+};
+
 const grid = document.getElementById("project-grid");
 const filters = document.getElementById("filters");
 const lightbox = document.getElementById("lightbox");
 const lbImg = document.getElementById("lb-img");
-const lbCaption = document.getElementById("lb-caption");
+const lbTitle = document.getElementById("lb-title");
+const lbSub = document.getElementById("lb-sub");
+const lbCount = document.getElementById("lb-count");
 let current = null;
 let index = 0;
 
@@ -222,6 +248,8 @@ projects.forEach((p) => {
   const card = document.createElement("button");
   card.className = "card";
   card.dataset.category = p.category;
+  const world = colorWorlds[p.folder];
+  if (world) card.style.setProperty("--accent", world[1] === "#ffffff" ? world[0] : world[1]);
   card.innerHTML = `
     <div class="card-img"><img src="${src(p, p.images[0])}" alt="${p.title}" loading="lazy"></div>
     <h3>${p.title}</h3>
@@ -233,6 +261,11 @@ projects.forEach((p) => {
 function open(p) {
   current = p;
   index = 0;
+  const [bg, ink] = colorWorlds[p.folder] || ["#ffffff", "#000000"];
+  lightbox.style.setProperty("--lb-bg", bg);
+  lightbox.style.setProperty("--lb-ink", ink);
+  lbTitle.textContent = p.title;
+  lbSub.textContent = p.tag;
   show();
   lightbox.hidden = false;
   document.body.style.overflow = "hidden";
@@ -246,7 +279,7 @@ function close() {
 function show() {
   lbImg.src = src(current, current.images[index]);
   lbImg.alt = `${current.title}, image ${index + 1}`;
-  lbCaption.textContent = `${current.title} — ${index + 1} / ${current.images.length}`;
+  lbCount.textContent = `${index + 1} / ${current.images.length}`;
 }
 
 function step(n) {

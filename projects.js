@@ -1,0 +1,264 @@
+// To add a project: put its images in images/<folder>/ and add an entry here,
+// plus a color world and a description at the bottom of this file.
+// The first image in the list is used as the cover. `category` must match a filter below.
+const categories = ["Apparel & Objects", "Architecture", "Graphic & Interaction", "Photography"];
+
+const projects = [
+  {
+    title: "Britpop in the Streets",
+    tag: "Design Perspectives · Design in London Exhibition",
+    category: "Apparel & Objects",
+    folder: "design-perspectives-britpop-jeans",
+    images: [
+      "20251016-131807414-ios.jpg", "20251016-131807173-ios.jpg", "design-perspectives-exhibition.jpg", "pants.jpg",
+      "20251015-162148581-ios.jpg", "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg",
+      "20251016-025707684-ios.jpg", "20251016-130604196-ios.jpg", "20251016-130609928-ios.jpg",
+      "20251016-130616885-ios.jpg", "20251015-132707498-ios.jpg",
+    ],
+  },
+  {
+    title: "Olivia Dean Shirt",
+    tag: "Apparel · Hand Embroidery",
+    category: "Apparel & Objects",
+    folder: "olivia-dean-shirt",
+    images: [
+      "img-3009.jpg", "img-2849.jpg", "img-2829.jpg", "img-2835.jpg", "img-2841.jpg",
+      "img-2842.jpg", "img-2857.jpg", "img-2924.jpg", "dsc04701.jpg",
+    ],
+  },
+  {
+    title: "Custom Denim Jacket",
+    tag: "Apparel · Hand Painting",
+    category: "Apparel & Objects",
+    folder: "custom-denim",
+    images: ["img-1658.jpg", "img-1659.jpg", "img-1660.jpg", "img-1661.jpg", "img-0955.jpg"],
+  },
+  {
+    title: "Senior Shirt",
+    tag: "Apparel · Appliqué & Embroidery",
+    category: "Apparel & Objects",
+    folder: "senior-shirt",
+    images: [
+      "20260831-214656384-ios.jpg", "20260831-214611147-ios.jpg", "20260831-214726736-ios.jpg",
+      "20260831-033155072-ios.jpg", "20260831-033207602-ios.jpg", "20260831-033215446-ios.jpg",
+      "20260831-033228773-ios.jpg",
+    ],
+  },
+  {
+    title: "Custom Basketball",
+    tag: "Product Design · Hand Painting",
+    category: "Apparel & Objects",
+    folder: "custom-basketball",
+    images: ["img-1567.jpg", "img-0945.jpg", "img-1568.jpg", "img-1571.jpg", "img-1573.jpg"],
+  },
+  {
+    title: "Custom Totes",
+    tag: "Product Design · Merchandise",
+    category: "Apparel & Objects",
+    folder: "custom-totes",
+    images: [
+      "dsc02234.jpg", "img-2166.jpg", "img-2167.jpg", "img-2168.jpg", "img-2169.jpg",
+      "img-2170.jpg", "img-2171.jpg", "img-2172.jpg", "img-2173.jpg",
+    ],
+  },
+  {
+    title: "Custom Shirt",
+    tag: "Dickies 247 Workshop",
+    category: "Apparel & Objects",
+    folder: "dickies-workshop",
+    images: ["img-1364.jpg", "img-1366.jpg", "img-1374.jpg", "img-4699.jpg"],
+  },
+  {
+    title: "Pavilion",
+    tag: "Architecture · Model & Axonometric",
+    category: "Architecture",
+    folder: "architecture-pavilion",
+    images: [
+      "img-5254.jpg", "img-5257.jpg", "60cd3d24-203b-40f4-8562-266551f4b4f1.jpg",
+      "0f388bec-a149-4c7e-88c0-a62f68e508a5.jpg",
+    ],
+  },
+  {
+    title: "Cube",
+    tag: "Architecture · Model & Drawings",
+    category: "Architecture",
+    folder: "architecture-cube",
+    images: [
+      "img-5200.jpg", "cube-frame.jpg", "img-5173.jpg", "oblique-01.jpg", "elevation-1-3-01.jpg",
+      "elevation-2-4-01.jpg", "section-plan-1-01.jpg", "section-plan-2-01.jpg",
+    ],
+  },
+  {
+    title: "Basswood Model",
+    tag: "University of Michigan · ArcStart",
+    category: "Architecture",
+    folder: "arcstart-basswood",
+    images: [
+      "img-7796.jpg", "img-7793.jpg", "img-7797.jpg", "img-7798.jpg", "img-7799.jpg",
+      "img-7800.jpg", "img-7801.jpg", "img-7802.jpg",
+    ],
+  },
+  {
+    title: "ArcStart: 3D Forms",
+    tag: "Architecture · Isometric & Concept",
+    category: "Architecture",
+    folder: "arcstart-3d-forms",
+    images: [
+      "forms-02.jpg", "forms-01.jpg", "forms-03.jpg", "forms-04.jpg", "forms-06.jpg",
+      "forms-07.jpg", "forms-08.jpg", "forms-09.jpg", "isometric-01.jpg", "isometric-02.jpg",
+    ],
+  },
+  {
+    title: "CineSense",
+    tag: "Designing Interactive Experiences · UX",
+    category: "Graphic & Interaction",
+    folder: "designing-interactive-experiences",
+    images: [
+      "cinesense.jpg", "general-user-journey-map-1.jpg", "bsl-cinema.jpg", "companion.jpg",
+      "haptic.jpg", "img-1659.jpg", "img-1660.jpg", "img-1661.jpg",
+    ],
+  },
+  {
+    title: "Husky Volleyball Graphics",
+    tag: "Graphic Design · Northeastern Athletics",
+    category: "Graphic & Interaction",
+    folder: "graphics-volleyball",
+    images: [
+      "foggy-windowgraphic.jpg", "callaway-thirdsgraphicjim13746.jpg", "daniels-thirdsgraphicjim14619.jpg",
+      "king-thirdjim14226.jpg", "meirelles-thirdsgraphicjim14204.jpg",
+    ],
+  },
+  {
+    title: "Ukrainian Melodies",
+    tag: "Graphic Design · Poster Series",
+    category: "Graphic & Interaction",
+    folder: "graphics-ukrainian-melodies",
+    images: [
+      "20261013-164409000-ios.jpg", "20261013-163845580-ios.jpg", "20261013-163846071-ios.jpg",
+      "20261013-163847681-ios.jpg", "20261013-163848022-ios.jpg",
+    ],
+  },
+  {
+    title: "Dawn of the Mourning Son",
+    tag: "Graphic Design · Theater Poster",
+    category: "Graphic & Interaction",
+    folder: "graphics",
+    images: ["dawn-of-the-mourning-son.jpg"],
+  },
+  {
+    title: "Handwritten Typography",
+    tag: "Typography · Custom Typeface",
+    category: "Graphic & Interaction",
+    folder: "handwritten-typography",
+    images: ["handwritten-typography1.jpg", "handwritten-typography2.jpg"],
+  },
+  {
+    title: "TEDxNortheasternLDN",
+    tag: "Event Design · 22 ft. Sign",
+    category: "Graphic & Interaction",
+    folder: "tedx",
+    images: ["copy-of-img-5242.jpg", "copy-of-img-5299.jpg"],
+  },
+  {
+    title: "The Basics of Volley",
+    tag: "Northeastern Women’s Volleyball",
+    category: "Photography",
+    folder: "photography-sports",
+    images: [
+      "0p1a4392.jpg", "0p1a4399.jpg", "0p1a4414.jpg", "0p1a4435.jpg", "0p1a4551.jpg", "0p1a4563.jpg",
+      "20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg",
+      "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg",
+      "20260926-223622000-ios.jpg", "20260926-223640000-ios.jpg",
+    ],
+  },
+  {
+    title: "The Art of Flânerie",
+    tag: "ARTF1110 Making Things",
+    category: "Photography",
+    folder: "making-things-flanerie",
+    images: [
+      "flanerie-06.jpg", "flanerie-01.jpg", "flanerie-02.jpg", "flanerie-03.jpg", "flanerie-04.jpg",
+      "flanerie-05.jpg", "flanerie-07.jpg", "flanerie-08.jpg", "flanerie-09.jpg", "flanerie-10.jpg",
+      "flanerie-11.jpg", "flanerie-12.jpg",
+    ],
+  },
+  {
+    title: "Seven Sisters Cliffs",
+    tag: "Taken on Sony Cybershot",
+    category: "Photography",
+    folder: "photography-seven-sisters",
+    images: [
+      "20251007-140406000-ios.jpg", "20251007-141413000-ios.jpg", "20251007-163238000-ios.jpg",
+      "20251007-163312000-ios.jpg", "20251007-163825000-ios.jpg", "20251007-164105000-ios.jpg",
+      "20251007-164112000-ios.jpg",
+    ],
+  },
+];
+
+// Each project's "color world" (gallery background, text color), pulled from its own palette.
+// Projects not listed here fall back to the black & white base.
+const colorWorlds = {
+  "design-perspectives-britpop-jeans": ["#eff2f7", "#c4161c"],
+  "olivia-dean-shirt": ["#f4efe6", "#2b2b2b"],
+  "custom-denim": ["#dde5ee", "#2c4a6e"],
+  "senior-shirt": ["#eef1ea", "#3f6b4a"],
+  "custom-basketball": ["#f4e7da", "#a8481a"],
+  "custom-totes": ["#f4eee2", "#4a6d8c"],
+  "dickies-workshop": ["#57260f", "#dba66c"],
+  "architecture-pavilion": ["#ece6da", "#6e5530"],
+  "architecture-cube": ["#111111", "#d9c9a3"],
+  "arcstart-basswood": ["#f1ede6", "#5a4a38"],
+  "arcstart-3d-forms": ["#e9e5ee", "#6b3f8c"],
+  "designing-interactive-experiences": ["#0b0b10", "#a58cff"],
+  "graphics-volleyball": ["#c41414", "#ffffff"],
+  "graphics-ukrainian-melodies": ["#f3ecd9", "#1f4e8c"],
+  "graphics": ["#2d2a35", "#f2a679"],
+  "tedx": ["#111111", "#e62b1e"],
+  "photography-sports": ["#c41414", "#ffffff"],
+  "making-things-flanerie": ["#eceee6", "#3d4a1f"],
+  "photography-seven-sisters": ["#2b2b2b", "#f5d9b5"],
+};
+
+// Short write-up shown on each project's page. Separate paragraphs with a blank line ("\n\n").
+const descriptions = {
+  "design-perspectives-britpop-jeans":
+    "A pair of customized jeans made for the Design in London exhibition in my Design Perspectives course. The piece looks at 1990s Britpop and the way it spilled onto London's streets, from band patches and the Union Jack to school ties worn as belts.\n\nI started with a mood board of Britpop street style, then sketched the design and cut, stitched and painted each detail by hand: Oasis and Blur patches, a Union Jack applique, painted side stripes and \"Design in London\" lettering down the leg, finished with layered pearls and chains.",
+  "olivia-dean-shirt":
+    "Hand-embroidered T-shirts made to wear to an Olivia Dean concert in New York. Each shirt carries a lyric stitched in my own handwriting, \"love's never wasted\" and \"when it's shared, mmm,\" so the two read as a pair.\n\nI wrote the lyrics out by hand, transferred them onto the shirts and embroidered them using a hoop, with \"Olivia Dean New York 2026\" stitched on the back.",
+  "custom-denim":
+    "A plain denim jacket turned into a hand-painted piece celebrating the University of Pennsylvania. The back panel features the Quaker mascot, the Penn shield, a \"Quakers\" pennant and a \"University of Pennsylvania\" banner.\n\nThe process shots go from the blank jacket through the painting in progress to the finished back panel.",
+  "senior-shirt":
+    "A one-of-a-kind senior shirt. The lettering is cut from gingham and floral fabrics, appliquéd onto a white tee and finished with small embroidered flowers and details.\n\nEach letter was cut and placed by hand, so the shirt reads as playful and handmade rather than printed.",
+  "custom-basketball":
+    "A personalized Wilson basketball, hand-painted with characters and bubble lettering. The illustrations wrap around the ball's panels so it reads from every angle.",
+  "custom-totes":
+    "A set of hand-drawn canvas tote bags. Each one is illustrated with fabric markers, turning a basic tote into a personal, wearable piece.\n\nThe photos show the designs in progress and the finished bags.",
+  "dickies-workshop":
+    "Made at a Dickies 247 customization workshop. I designed the layout of my own shirt from a set of Dickies patches and transfers, then applied them with a heat press.\n\nThe challenge was composition: arranging logos, icons and type into a balanced layout that still felt like mine.",
+  "architecture-pavilion":
+    "A pavilion study built around a single undulating roof. A thin white surface rises and falls over a basswood truss structure, creating sheltered pockets underneath.\n\nThe project moved from concept sketches to a physical model, then to an axonometric drawing and a render of the pavilion placed in a landscape.",
+  "architecture-cube":
+    "A study in dividing space within a cube. Working inside a basswood frame, I used planes and openings to create a sequence of rooms and views through the form.\n\nThe model is paired with a full drawing set: an oblique, two pairs of elevations and two section plans.",
+  "arcstart-basswood":
+    "Made during ArcStart, a three-week pre-college architecture program at the University of Michigan. The model is a vertical composition of basswood sticks and planes, layered to explore balance, rhythm and how light passes through a structure.\n\nPhotographed against the studio window, where the shadows become part of the piece.",
+  "arcstart-3d-forms":
+    "A series of form studies from ArcStart at the University of Michigan. I developed one interlocking form and drew it from four isometric viewpoints, northwest, southeast, southwest and northeast, each in its own color.\n\nThe form then grew into a concept for a room for rock climbing, supported by color palettes and material and atmosphere references.",
+  "designing-interactive-experiences":
+    "CineSense is a concept developed in Designing Interactive Experiences: a wearable that uses haptics to help audiences \"feel every moment\" of a film, designed to make the cinema more accessible.\n\nThe process included a user journey map, storyboards of the cinema experience, sketches of wearable forms and a companion experience, and the final brand identity.",
+  "graphics-volleyball":
+    "Social media graphics for Northeastern Women's Volleyball, made as part of my role as team manager. The set includes player feature graphics and a \"This Is Husky Volley\" piece.\n\nEach graphic keeps the player as the focus while carrying a consistent Husky identity.",
+  "graphics-ukrainian-melodies":
+    "A poster series for Ukrainian Melodies, a music event. The posters pair traditional instruments, such as the violin, guitar and piano, with ornamental patterns and the blue and yellow of Ukraine.\n\nI explored several directions for the series before landing on the final poster.",
+  "graphics":
+    "A poster for Dawn of the Mourning Son, a short play about grief and healing. A lone silhouette set against a city skyline at dawn captures the play's quiet, reflective tone.",
+  "handwritten-typography":
+    "A custom typeface made from my own handwriting. I filled in Calligraphr character templates by hand, letter by letter, then scanned them to turn my handwriting into a working digital font.",
+  "tedx":
+    "As Events Officer for the TEDxNortheasternLDN Society, I coordinated logistics for the end-of-year TEDx event in London, including sourcing materials and managing the budget.\n\nI also delivered the event's 22 ft. sign within a 3-day deadline.",
+  "photography-sports":
+    "Photographs of Northeastern Women's Volleyball, taken as team manager. I shoot practices twice a week and games throughout the season, capturing the energy and the small moments of the sport.\n\nThese images also feed the team's Instagram, reels and stories.",
+  "making-things-flanerie":
+    "A photo essay for ARTF1110 Making Things, built around the idea of the flâneur: someone who wanders the city simply to observe it.\n\nI walked through Boston photographing everyday scenes, then layered black-and-white and color within single images to guide where the eye lands.",
+  "photography-seven-sisters":
+    "Photographs from a trip to the Seven Sisters cliffs on England's south coast, taken on a Sony Cybershot.\n\nThe older digital camera gives the images a soft, muted quality that suits the dusk light over the fields and coastline.",
+};

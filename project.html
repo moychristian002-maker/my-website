@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christian Moy — Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antic&family=MuseoModerno:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="project-page">
+  <header class="site-header">
+    <a href="index.html" class="logo">Christian Moy</a>
+    <nav>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="article" id="article">
+      <a href="index.html#work" class="back">&larr; all work</a>
+      <figure class="article-hero"><img id="hero-img" alt=""></figure>
+      <header class="article-head">
+        <h1 id="title"></h1>
+        <p class="article-sub" id="subtitle"></p>
+      </header>
+      <div class="article-body" id="body"></div>
+      <h2 class="article-label" id="process-label">process &amp; details</h2>
+      <div class="article-gallery" id="gallery"></div>
+      <nav class="article-nav">
+        <a id="prev-link"></a>
+        <a id="next-link"></a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> Christian Moy</footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-prev" aria-label="Previous image">&lsaquo;</button>
+    <figure>
+      <img id="lb-img" alt="">
+      <figcaption><span class="lb-count" id="lb-count"></span></figcaption>
+    </figure>
+    <button class="lb-next" aria-label="Next image">&rsaquo;</button>
+  </div>
+
+  <script src="projects.js"></script>
+  <script src="project.js"></script>
+</body>
+</html>

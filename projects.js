@@ -10,10 +10,10 @@ const projects = [
     category: "Apparel & Objects",
     folder: "design-perspectives-britpop-jeans",
     images: [
-      "20251016-131807414-ios.jpg", "20251016-131807173-ios.jpg", "design-perspectives-exhibition.jpg", "pants.jpg",
-      "20251015-162148581-ios.jpg", "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg",
-      "20251016-025707684-ios.jpg", "20251016-130604196-ios.jpg", "20251016-130609928-ios.jpg",
-      "20251016-130616885-ios.jpg", "20251015-132707498-ios.jpg",
+      "20251016-131807414-ios.jpg", "design-perspectives-exhibition.jpg", "pants.jpg", "20251015-162148581-ios.jpg",
+      "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg", "20251016-025707684-ios.jpg",
+      "20251016-130604196-ios.jpg", "20251016-130609928-ios.jpg", "20251016-130616885-ios.jpg",
+      "20251016-131807173-ios.jpg", "20251015-132707498-ios.jpg",
     ],
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     tag: "Apparel · Hand Painting",
     category: "Apparel & Objects",
     folder: "custom-denim",
-    images: ["img-1658.jpg", "img-1659.jpg", "img-1660.jpg", "img-1661.jpg", "img-0955.jpg"],
+    images: ["img-1658.jpg", "img-0955.jpg", "img-1660.jpg", "img-1661.jpg"],
   },
   {
     title: "Senior Shirt",
@@ -69,8 +69,8 @@ const projects = [
     images: ["img-1364.jpg", "img-1366.jpg", "img-1374.jpg", "img-4699.jpg"],
   },
   {
-    title: "Pavilion",
-    tag: "Architecture · Model & Axonometric",
+    title: "The Resting Line",
+    tag: "Pavilion · Model & Axonometric",
     category: "Architecture",
     folder: "architecture-pavilion",
     images: [
@@ -94,8 +94,7 @@ const projects = [
     category: "Architecture",
     folder: "arcstart-basswood",
     images: [
-      "img-7796.jpg", "img-7793.jpg", "img-7797.jpg", "img-7798.jpg", "img-7799.jpg",
-      "img-7800.jpg", "img-7801.jpg", "img-7802.jpg",
+      "img-7796.jpg", "img-7793.jpg", "img-7797.jpg", "img-7798.jpg", "img-7800.jpg", "img-7802.jpg",
     ],
   },
   {
@@ -114,8 +113,8 @@ const projects = [
     category: "Graphic & Interaction",
     folder: "designing-interactive-experiences",
     images: [
-      "cinesense.jpg", "general-user-journey-map-1.jpg", "bsl-cinema.jpg", "companion.jpg",
-      "haptic.jpg", "img-1659.jpg", "img-1660.jpg", "img-1661.jpg",
+      "cinesense.jpg", "general-user-journey-map-1.jpg", "haptic.jpg", "bsl-cinema.jpg",
+      "img-1659.jpg", "companion.jpg",
     ],
   },
   {
@@ -232,7 +231,7 @@ const descriptions = {
   "custom-basketball":
     "A personalized Wilson basketball, hand-painted with characters and bubble lettering. The illustrations wrap around the ball's panels so it reads from every angle.",
   "custom-totes":
-    "A set of hand-drawn canvas tote bags. Each one is illustrated with fabric markers, turning a basic tote into a personal, wearable piece.\n\nThe photos show the designs in progress and the finished bags.",
+    "A set of hand-drawn tote bags, each designed around a different college: Wheaton, Johns Hopkins, Grove City and more. I drew every design by hand, matching each school\x27s logo, mascot or colors.\n\nThe first photo shows the designs in progress; the rest are the finished bags.",
   "dickies-workshop":
     "Made at a Dickies 247 customization workshop. I designed the layout of my own shirt from a set of Dickies patches and transfers, then applied them with a heat press.\n\nThe challenge was composition: arranging logos, icons and type into a balanced layout that still felt like mine.",
   "architecture-pavilion":
@@ -244,7 +243,7 @@ const descriptions = {
   "arcstart-3d-forms":
     "A series of form studies from ArcStart at the University of Michigan. I developed one interlocking form and drew it from four isometric viewpoints, northwest, southeast, southwest and northeast, each in its own color.\n\nThe form then grew into a concept for a room for rock climbing, supported by color palettes and material and atmosphere references.",
   "designing-interactive-experiences":
-    "CineSense is a concept developed in Designing Interactive Experiences: a wearable that uses haptics to help audiences \"feel every moment\" of a film, designed to make the cinema more accessible.\n\nThe process included a user journey map, storyboards of the cinema experience, sketches of wearable forms and a companion experience, and the final brand identity.",
+    "CineSense is a concept developed in Designing Interactive Experiences: a wearable that uses haptics to help audiences \"feel every moment\" of a film, designed to make the cinema more accessible.\n\nThe process moved from a user journey map to sketches of possible haptic wearables (a blanket, a bracelet, a neck pillow, glasses), a storyboard of the cinema visit, wireframes for a companion app, and the final brand identity.",
   "graphics-volleyball":
     "Social media graphics for Northeastern Women's Volleyball, made as part of my role as team manager. The set includes player feature graphics and a \"This Is Husky Volley\" piece.\n\nEach graphic keeps the player as the focus while carrying a consistent Husky identity.",
   "graphics-ukrainian-melodies":

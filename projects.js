@@ -14,23 +14,11 @@ const projects = [
       ["professor", "Tom Critchley"],
       ["materials", "Thrifted jeans, tie, acrylic paint and medium, keychains and pant charms, needle and thread, transfer paper"],
     ],
-    // Cover first, then the same order as the sections below (the lightbox follows this order).
-    images: [
-      "20251016-131807414-ios.jpg",
-      "design-perspectives-exhibition.jpg", "pants.jpg", "20251015-132707498-ios.jpg", "20251015-162148581-ios.jpg",
-      "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg",
-      "20251016-025707684-ios.jpg", "20251016-130604196-ios.jpg", "20251016-130609928-ios.jpg",
-      "20251016-130616885-ios.jpg", "20251016-131807173-ios.jpg",
-    ],
+    images: ["20251016-131807414-ios.jpg"],
     sections: [
-      ["mood board & process", [
-        "design-perspectives-exhibition.jpg", "pants.jpg", "20251015-132707498-ios.jpg", "20251015-162148581-ios.jpg",
-        "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg",
-      ]],
-      ["the jeans", [
-        "20251016-025707684-ios.jpg", "20251016-130604196-ios.jpg", "20251016-130609928-ios.jpg",
-        "20251016-130616885-ios.jpg", "20251016-131807173-ios.jpg",
-      ]],
+      ["research", ["design-perspectives-exhibition.jpg", "pants.jpg"]],
+      ["making", ["20251015-162148581-ios.jpg", "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg", "20251016-025707684-ios.jpg"]],
+      ["at design in london", ["20251015-132707498-ios.jpg", "20251016-130604196-ios.jpg", "20251016-130609928-ios.jpg", "20251016-130616885-ios.jpg", "20251016-131807173-ios.jpg"]],
     ],
   },
   {
@@ -38,9 +26,11 @@ const projects = [
     tag: "Apparel · Hand Embroidery",
     category: "Apparel & Objects",
     folder: "olivia-dean-shirt",
-    images: [
-      "img-3009.jpg", "img-2849.jpg", "img-2829.jpg", "img-2835.jpg", "img-2841.jpg",
-      "img-2842.jpg", "img-2857.jpg", "img-2924.jpg", "dsc04701.jpg",
+    images: ["img-3009.jpg"],
+    sections: [
+      ["stitching", ["img-2835.jpg", "img-2841.jpg", "img-2849.jpg"]],
+      ["the shirts", ["img-2829.jpg", "img-2842.jpg", "img-2857.jpg"]],
+      ["at the concert", ["img-2924.jpg", "dsc04701.jpg"]],
     ],
   },
   {
@@ -48,17 +38,21 @@ const projects = [
     tag: "Apparel · Hand Painting",
     category: "Apparel & Objects",
     folder: "custom-denim",
-    images: ["img-1658.jpg", "img-0955.jpg", "img-1660.jpg", "img-1661.jpg"],
+    images: ["img-1658.jpg"],
+    sections: [
+      ["painting", ["img-0955.jpg", "img-1660.jpg", "img-1661.jpg"]],
+    ],
   },
   {
     title: "Senior Shirt",
     tag: "Apparel · Appliqué & Embroidery",
     category: "Apparel & Objects",
     folder: "senior-shirt",
-    images: [
-      "20260831-214656384-ios.jpg", "20260831-214611147-ios.jpg", "20260831-214726736-ios.jpg",
-      "20260831-033155072-ios.jpg", "20260831-033207602-ios.jpg", "20260831-033215446-ios.jpg",
-      "20260831-033228773-ios.jpg",
+    images: ["20260831-214656384-ios.jpg"],
+    sections: [
+      ["stitching", ["20260831-033155072-ios.jpg"]],
+      ["details", ["20260831-033207602-ios.jpg", "20260831-033215446-ios.jpg", "20260831-033228773-ios.jpg"]],
+      ["the shirt", ["20260831-214726736-ios.jpg", "20260831-214611147-ios.jpg"]],
     ],
   },
   {
@@ -66,16 +60,20 @@ const projects = [
     tag: "Product Design · Hand Painting",
     category: "Apparel & Objects",
     folder: "custom-basketball",
-    images: ["img-1567.jpg", "img-0945.jpg", "img-1568.jpg", "img-1571.jpg", "img-1573.jpg"],
+    images: ["img-1567.jpg"],
+    sections: [
+      ["every angle", ["img-0945.jpg", "img-1568.jpg", "img-1571.jpg", "img-1573.jpg"]],
+    ],
   },
   {
     title: "Custom Totes",
     tag: "Product Design · Merchandise",
     category: "Apparel & Objects",
     folder: "custom-totes",
-    images: [
-      "dsc02234.jpg", "img-2166.jpg", "img-2167.jpg", "img-2168.jpg", "img-2169.jpg",
-      "img-2170.jpg", "img-2171.jpg", "img-2172.jpg", "img-2173.jpg",
+    images: ["img-2169.jpg"],
+    sections: [
+      ["drawing", ["dsc02234.jpg"]],
+      ["the totes", ["img-2166.jpg", "img-2167.jpg", "img-2168.jpg", "img-2170.jpg", "img-2171.jpg", "img-2172.jpg", "img-2173.jpg"]],
     ],
   },
   {
@@ -83,16 +81,20 @@ const projects = [
     tag: "Dickies 247 Workshop",
     category: "Apparel & Objects",
     folder: "dickies-workshop",
-    images: ["img-1364.jpg", "img-1366.jpg", "img-1374.jpg", "img-4699.jpg"],
+    images: ["img-4699.jpg"],
+    sections: [
+      ["at the workshop", ["img-1364.jpg", "img-1366.jpg", "img-1374.jpg"]],
+    ],
   },
   {
     title: "The Resting Line",
     tag: "Pavilion · Model & Axonometric",
     category: "Architecture",
     folder: "architecture-pavilion",
-    images: [
-      "img-5254.jpg", "img-5257.jpg", "60cd3d24-203b-40f4-8562-266551f4b4f1.jpg",
-      "0f388bec-a149-4c7e-88c0-a62f68e508a5.jpg",
+    images: ["img-5254.jpg"],
+    sections: [
+      ["the model", ["img-5257.jpg"]],
+      ["drawings", ["0f388bec-a149-4c7e-88c0-a62f68e508a5.jpg", "60cd3d24-203b-40f4-8562-266551f4b4f1.jpg"]],
     ],
   },
   {
@@ -100,9 +102,10 @@ const projects = [
     tag: "Architecture · Model & Drawings",
     category: "Architecture",
     folder: "architecture-cube",
-    images: [
-      "img-5200.jpg", "cube-frame.jpg", "img-5173.jpg", "oblique-01.jpg", "elevation-1-3-01.jpg",
-      "elevation-2-4-01.jpg", "section-plan-1-01.jpg", "section-plan-2-01.jpg",
+    images: ["img-5200.jpg"],
+    sections: [
+      ["models", ["cube-frame.jpg", "img-5173.jpg"]],
+      ["drawings", ["oblique-01.jpg", "elevation-1-3-01.jpg", "elevation-2-4-01.jpg", "section-plan-1-01.jpg", "section-plan-2-01.jpg"]],
     ],
   },
   {
@@ -110,8 +113,10 @@ const projects = [
     tag: "University of Michigan · ArcStart",
     category: "Architecture",
     folder: "arcstart-basswood",
-    images: [
-      "img-7796.jpg", "img-7793.jpg", "img-7797.jpg", "img-7798.jpg", "img-7800.jpg", "img-7802.jpg",
+    images: ["img-7796.jpg"],
+    sections: [
+      ["making", ["img-7793.jpg"]],
+      ["the model", ["img-7797.jpg", "img-7798.jpg", "img-7800.jpg", "img-7802.jpg"]],
     ],
   },
   {
@@ -119,9 +124,11 @@ const projects = [
     tag: "Architecture · Isometric & Concept",
     category: "Architecture",
     folder: "arcstart-3d-forms",
-    images: [
-      "forms-02.jpg", "forms-01.jpg", "forms-03.jpg", "forms-04.jpg", "forms-06.jpg",
-      "forms-07.jpg", "forms-08.jpg", "forms-09.jpg", "isometric-01.jpg", "isometric-02.jpg",
+    images: ["forms-02.jpg"],
+    sections: [
+      ["isometric views", ["forms-01.jpg", "forms-03.jpg", "forms-04.jpg"]],
+      ["color & references", ["forms-06.jpg", "forms-07.jpg", "forms-08.jpg", "forms-09.jpg", "isometric-02.jpg"]],
+      ["concept", ["isometric-01.jpg"]],
     ],
   },
   {
@@ -129,9 +136,10 @@ const projects = [
     tag: "Designing Interactive Experiences · UX",
     category: "Graphic & Interaction",
     folder: "designing-interactive-experiences",
-    images: [
-      "cinesense.jpg", "general-user-journey-map-1.jpg", "haptic.jpg", "bsl-cinema.jpg",
-      "img-1659.jpg", "companion.jpg",
+    images: ["cinesense.jpg"],
+    sections: [
+      ["research & ideas", ["general-user-journey-map-1.jpg", "haptic.jpg", "bsl-cinema.jpg", "img-1659.jpg"]],
+      ["companion app", ["companion.jpg"]],
     ],
   },
   {
@@ -180,11 +188,10 @@ const projects = [
     tag: "Northeastern Women’s Volleyball",
     category: "Photography",
     folder: "photography-sports",
-    images: [
-      "0p1a4392.jpg", "0p1a4399.jpg", "0p1a4414.jpg", "0p1a4435.jpg", "0p1a4551.jpg", "0p1a4563.jpg",
-      "20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg",
-      "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg",
-      "20260926-223622000-ios.jpg", "20260926-223640000-ios.jpg",
+    images: ["0p1a4392.jpg"],
+    sections: [
+      ["practice", ["0p1a4399.jpg", "0p1a4414.jpg", "0p1a4435.jpg", "0p1a4551.jpg", "0p1a4563.jpg"]],
+      ["game day", ["20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg", "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg", "20260926-223622000-ios.jpg", "20260926-223640000-ios.jpg"]],
     ],
   },
   {
@@ -203,13 +210,19 @@ const projects = [
     tag: "Taken on Sony Cybershot",
     category: "Photography",
     folder: "photography-seven-sisters",
-    images: [
-      "20251007-140406000-ios.jpg", "20251007-141413000-ios.jpg", "20251007-163238000-ios.jpg",
-      "20251007-163312000-ios.jpg", "20251007-163825000-ios.jpg", "20251007-164105000-ios.jpg",
-      "20251007-164112000-ios.jpg",
+    images: ["20251007-140406000-ios.jpg"],
+    sections: [
+      ["the coast", ["20251007-141413000-ios.jpg"]],
+      ["the fields at dusk", ["20251007-163238000-ios.jpg", "20251007-163312000-ios.jpg", "20251007-163825000-ios.jpg", "20251007-164105000-ios.jpg", "20251007-164112000-ios.jpg"]],
     ],
   },
 ];
+
+// Projects with `sections` list only their cover in `images`; the rest is filled in
+// from the sections, in order, so the lightbox follows the page.
+projects.forEach((p) => {
+  if (p.sections) p.images = [p.images[0], ...p.sections.flatMap(([, files]) => files)];
+});
 
 // Each project's "color world" (gallery background, text color), pulled from its own palette.
 // Projects not listed here fall back to the black & white base.
@@ -248,7 +261,7 @@ const descriptions = {
   "custom-basketball":
     "A personalized Wilson basketball, hand-painted with characters and bubble lettering. The illustrations wrap around the ball's panels so it reads from every angle.",
   "custom-totes":
-    "A set of hand-drawn tote bags, each designed around a different college: Wheaton, Johns Hopkins, Grove City and more. I drew every design by hand, matching each school's logo, mascot or colors.\n\nThe first photo shows the designs in progress; the rest are the finished bags.",
+    "A set of hand-drawn tote bags, each designed around a different college: Wheaton, Johns Hopkins, Grove City and more. I drew every design by hand, matching each school's logo, mascot or colors.",
   "dickies-workshop":
     "Made at a Dickies 247 customization workshop. I designed the layout of my own shirt from a set of Dickies patches and transfers, then applied them with a heat press.\n\nThe challenge was composition: arranging logos, icons and type into a balanced layout that still felt like mine.",
   "architecture-pavilion":

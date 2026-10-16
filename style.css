@@ -171,6 +171,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .article-details dd { font-style: italic; }
 .article-label { font-size: 1.3rem; font-weight: 600; text-align: center; margin-bottom: 1.75rem; }
 .article-label[hidden] { display: none; }
+.article-gallery + .article-label { margin-top: 3.5rem; }
 .article-gallery { columns: 2 280px; column-gap: 1.25rem; }
 .article-gallery button { display: block; width: 100%; margin-bottom: 1.25rem; padding: 0; border: 0; background: none; cursor: zoom-in; break-inside: avoid; }
 .article-gallery img { width: 100%; display: block; border-radius: var(--radius); transition: opacity 0.2s; }

@@ -33,15 +33,25 @@ const details = document.getElementById("details");
 });
 if (p.details) details.hidden = false;
 
-// Remaining images become the process gallery; each opens full-size.
-const gallery = document.getElementById("gallery");
-const rest = p.images.slice(1);
-if (!rest.length) document.getElementById("process-label").hidden = true;
-rest.forEach((file, i) => {
-  const b = document.createElement("button");
-  b.innerHTML = `<img src="${src(file)}" alt="${p.title}, image ${i + 2}" loading="lazy">`;
-  b.addEventListener("click", () => openAt(i + 1));
-  gallery.appendChild(b);
+// Remaining images become the gallery; each opens full-size. A project can split
+// them into labeled `sections` (e.g. process vs. the finished piece).
+const sections = document.getElementById("sections");
+const groups = p.sections || [["process & details", p.images.slice(1)]];
+groups.forEach(([label, files]) => {
+  if (!files.length) return;
+  const heading = document.createElement("h2");
+  heading.className = "article-label";
+  heading.textContent = label;
+  const gallery = document.createElement("div");
+  gallery.className = "article-gallery";
+  files.forEach((file) => {
+    const i = p.images.indexOf(file);
+    const b = document.createElement("button");
+    b.innerHTML = `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">`;
+    b.addEventListener("click", () => openAt(i));
+    gallery.appendChild(b);
+  });
+  sections.append(heading, gallery);
 });
 document.querySelector(".article-hero").addEventListener("click", () => openAt(0));
 

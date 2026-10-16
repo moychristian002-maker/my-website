@@ -14,11 +14,23 @@ const projects = [
       ["professor", "Tom Critchley"],
       ["materials", "Thrifted jeans, tie, acrylic paint and medium, keychains and pant charms, needle and thread, transfer paper"],
     ],
+    // Cover first, then the same order as the sections below (the lightbox follows this order).
     images: [
-      "20251016-131807414-ios.jpg", "design-perspectives-exhibition.jpg", "pants.jpg", "20251015-162148581-ios.jpg",
-      "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg", "20251016-025707684-ios.jpg",
-      "20251016-130604196-ios.jpg", "20251016-130609928-ios.jpg", "20251016-130616885-ios.jpg",
-      "20251016-131807173-ios.jpg", "20251015-132707498-ios.jpg",
+      "20251016-131807414-ios.jpg",
+      "design-perspectives-exhibition.jpg", "pants.jpg", "20251015-132707498-ios.jpg", "20251015-162148581-ios.jpg",
+      "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg",
+      "20251016-025707684-ios.jpg", "20251016-130604196-ios.jpg", "20251016-130609928-ios.jpg",
+      "20251016-130616885-ios.jpg", "20251016-131807173-ios.jpg",
+    ],
+    sections: [
+      ["mood board & process", [
+        "design-perspectives-exhibition.jpg", "pants.jpg", "20251015-132707498-ios.jpg", "20251015-162148581-ios.jpg",
+        "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg",
+      ]],
+      ["the jeans", [
+        "20251016-025707684-ios.jpg", "20251016-130604196-ios.jpg", "20251016-130609928-ios.jpg",
+        "20251016-130616885-ios.jpg", "20251016-131807173-ios.jpg",
+      ]],
     ],
   },
   {

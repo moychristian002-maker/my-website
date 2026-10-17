@@ -119,7 +119,7 @@ const projects = [
       "digitized-wilson.jpg": "whole",
       "digitized-timmy-time.jpg": "whole",
       "img-1561.jpg": "50% 70%",
-      "img-1573.jpg": "60% 50%",
+      "img-1567.jpg": "55% 50%",
       "img-1568.jpg": "50% 45%",
       "img-0945.jpg": "62% 50%",
       "img-1571.jpg": "50% 60%",

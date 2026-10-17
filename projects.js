@@ -43,10 +43,22 @@ const projects = [
     tag: "Apparel · Hand Painting",
     category: "Apparel & Objects",
     folder: "custom-denim",
+    details: [
+      ["materials", "Denim jacket, acrylic paint and medium"],
+    ],
     images: ["img-1658.jpg"],
     sections: [
+      ["inspiration", ["inspiration-peachypaintshop.jpg"]],
+      ["design", ["sketch.jpg", "ai-mockup.jpg"]],
       ["painting", ["img-0955.jpg", "img-1660.jpg", "img-1661.jpg"]],
+      ["the gift", ["img-6783.jpg"]],
     ],
+    captions: {
+      "inspiration-peachypaintshop.jpg": "design inspiration by @peachypaintshop on Etsy, found on Pinterest",
+      "sketch.jpg": "my sketch of the design",
+      "ai-mockup.jpg": "AI-generated color mockup, based on my sketch",
+      "img-6783.jpg": "my friend wearing the jacket",
+    },
   },
   {
     title: "Senior Shirt",
@@ -260,7 +272,7 @@ const descriptions = {
   "olivia-dean-shirt":
     "Hand-embroidered T-shirts made to wear to an Olivia Dean concert in New York. Each shirt carries a lyric stitched in my own handwriting, \"love's never wasted\" and \"when it's shared, mmm,\" so the two read as a pair.\n\nBefore starting the shirts, I taught myself to embroider on a practice hoop of a bookshelf. For the lettering, I used a shirt I found on Pinterest as a typeface reference, then wrote the lyrics out in my own hand, transferred them onto the shirts and embroidered them using a hoop, with \"Olivia Dean New York 2026\" stitched on the back.",
   "custom-denim":
-    "A plain denim jacket turned into a hand-painted piece celebrating the University of Pennsylvania. The back panel features the Quaker mascot, the Penn shield, a \"Quakers\" pennant and a \"University of Pennsylvania\" banner.\n\nThe process shots go from the blank jacket through the painting in progress to the finished back panel.",
+    "A birthday present for a friend: a plain denim jacket, hand-painted to celebrate the University of Pennsylvania with the Quaker mascot, the Penn shield, a \"Quakers\" pennant and a \"University of Pennsylvania\" banner.\n\nThe idea started with a painted Minnesota jacket by @peachypaintshop that I found on Pinterest. I sketched my own Penn version, used an image generator to color in the sketch as a quick mockup, then drew the outline onto the jacket and painted it by hand with acrylics.",
   "senior-shirt":
     "A one-of-a-kind senior shirt. The lettering is cut from gingham and floral fabrics, appliquéd onto a white tee and finished with small embroidered flowers and details.\n\nEach letter was cut and placed by hand, so the shirt reads as playful and handmade rather than printed.",
   "custom-basketball":

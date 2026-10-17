@@ -99,12 +99,12 @@ const projects = [
     details: [
       ["materials", "Basketball, acrylic paint, Posca paint pens, Sharpie, paper"],
     ],
-    images: ["img-1567.jpg"],
+    images: ["img-1573.jpg"],
     sections: [
       ["inspiration", ["gift-from-friend-1.jpg", "gift-from-friend-2.jpg"]],
       ["little things about him", ["digitized-player.jpg", "brooklyn-bridge.jpg", "digitized-wilson.jpg", "digitized-timmy-time.jpg"]],
-      ["painting", ["img-1561.jpg"]],
-      ["every angle", ["img-1573.jpg", "img-1568.jpg", "img-0945.jpg", "img-1571.jpg", "bridge-side.mp4"]],
+      ["painting", ["img-1561.jpg", "img-1567.jpg"]],
+      ["every angle", ["img-1568.jpg", "img-0945.jpg", "img-1571.jpg", "bridge-side.mp4"]],
     ],
     captions: {
       "gift-from-friend-1.jpg": "the ball my friend customized for my birthday",

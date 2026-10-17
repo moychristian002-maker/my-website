@@ -169,22 +169,33 @@ const projects = [
     ],
   },
   {
-    title: "Cube",
-    tag: "Architecture · Model & Drawings",
+    title: "Frame by Frame",
+    tag: "Cube Project · Model & Drawings",
     category: "Architecture",
     folder: "architecture-cube",
+    images: ["img-5173.jpg"],
+    sections: [
+      ["process sketches", ["sketch-1.jpg", "sketch-2.jpg", "sketch-3.jpg"]],
+      ["process models", ["cube-frame.jpg", "img-5195.jpg", "img-5201.jpg"]],
+      ["drawings", ["oblique-01.jpg", "elevation-1-3-01.jpg", "elevation-2-4-01.jpg", "section-plan-1-01.jpg", "section-plan-2-01.jpg", "stairs.jpg"]],
+      ["final cube", ["img-5186.jpg", "img-5190.jpg"]],
+    ],
+    // The original presentation, shown at the end as a booklet you can page through.
+    booklet: [
+      "booklet/page-01.jpg", "booklet/page-02.jpg", "booklet/page-03.jpg",
+      "booklet/page-04.jpg", "booklet/page-05.jpg", "booklet/page-06.jpg",
+    ],
     crop: {
+      "sketch-1.jpg": "whole",
+      "sketch-2.jpg": "whole",
+      "sketch-3.jpg": "whole",
       "oblique-01.jpg": "whole",
       "elevation-1-3-01.jpg": "whole",
       "elevation-2-4-01.jpg": "whole",
       "section-plan-1-01.jpg": "whole",
       "section-plan-2-01.jpg": "whole",
+      "stairs.jpg": "whole",
     },
-    images: ["img-5200.jpg"],
-    sections: [
-      ["models", ["cube-frame.jpg", "img-5173.jpg"]],
-      ["drawings", ["oblique-01.jpg", "elevation-1-3-01.jpg", "elevation-2-4-01.jpg", "section-plan-1-01.jpg", "section-plan-2-01.jpg"]],
-    ],
   },
   {
     title: "Basswood Model",
@@ -383,7 +394,7 @@ const descriptions = {
   "architecture-pavilion":
     "A pavilion study built around a single undulating roof. A thin white surface rises and falls over a basswood truss structure, creating sheltered pockets underneath.\n\nThe project moved from concept sketches to a physical model, then to an axonometric drawing and a render of the pavilion placed in a landscape.",
   "architecture-cube":
-    "A study in dividing space within a cube. Working inside a basswood frame, I used planes and openings to create a sequence of rooms and views through the form.\n\nThe model is paired with a full drawing set: an oblique, two pairs of elevations and two section plans.",
+    "The first part of a larger project, built around the verb \"framing.\" A frame does not simply contain; it directs focus and sets up relationships between interior and exterior, open and closed, solid and void. This cube explores framing as both a structural and a conceptual tool.\n\nI started with a skeletal cube of thin wooden sticks, a transparent framework that defined edges without enclosing them. Then I selectively filled some of the frames with planes, turning the open grid into spaces that suggest enclosure, separation and orientation. The result is a study of framing as an act of opening (sightlines, transparency, flow) and an act of closing (boundaries, privacy, focus).",
   "arcstart-basswood":
     "Made during ArcStart, a three-week pre-college architecture program at the University of Michigan. The model is a vertical composition of basswood sticks and planes, layered to explore balance, rhythm and how light passes through a structure.\n\nPhotographed against the studio window, where the shadows become part of the piece.",
   "arcstart-3d-forms":

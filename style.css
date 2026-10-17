@@ -180,7 +180,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .article-gallery.single { grid-template-columns: minmax(0, 1fr); max-width: calc(50% - 0.625rem); margin: 1.25rem auto 0; }
 .article-gallery button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
 .article-gallery img, .article-gallery video { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: var(--radius); transition: opacity 0.2s; }
-.article-gallery .whole img, .article-gallery .whole video { object-fit: contain; background: color-mix(in srgb, currentColor 6%, transparent); }
+.article-gallery .whole img, .article-gallery .whole video { object-fit: contain; background: #fff; }
 .article-gallery.single .whole img, .article-gallery.single .whole video { aspect-ratio: auto; background: none; }
 .article-gallery button:hover img { opacity: 0.88; }
 @media (max-width: 640px) {
@@ -275,3 +275,19 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
   .project-page .article-head, .project-page .article-body,
   .project-page .article-details, .project-page #sections { animation: none; }
 }
+
+/* Booklet (project.js): the original presentation, paged with a turning leaf */
+.booklet { margin-top: 3.5rem; }
+.booklet-stage { position: relative; aspect-ratio: 3000 / 2121; perspective: 2600px; cursor: pointer; outline: none; }
+.booklet-stage:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; border-radius: 4px; }
+.booklet-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.booklet-page { filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.25)); }
+.booklet-leaf { z-index: 1; backface-visibility: hidden; animation: 0.75s cubic-bezier(0.45, 0, 0.2, 1) forwards; pointer-events: none; }
+.booklet-leaf.forward { transform-origin: left center; animation-name: leaf-forward; }
+.booklet-leaf.back { transform-origin: right center; animation-name: leaf-back; }
+@keyframes leaf-forward { to { transform: rotateY(-100deg); opacity: 0; } }
+@keyframes leaf-back { to { transform: rotateY(100deg); opacity: 0; } }
+.booklet-controls { display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-top: 1.5rem; }
+.booklet-controls button { width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 1px solid currentColor; background: none; color: inherit; font-size: 1.5rem; line-height: 1; cursor: pointer; transition: opacity 0.2s; }
+.booklet-controls button:disabled { opacity: 0.3; cursor: default; }
+.booklet-count { min-width: 4rem; text-align: center; font-style: italic; opacity: 0.75; }

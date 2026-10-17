@@ -71,6 +71,84 @@ groups.forEach(([label, files]) => {
 });
 document.querySelector(".article-hero").addEventListener("click", () => openAt(0));
 
+// Booklet: a project's original presentation at the end of the page, one page at a
+// time. Turn pages with the arrows, by clicking the left or right half of the page,
+// with the arrow keys, or by swiping.
+if (p.booklet) {
+  const pages = p.booklet;
+  const wrap = document.createElement("section");
+  wrap.className = "booklet";
+  wrap.innerHTML = `
+    <h2 class="article-label">the booklet</h2>
+    <div class="booklet-stage" tabindex="0" role="region" aria-label="Booklet: use the arrow keys to turn pages">
+      <img class="booklet-page" alt="">
+    </div>
+    <div class="booklet-controls">
+      <button class="booklet-prev" aria-label="Previous page">&lsaquo;</button>
+      <span class="booklet-count"></span>
+      <button class="booklet-next" aria-label="Next page">&rsaquo;</button>
+    </div>`;
+  sections.appendChild(wrap);
+
+  const stage = wrap.querySelector(".booklet-stage");
+  const page = wrap.querySelector(".booklet-page");
+  const count = wrap.querySelector(".booklet-count");
+  const prevBtn = wrap.querySelector(".booklet-prev");
+  const nextBtn = wrap.querySelector(".booklet-next");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let at = 0;
+  let busy = false;
+
+  const render = () => {
+    page.src = src(pages[at]);
+    page.alt = `${p.title}, booklet page ${at + 1}`;
+    count.textContent = `${at + 1} / ${pages.length}`;
+    prevBtn.disabled = at === 0;
+    nextBtn.disabled = at === pages.length - 1;
+  };
+
+  // The old page stays on top as a copy and swings away, revealing the new one.
+  const turn = (dir) => {
+    const to = at + dir;
+    if (busy || to < 0 || to >= pages.length) return;
+    if (still) { at = to; render(); return; }
+    busy = true;
+    const leaf = page.cloneNode();
+    leaf.className = `booklet-leaf ${dir > 0 ? "forward" : "back"}`;
+    stage.appendChild(leaf);
+    at = to;
+    render();
+    leaf.addEventListener("animationend", () => { leaf.remove(); busy = false; }, { once: true });
+  };
+
+  prevBtn.addEventListener("click", () => turn(-1));
+  nextBtn.addEventListener("click", () => turn(1));
+  stage.addEventListener("click", (e) => {
+    const r = stage.getBoundingClientRect();
+    turn(e.clientX - r.left < r.width / 2 ? -1 : 1);
+  });
+  stage.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); turn(1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); turn(-1); }
+  });
+  let touchX = null;
+  stage.addEventListener("touchstart", (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener("touchend", (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) turn(dx < 0 ? 1 : -1);
+    touchX = null;
+  });
+
+  render();
+  // Load the rest of the pages once the booklet is near, so turning is instant.
+  new IntersectionObserver((entries, obs) => {
+    if (!entries[0].isIntersecting) return;
+    pages.forEach((f) => { new Image().src = src(f); });
+    obs.disconnect();
+  }, { rootMargin: "600px" }).observe(stage);
+}
+
 // Previous / next project links.
 const prev = projects[(pos - 1 + projects.length) % projects.length];
 const next = projects[(pos + 1) % projects.length];

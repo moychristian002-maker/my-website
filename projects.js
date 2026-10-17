@@ -177,7 +177,10 @@ const projects = [
     sections: [
       ["process sketches", ["sketch-1.jpg", "sketch-2.jpg", "sketch-3.jpg"]],
       ["process models", ["cube-frame.jpg", "img-5195.jpg", "img-5201.jpg"]],
-      ["drawings", ["oblique-01.jpg", "elevation-1-3-01.jpg", "elevation-2-4-01.jpg", "section-plan-1-01.jpg", "section-plan-2-01.jpg", "stairs.jpg"]],
+      ["elevations", ["elevation-1.jpg", "elevation-2.jpg", "elevation-3.jpg", "elevation-4.jpg"]],
+      ["sections", ["section-1.jpg", "section-2.jpg"]],
+      ["plans", ["plan-1.jpg", "plan-2.jpg"]],
+      ["oblique", ["oblique-01.jpg"]],
       ["final cube", ["img-5186.jpg", "img-5190.jpg"]],
     ],
     // The original presentation, shown at the end as a booklet you can page through.
@@ -190,11 +193,16 @@ const projects = [
       "sketch-2.jpg": "whole",
       "sketch-3.jpg": "whole",
       "oblique-01.jpg": "whole",
-      "elevation-1-3-01.jpg": "whole",
-      "elevation-2-4-01.jpg": "whole",
-      "section-plan-1-01.jpg": "whole",
-      "section-plan-2-01.jpg": "whole",
-      "stairs.jpg": "whole",
+    },
+    captions: {
+      "elevation-1.jpg": "elevation 1",
+      "elevation-2.jpg": "elevation 2",
+      "elevation-3.jpg": "elevation 3",
+      "elevation-4.jpg": "elevation 4",
+      "section-1.jpg": "section 1",
+      "section-2.jpg": "section 2",
+      "plan-1.jpg": "plan 1",
+      "plan-2.jpg": "plan 2",
     },
   },
   {

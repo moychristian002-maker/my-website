@@ -9,6 +9,11 @@ const projects = [
     tag: "LADES4143 Design Perspectives · Design in London Exhibition",
     category: "Apparel & Objects",
     folder: "design-perspectives-britpop-jeans",
+    crop: {
+      "20251015-132707498-ios.jpg": "whole",
+      "design-perspectives-exhibition.jpg": "whole",
+      "pants.jpg": "whole",
+    },
     details: [
       ["course", "LADES4143 Design Perspectives"],
       ["professor", "Tom Critchley"],
@@ -26,6 +31,14 @@ const projects = [
     tag: "Apparel · Hand Embroidery",
     category: "Apparel & Objects",
     folder: "olivia-dean-shirt",
+    crop: {
+      "img-1638.jpg": "whole",
+      "img-1639.jpg": "whole",
+      "img-1640.jpg": "whole",
+      "img-1641.jpg": "whole",
+      "img-1642.jpg": "whole",
+      "img-2843.jpg": "whole",
+    },
     images: ["img-2857.jpg"],
     sections: [
       ["process", ["bookshelf-hoop.jpg", "img-1638.jpg", "img-1639.jpg", "img-1640.jpg"]],
@@ -43,6 +56,9 @@ const projects = [
     tag: "Apparel · Hand Painting",
     category: "Apparel & Objects",
     folder: "custom-denim",
+    crop: {
+      "sketch.jpg": "whole",
+    },
     details: [
       ["materials", "Denim jacket, acrylic paint and medium"],
     ],
@@ -108,6 +124,10 @@ const projects = [
     tag: "Pavilion · Model & Axonometric",
     category: "Architecture",
     folder: "architecture-pavilion",
+    crop: {
+      "0f388bec-a149-4c7e-88c0-a62f68e508a5.jpg": "whole",
+      "60cd3d24-203b-40f4-8562-266551f4b4f1.jpg": "whole",
+    },
     images: ["img-5254.jpg"],
     sections: [
       ["the model", ["img-5257.jpg"]],
@@ -119,6 +139,13 @@ const projects = [
     tag: "Architecture · Model & Drawings",
     category: "Architecture",
     folder: "architecture-cube",
+    crop: {
+      "oblique-01.jpg": "whole",
+      "elevation-1-3-01.jpg": "whole",
+      "elevation-2-4-01.jpg": "whole",
+      "section-plan-1-01.jpg": "whole",
+      "section-plan-2-01.jpg": "whole",
+    },
     images: ["img-5200.jpg"],
     sections: [
       ["models", ["cube-frame.jpg", "img-5173.jpg"]],
@@ -141,6 +168,17 @@ const projects = [
     tag: "Architecture · Isometric & Concept",
     category: "Architecture",
     folder: "arcstart-3d-forms",
+    crop: {
+      "forms-01.jpg": "whole",
+      "forms-03.jpg": "whole",
+      "forms-04.jpg": "whole",
+      "forms-06.jpg": "whole",
+      "forms-07.jpg": "whole",
+      "forms-08.jpg": "whole",
+      "forms-09.jpg": "whole",
+      "isometric-01.jpg": "whole",
+      "isometric-02.jpg": "whole",
+    },
     images: ["forms-02.jpg"],
     sections: [
       ["isometric views", ["forms-01.jpg", "forms-03.jpg", "forms-04.jpg"]],
@@ -153,6 +191,13 @@ const projects = [
     tag: "Designing Interactive Experiences · UX",
     category: "Graphic & Interaction",
     folder: "designing-interactive-experiences",
+    crop: {
+      "general-user-journey-map-1.jpg": "whole",
+      "haptic.jpg": "whole",
+      "bsl-cinema.jpg": "whole",
+      "img-1659.jpg": "whole",
+      "companion.jpg": "whole",
+    },
     images: ["cinesense.jpg"],
     sections: [
       ["research & ideas", ["general-user-journey-map-1.jpg", "haptic.jpg", "bsl-cinema.jpg", "img-1659.jpg"]],
@@ -174,6 +219,12 @@ const projects = [
     tag: "Graphic Design · Poster Series",
     category: "Graphic & Interaction",
     folder: "graphics-ukrainian-melodies",
+    crop: {
+      "20261013-163845580-ios.jpg": "whole",
+      "20261013-163846071-ios.jpg": "whole",
+      "20261013-163847681-ios.jpg": "whole",
+      "20261013-163848022-ios.jpg": "whole",
+    },
     images: [
       "20261013-164409000-ios.jpg", "20261013-163845580-ios.jpg", "20261013-163846071-ios.jpg",
       "20261013-163847681-ios.jpg", "20261013-163848022-ios.jpg",
@@ -191,6 +242,9 @@ const projects = [
     tag: "Typography · Custom Typeface",
     category: "Graphic & Interaction",
     folder: "handwritten-typography",
+    crop: {
+      "handwritten-typography2.jpg": "whole",
+    },
     images: ["handwritten-typography1.jpg", "handwritten-typography2.jpg"],
   },
   {
@@ -216,6 +270,20 @@ const projects = [
     tag: "ARTF1110 Making Things",
     category: "Photography",
     folder: "making-things-flanerie",
+    crop: {
+      "flanerie-01.jpg": "whole",
+      "flanerie-02.jpg": "whole",
+      "flanerie-03.jpg": "whole",
+      "flanerie-04.jpg": "whole",
+      "flanerie-05.jpg": "whole",
+      "flanerie-06.jpg": "whole",
+      "flanerie-07.jpg": "whole",
+      "flanerie-08.jpg": "whole",
+      "flanerie-09.jpg": "whole",
+      "flanerie-10.jpg": "whole",
+      "flanerie-11.jpg": "whole",
+      "flanerie-12.jpg": "whole",
+    },
     images: [
       "flanerie-06.jpg", "flanerie-01.jpg", "flanerie-02.jpg", "flanerie-03.jpg", "flanerie-04.jpg",
       "flanerie-05.jpg", "flanerie-07.jpg", "flanerie-08.jpg", "flanerie-09.jpg", "flanerie-10.jpg",

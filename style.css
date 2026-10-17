@@ -173,12 +173,19 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .article-label { font-size: 1.3rem; font-weight: 600; text-align: center; margin-bottom: 1.75rem; }
 .article-label[hidden] { display: none; }
 .article-gallery + .article-label { margin-top: 3.5rem; }
-.article-gallery { columns: 2 280px; column-gap: 1.25rem; }
-.article-gallery.single { columns: 1; max-width: max(280px, calc(50% - 0.625rem)); margin: 0 auto; }
-.article-gallery button { display: block; width: 100%; margin-bottom: 1.25rem; padding: 0; border: 0; background: none; cursor: zoom-in; break-inside: avoid; }
-.article-gallery img { width: 100%; display: block; border-radius: var(--radius); transition: opacity 0.2s; }
-.article-gallery video { width: 100%; display: block; border-radius: var(--radius); }
+/* Gallery: an even grid of square tiles, each photo cropped to its main item
+   (per-photo `crop` in projects.js sets the focus, or "whole" to fit it uncropped).
+   The lightbox always shows the full photo. */
+.article-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
+.article-gallery.single { grid-template-columns: minmax(0, 1fr); max-width: calc(50% - 0.625rem); margin: 1.25rem auto 0; }
+.article-gallery button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.article-gallery img, .article-gallery video { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: var(--radius); transition: opacity 0.2s; }
+.article-gallery .whole img, .article-gallery .whole video { object-fit: contain; background: color-mix(in srgb, currentColor 6%, transparent); }
 .article-gallery button:hover img { opacity: 0.88; }
+@media (max-width: 640px) {
+  .article-gallery { grid-template-columns: minmax(0, 1fr); }
+  .article-gallery.single { max-width: none; }
+}
 .article-nav { display: flex; justify-content: space-between; gap: 2rem; margin-top: 4.5rem; padding-top: 2rem; border-top: 1px solid currentColor; }
 .article-nav a { font-family: var(--title); font-weight: 600; font-size: 1.15rem; text-transform: lowercase; text-decoration: none; max-width: 45%; }
 .article-nav a:last-child { text-align: right; }

@@ -131,10 +131,9 @@ const projects = [
     tag: "Product Design · Merchandise",
     category: "Apparel & Objects",
     folder: "custom-totes",
-    images: ["img-2169.jpg"],
+    images: ["dsc02234.jpg"],
     sections: [
-      ["drawing", ["dsc02234.jpg"]],
-      ["the totes", ["img-2166.jpg", "img-2167.jpg", "img-2168.jpg", "img-2170.jpg", "img-2171.jpg", "img-2172.jpg", "img-2173.jpg"]],
+      ["process", ["img-2169.jpg", "img-2166.jpg", "img-2167.jpg", "img-2168.jpg", "img-2170.jpg", "img-2171.jpg", "img-2172.jpg", "img-2173.jpg"]],
     ],
   },
   {

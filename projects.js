@@ -98,8 +98,21 @@ const projects = [
     folder: "custom-basketball",
     images: ["img-1567.jpg"],
     sections: [
-      ["every angle", ["img-0945.jpg", "img-1568.jpg", "img-1571.jpg", "img-1573.jpg"]],
+      ["his gift to me", ["gift-from-friend-1.jpg", "gift-from-friend-2.jpg"]],
+      ["inspiration", ["img-8052.jpg", "brooklyn-bridge.jpg"]],
+      ["digitized ideas", ["digitized-player.jpg", "digitized-wilson.jpg", "digitized-timmy-time.jpg"]],
+      ["painting", ["img-1561.jpg"]],
+      ["every angle", ["img-1573.jpg", "img-1568.jpg", "img-0945.jpg", "img-1571.jpg", "bridge-side.mp4"]],
     ],
+    captions: {
+      "gift-from-friend-1.jpg": "the ball my friend customized for my birthday",
+      "img-8052.jpg": "my friend on the court",
+      "brooklyn-bridge.jpg": "the Brooklyn Bridge, for the other side of the ball",
+    },
+    crop: {
+      "digitized-wilson.jpg": "whole",
+      "digitized-timmy-time.jpg": "whole",
+    },
   },
   {
     title: "Custom Totes",
@@ -347,7 +360,7 @@ const descriptions = {
   "senior-shirt":
     "A one-of-a-kind senior shirt. The lettering is cut from gingham and floral fabrics, appliquéd onto a white tee and finished with small embroidered flowers and details.\n\nEach letter was cut and placed by hand, so the shirt reads as playful and handmade rather than printed.",
   "custom-basketball":
-    "A personalized Wilson basketball, hand-painted with characters and bubble lettering. The illustrations wrap around the ball's panels so it reads from every angle.",
+    "A birthday present for a friend. For my birthday, he customized a basketball for me, so for his, I returned the favor.\n\nI designed the ball around him and his love of the game: his name in bubble lettering, a drawing of him dribbling in his Knights jersey, the Wilson logo redrawn with a bunny and a panda, a \"timmy time\" logo and the Brooklyn Bridge. I digitized my ideas first, then painted them by hand onto the ball, wrapping the illustrations around its panels so it reads from every angle.",
   "custom-totes":
     "A set of hand-drawn tote bags, each designed around a different college: Wheaton, Johns Hopkins, Grove City and more. I drew every design by hand, matching each school's logo, mascot or colors.",
   "dickies-workshop":

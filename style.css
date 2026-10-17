@@ -203,6 +203,9 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .lb-title { display: block; font-family: var(--title); font-weight: 700; font-size: clamp(1.4rem, 3vw, 2.1rem); line-height: 1.15; text-transform: lowercase; }
 .lb-sub { display: block; font-style: italic; font-size: 1.05rem; text-transform: lowercase; }
 .lb-count { display: block; margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.6; }
+.lb-caption { display: block; margin-top: 0.75rem; font-style: italic; }
+.lb-caption:empty { display: none; }
+.article-gallery .caption { display: block; font-family: var(--body); margin-top: 0.5rem; font-size: 0.9rem; font-style: italic; text-align: left; color: inherit; opacity: 0.75; }
 .lightbox button {
   position: absolute;
   background: none;

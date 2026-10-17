@@ -28,11 +28,15 @@ const projects = [
     folder: "olivia-dean-shirt",
     images: ["img-2857.jpg"],
     sections: [
-      ["process", ["bookshelf-hoop.jpg", "img-2726.jpg", "img-1638.jpg", "img-1639.jpg", "img-1640.jpg"]],
-      ["reference", ["img-1641.jpg", "img-1642.jpg", "img-2843.jpg"]],
+      ["process", ["bookshelf-hoop.jpg", "img-1638.jpg", "img-1639.jpg", "img-1640.jpg"]],
+      ["reference", ["img-2726.jpg", "img-1641.jpg", "img-1642.jpg", "img-2843.jpg"]],
       ["embroidery", ["img-2793.jpg", "img-2835.jpg", "img-2841.jpg", "img-2829.jpg", "img-2842.jpg"]],
       ["at the concert", ["img-2924.jpg", "img-3009.jpg", "dsc04699.jpg", "dsc04701.jpg"]],
     ],
+    captions: {
+      "bookshelf-hoop.jpg": "practice piece: learning to embroider before the shirts",
+      "img-2726.jpg": "typeface reference, found on Pinterest",
+    },
   },
   {
     title: "Custom Denim Jacket",
@@ -254,7 +258,7 @@ const descriptions = {
   "design-perspectives-britpop-jeans":
     "Made for \"Design in London,\" an ungraded exhibition for my Design Perspectives lecture that highlighted material culture and curation. Alongside the piece, I wrote its museum label:\n\nEmerging from the 1990s Britpop and swagger of Cool Britannia, \"Britpop in the Streets\" reimagines the rebellious confidence of a generation through a contemporary lens. The distressed denim, patched with frayed motifs of the rival bands Oasis and Blur and a Union Jack, recalls the working-class pride and unfiltered attitude that defined the movement. The striped burgundy tie adds a note of rebellion against conformity, an echo of the sharp yet chaotic fashion contrasts of the time.\n\nBands like Oasis and Blur did not only define the sound of Britpop; they shaped its visual language. Oasis represented the \"northern grit\" of Manchester's working-class bravado, and Blur embodied \"southern cool,\" the sharp, art-school irony of London. That tension showed up in London's fashion scene as a mix of tailoring and streetwear, rebellion and reinvention. London in this period blurred the lines between music, art and style, turning youth culture into couture.\n\nChains of pearls and silver hardware carry the same spirit of experimentation and chaotic fashion. It stands as a wearable piece of London's creative energy, where music and design continue to collide and evolve.",
   "olivia-dean-shirt":
-    "Hand-embroidered T-shirts made to wear to an Olivia Dean concert in New York. Each shirt carries a lyric stitched in my own handwriting, \"love's never wasted\" and \"when it's shared, mmm,\" so the two read as a pair.\n\nI wrote the lyrics out by hand, transferred them onto the shirts and embroidered them using a hoop, with \"Olivia Dean New York 2026\" stitched on the back.",
+    "Hand-embroidered T-shirts made to wear to an Olivia Dean concert in New York. Each shirt carries a lyric stitched in my own handwriting, \"love's never wasted\" and \"when it's shared, mmm,\" so the two read as a pair.\n\nBefore starting the shirts, I taught myself to embroider on a practice hoop of a bookshelf. For the lettering, I used a shirt I found on Pinterest as a typeface reference, then wrote the lyrics out in my own hand, transferred them onto the shirts and embroidered them using a hoop, with \"Olivia Dean New York 2026\" stitched on the back.",
   "custom-denim":
     "A plain denim jacket turned into a hand-painted piece celebrating the University of Pennsylvania. The back panel features the Quaker mascot, the Penn shield, a \"Quakers\" pennant and a \"University of Pennsylvania\" banner.\n\nThe process shots go from the blank jacket through the painting in progress to the finished back panel.",
   "senior-shirt":

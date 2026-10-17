@@ -4,6 +4,7 @@ const pos = Math.max(0, projects.findIndex((p) => p.folder === slug));
 const p = projects[pos];
 const [bg, ink] = colorWorlds[p.folder] || ["#ffffff", "#000000"];
 const src = (file) => `images/${p.folder}/${file}`;
+const caption = (file) => (p.captions || {})[file] || "";
 
 // The page takes on the project's color world (applied with a fade by fade.js).
 document.title = `${p.title} — Christian Moy`;
@@ -45,7 +46,7 @@ groups.forEach(([label, files]) => {
   files.forEach((file) => {
     const i = p.images.indexOf(file);
     const b = document.createElement("button");
-    b.innerHTML = `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">`;
+    b.innerHTML = `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">${caption(file) ? `<span class="caption">${caption(file)}</span>` : ""}`;
     b.addEventListener("click", () => openAt(i));
     gallery.appendChild(b);
   });
@@ -67,6 +68,7 @@ nextLink.innerHTML = `<span>next</span>${next.title}`;
 const lightbox = document.getElementById("lightbox");
 const lbImg = document.getElementById("lb-img");
 const lbCount = document.getElementById("lb-count");
+const lbCaption = document.getElementById("lb-caption");
 lightbox.style.setProperty("--lb-bg", bg);
 lightbox.style.setProperty("--lb-ink", ink);
 let index = 0;
@@ -87,6 +89,7 @@ function show() {
   lbImg.src = src(p.images[index]);
   lbImg.alt = `${p.title}, image ${index + 1}`;
   lbCount.textContent = `${index + 1} / ${p.images.length}`;
+  lbCaption.textContent = caption(p.images[index]);
 }
 
 function step(n) {

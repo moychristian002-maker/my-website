@@ -81,14 +81,11 @@ const projects = [
     tag: "Apparel · Appliqué & Embroidery",
     category: "Apparel & Objects",
     folder: "senior-shirt",
-    crop: {
-      "20260831-214611147-ios.jpg": "55% 50%",
-    },
     images: ["20260831-214656384-ios.jpg"],
     sections: [
       ["stitching", ["20260831-033155072-ios.jpg"]],
       ["details", ["20260831-033207602-ios.jpg", "20260831-033215446-ios.jpg", "20260831-033228773-ios.jpg"]],
-      ["the shirt", ["20260831-214726736-ios.jpg", "20260831-214611147-ios.jpg"]],
+      ["the shirt", ["20260831-214656384-ios.jpg", "20260831-214726736-ios.jpg"]],
     ],
   },
   {

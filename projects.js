@@ -81,6 +81,9 @@ const projects = [
     tag: "Apparel · Appliqué & Embroidery",
     category: "Apparel & Objects",
     folder: "senior-shirt",
+    crop: {
+      "20260831-214611147-ios.jpg": "55% 50%",
+    },
     images: ["20260831-214656384-ios.jpg"],
     sections: [
       ["stitching", ["20260831-033155072-ios.jpg"]],

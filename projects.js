@@ -154,16 +154,6 @@ const projects = [
     },
   },
   {
-    title: "Custom Shirt",
-    tag: "Dickies 247 Workshop",
-    category: "Apparel & Objects",
-    folder: "dickies-workshop",
-    images: ["img-4699.jpg"],
-    sections: [
-      ["at the workshop", ["img-1364.jpg", "img-1366.jpg", "img-1374.jpg"]],
-    ],
-  },
-  {
     title: "The Resting Line",
     tag: "Pavilion · Model & Axonometric",
     category: "Architecture",
@@ -362,7 +352,6 @@ const colorWorlds = {
   "senior-shirt": ["#a3c1a3", "#1f3d27"],
   "custom-basketball": ["#f4e7da", "#a8481a"],
   "custom-totes": ["#f4eee2", "#4a6d8c"],
-  "dickies-workshop": ["#57260f", "#dba66c"],
   "architecture-pavilion": ["#ece6da", "#6e5530"],
   "architecture-cube": ["#111111", "#d9c9a3"],
   "arcstart-basswood": ["#f1ede6", "#5a4a38"],
@@ -391,8 +380,6 @@ const descriptions = {
     "A birthday present for a friend. He customized a basketball for me on my birthday, and that became my inspiration: for his birthday, I wanted to return the favor.\n\nI filled the ball with small elements about him: his name in bubble lettering, a drawing of him dribbling, the Brooklyn Bridge at night, the Wilson logo redrawn with a bunny and a panda, a \"timmy time\" logo and his college logo. I digitized my ideas first, then painted them by hand onto the ball, wrapping them around its panels so it reads from every angle.",
   "custom-totes":
     "A set of hand-drawn tote bags, each designed around a different college: Wheaton, Grove City and more. Working from reference images I found online, I drew every design by hand, matching each school's logo, mascot or colors.",
-  "dickies-workshop":
-    "Made at a Dickies 247 customization workshop. I designed the layout of my own shirt from a set of Dickies patches and transfers, then applied them with a heat press.\n\nThe challenge was composition: arranging logos, icons and type into a balanced layout that still felt like mine.",
   "architecture-pavilion":
     "A pavilion study built around a single undulating roof. A thin white surface rises and falls over a basswood truss structure, creating sheltered pockets underneath.\n\nThe project moved from concept sketches to a physical model, then to an axonometric drawing and a render of the pavilion placed in a landscape.",
   "architecture-cube":

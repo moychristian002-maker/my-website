@@ -43,11 +43,38 @@ if (morph) {
   if (onProjectPage) {
     nameHero(document.getElementById("hero-img"));
     try { sessionStorage.setItem("last-project", new URL(location.href).searchParams.get("p")); } catch (e) {}
+    document.querySelector(".back").addEventListener("click", () => {
+      try { sessionStorage.setItem("back-to-work", "1"); } catch (e) {}
+    });
   } else {
-    // Arriving home from a project: its card is where the cover photo shrinks back to.
+    // Arriving home from a project by a link: reopen the homepage where it was left
+    // (or at the linked section), instantly, so the cover photo lands on a card that
+    // is already in place. The back button restores the position by itself.
+    let folder = null, y = null, back = null;
+    try {
+      folder = sessionStorage.getItem("last-project");
+      y = sessionStorage.getItem("home-scroll");
+      back = sessionStorage.getItem("back-to-work");
+      sessionStorage.removeItem("back-to-work");
+    } catch (e) {}
+    const target = cardImg(folder);
+    const nav = performance.getEntriesByType("navigation")[0];
+    if (nav && nav.type === "navigate" && /project\.html/.test(document.referrer)) {
+      root.style.scrollBehavior = "auto";
+      const anchor = location.hash && document.querySelector(location.hash);
+      if (anchor) anchor.scrollIntoView();
+      else if (back) {
+        if (y !== null) scrollTo(0, +y);
+        // After previous/next, the last project may be another card; bring it into view.
+        const r = target && target.getBoundingClientRect();
+        if (r && (r.top < 0 || r.bottom > innerHeight)) target.scrollIntoView({ block: "center" });
+      }
+      requestAnimationFrame(() => requestAnimationFrame(() => { root.style.scrollBehavior = ""; }));
+    }
+    // The card the photo returns to should not wait on lazy loading.
+    if (target) target.querySelector("img").loading = "eager";
+
     addEventListener("pagereveal", (e) => {
-      let folder = null;
-      try { folder = sessionStorage.getItem("last-project"); } catch (err) {}
       if (!e.viewTransition || !folder) return;
       nameHero(cardImg(folder));
       e.viewTransition.finished.finally(() => nameHero(null));
@@ -56,7 +83,9 @@ if (morph) {
 
   document.addEventListener("click", (e) => {
     const card = e.target.closest(".card");
-    if (card) nameHero(card.querySelector(".card-img"));
+    if (!card) return;
+    nameHero(card.querySelector(".card-img"));
+    try { sessionStorage.setItem("home-scroll", String(scrollY)); } catch (err) {}
   });
 } else {
   // Color fade fallback.

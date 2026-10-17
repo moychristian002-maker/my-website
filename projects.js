@@ -318,7 +318,7 @@ const colorWorlds = {
   "design-perspectives-britpop-jeans": ["#eff2f7", "#c4161c"],
   "olivia-dean-shirt": ["#f4efe6", "#2b2b2b"],
   "custom-denim": ["#dde5ee", "#2c4a6e"],
-  "senior-shirt": ["#eef1ea", "#3f6b4a"],
+  "senior-shirt": ["#a3c1a3", "#1f3d27"],
   "custom-basketball": ["#f4e7da", "#a8481a"],
   "custom-totes": ["#f4eee2", "#4a6d8c"],
   "dickies-workshop": ["#57260f", "#dba66c"],

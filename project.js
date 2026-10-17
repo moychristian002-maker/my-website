@@ -45,20 +45,26 @@ groups.forEach(([label, files]) => {
   const heading = document.createElement("h2");
   heading.className = "article-label";
   heading.textContent = label;
-  const gallery = document.createElement("div");
-  gallery.className = "article-gallery";
-  if (files.length === 1) gallery.classList.add("single");
-  files.forEach((file) => {
-    const i = p.images.indexOf(file);
-    const b = document.createElement("button");
-    const media = isVideo(file)
-      ? `<video src="${src(file)}" poster="${poster(file)}" muted loop autoplay playsinline preload="metadata" aria-label="${p.title}, video ${i + 1}"></video>`
-      : `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">`;
-    b.innerHTML = `${media}${caption(file) ? `<span class="caption">${caption(file)}</span>` : ""}`;
-    b.addEventListener("click", () => openAt(i));
-    gallery.appendChild(b);
+  sections.appendChild(heading);
+  // Two columns; with an odd count, the last photo sits centered on its own row below.
+  const paired = files.length % 2 ? files.slice(0, -1) : files;
+  const last = files.length % 2 ? files.slice(-1) : [];
+  [paired, last].forEach((group, n) => {
+    if (!group.length) return;
+    const gallery = document.createElement("div");
+    gallery.className = n ? "article-gallery single" : "article-gallery";
+    group.forEach((file) => {
+      const i = p.images.indexOf(file);
+      const b = document.createElement("button");
+      const media = isVideo(file)
+        ? `<video src="${src(file)}" poster="${poster(file)}" muted loop autoplay playsinline preload="metadata" aria-label="${p.title}, video ${i + 1}"></video>`
+        : `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">`;
+      b.innerHTML = `${media}${caption(file) ? `<span class="caption">${caption(file)}</span>` : ""}`;
+      b.addEventListener("click", () => openAt(i));
+      gallery.appendChild(b);
+    });
+    sections.appendChild(gallery);
   });
-  sections.append(heading, gallery);
 });
 document.querySelector(".article-hero").addEventListener("click", () => openAt(0));
 

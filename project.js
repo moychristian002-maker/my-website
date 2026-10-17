@@ -71,17 +71,20 @@ groups.forEach(([label, files]) => {
 });
 document.querySelector(".article-hero").addEventListener("click", () => openAt(0));
 
-// Booklet: a project's original presentation at the end of the page, one page at a
-// time. Turn pages with the arrows, by clicking the left or right half of the page,
+// Booklet: a project's original presentation at the end of the page, shown as an open
+// book. Each image is a two-page spread; a portrait image (the cover) is a single page
+// on the right. Turning flips one page over the spine: the right page going forward,
+// the left page going back. Turn with the arrows, by clicking the left or right page,
 // with the arrow keys, or by swiping.
 if (p.booklet) {
-  const pages = p.booklet;
+  const files = p.booklet;
   const wrap = document.createElement("section");
   wrap.className = "booklet";
   wrap.innerHTML = `
     <h2 class="article-label">the booklet</h2>
     <div class="booklet-stage" tabindex="0" role="region" aria-label="Booklet: use the arrow keys to turn pages">
-      <img class="booklet-page" alt="">
+      <div class="booklet-half l"></div>
+      <div class="booklet-half r"></div>
     </div>
     <div class="booklet-controls">
       <button class="booklet-prev" aria-label="Previous page">&lsaquo;</button>
@@ -91,34 +94,54 @@ if (p.booklet) {
   sections.appendChild(wrap);
 
   const stage = wrap.querySelector(".booklet-stage");
-  const page = wrap.querySelector(".booklet-page");
+  const left = wrap.querySelector(".booklet-half.l");
+  const right = wrap.querySelector(".booklet-half.r");
   const count = wrap.querySelector(".booklet-count");
   const prevBtn = wrap.querySelector(".booklet-prev");
   const nextBtn = wrap.querySelector(".booklet-next");
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const single = files.map(() => false);
   let at = 0;
   let busy = false;
 
-  const render = () => {
-    page.src = src(pages[at]);
-    page.alt = `${p.title}, booklet page ${at + 1}`;
-    count.textContent = `${at + 1} / ${pages.length}`;
+  // Paint one side of a spread onto an element (empty for the blank side of a single page).
+  const paint = (el, i, side) => {
+    const blank = single[i] && side === "l";
+    el.classList.toggle("filled", !blank);
+    el.style.backgroundImage = blank ? "" : `url("${src(files[i])}")`;
+    el.style.backgroundSize = single[i] ? "100% 100%" : "200% 100%";
+    el.style.backgroundPosition = side === "l" ? "left center" : "right center";
+  };
+  const show = (i) => { paint(left, i, "l"); paint(right, i, "r"); };
+  const status = () => {
+    count.textContent = `${at + 1} / ${files.length}`;
     prevBtn.disabled = at === 0;
-    nextBtn.disabled = at === pages.length - 1;
+    nextBtn.disabled = at === files.length - 1;
   };
 
-  // The old page stays on top as a copy and swings away, revealing the new one.
   const turn = (dir) => {
     const to = at + dir;
-    if (busy || to < 0 || to >= pages.length) return;
-    if (still) { at = to; render(); return; }
-    busy = true;
-    const leaf = page.cloneNode();
-    leaf.className = `booklet-leaf ${dir > 0 ? "forward" : "back"}`;
-    stage.appendChild(leaf);
+    if (busy || to < 0 || to >= files.length) return;
+    const from = at;
     at = to;
-    render();
-    leaf.addEventListener("animationend", () => { leaf.remove(); busy = false; }, { once: true });
+    status();
+    if (still) { show(to); return; }
+    busy = true;
+    // The page that turns: front shows where we are, back shows where we land.
+    const leaf = document.createElement("div");
+    leaf.className = `booklet-leaf ${dir > 0 ? "forward" : "back"}`;
+    leaf.innerHTML = `<div class="front"></div><div class="back"></div>`;
+    if (dir > 0) {
+      paint(leaf.firstChild, from, "r");
+      paint(leaf.lastChild, to, "l");
+      paint(right, to, "r"); // revealed under the turning page
+    } else {
+      paint(leaf.firstChild, from, "l");
+      paint(leaf.lastChild, to, "r");
+      paint(left, to, "l");
+    }
+    stage.appendChild(leaf);
+    leaf.addEventListener("animationend", () => { show(to); leaf.remove(); busy = false; }, { once: true });
   };
 
   prevBtn.addEventListener("click", () => turn(-1));
@@ -140,13 +163,14 @@ if (p.booklet) {
     touchX = null;
   });
 
-  render();
-  // Load the rest of the pages once the booklet is near, so turning is instant.
-  new IntersectionObserver((entries, obs) => {
-    if (!entries[0].isIntersecting) return;
-    pages.forEach((f) => { new Image().src = src(f); });
-    obs.disconnect();
-  }, { rootMargin: "600px" }).observe(stage);
+  // Load every page up front (they're small) to learn which are single pages.
+  Promise.all(files.map((f, i) => new Promise((done) => {
+    const img = new Image();
+    img.onload = () => { single[i] = img.naturalWidth < img.naturalHeight; done(); };
+    img.onerror = done;
+    img.src = src(f);
+  }))).then(() => { show(at); status(); });
+  status();
 }
 
 // Previous / next project links.

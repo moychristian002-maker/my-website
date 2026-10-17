@@ -96,6 +96,9 @@ const projects = [
     tag: "Product Design · Hand Painting",
     category: "Apparel & Objects",
     folder: "custom-basketball",
+    details: [
+      ["materials", "Basketball, acrylic paint, Posca paint pens, Sharpie, paper"],
+    ],
     images: ["img-1567.jpg"],
     sections: [
       ["inspiration", ["gift-from-friend-1.jpg", "gift-from-friend-2.jpg"]],
@@ -109,8 +112,18 @@ const projects = [
       "brooklyn-bridge.jpg": "the Brooklyn Bridge at night",
     },
     crop: {
+      "gift-from-friend-1.jpg": "50% 72%",
+      "gift-from-friend-2.jpg": "50% 75%",
+      "digitized-player.jpg": "whole",
+      "brooklyn-bridge.jpg": "whole",
       "digitized-wilson.jpg": "whole",
       "digitized-timmy-time.jpg": "whole",
+      "img-1561.jpg": "50% 70%",
+      "img-1573.jpg": "60% 50%",
+      "img-1568.jpg": "50% 45%",
+      "img-0945.jpg": "62% 50%",
+      "img-1571.jpg": "50% 60%",
+      "bridge-side.mp4": "50% 70%",
     },
   },
   {

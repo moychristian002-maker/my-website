@@ -181,6 +181,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .article-gallery button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
 .article-gallery img, .article-gallery video { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: var(--radius); transition: opacity 0.2s; }
 .article-gallery .whole img, .article-gallery .whole video { object-fit: contain; background: color-mix(in srgb, currentColor 6%, transparent); }
+.article-gallery.single .whole img, .article-gallery.single .whole video { aspect-ratio: auto; background: none; }
 .article-gallery button:hover img { opacity: 0.88; }
 @media (max-width: 640px) {
   .article-gallery { grid-template-columns: minmax(0, 1fr); }

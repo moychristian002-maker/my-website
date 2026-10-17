@@ -133,8 +133,19 @@ const projects = [
     folder: "custom-totes",
     images: ["dsc02234.jpg"],
     sections: [
-      ["process", ["img-2169.jpg", "img-2166.jpg", "img-2167.jpg", "img-2168.jpg", "img-2170.jpg", "img-2171.jpg", "img-2172.jpg", "img-2173.jpg"]],
+      ["references (found online)", ["ref-seashells.jpg", "ref-trees.jpg", "ref-us-map.jpg", "ref-ivy.jpg", "ref-chipmunk.jpg"]],
+      ["process", ["img-2161.jpg", "img-2169.jpg", "img-2166.jpg", "img-2167.jpg", "img-2170.jpg", "img-2172.jpg", "img-2173.jpg"]],
     ],
+    captions: {
+      "img-2161.jpg": "my sketches, laid out with the totes",
+    },
+    crop: {
+      "ref-seashells.jpg": "whole",
+      "ref-trees.jpg": "whole",
+      "ref-us-map.jpg": "whole",
+      "ref-ivy.jpg": "whole",
+      "ref-chipmunk.jpg": "whole",
+    },
   },
   {
     title: "Custom Shirt",
@@ -373,7 +384,7 @@ const descriptions = {
   "custom-basketball":
     "A birthday present for a friend. He customized a basketball for me on my birthday, and that became my inspiration: for his birthday, I wanted to return the favor.\n\nI filled the ball with small elements about him: his name in bubble lettering, a drawing of him dribbling, the Brooklyn Bridge at night, the Wilson logo redrawn with a bunny and a panda, a \"timmy time\" logo and his college logo. I digitized my ideas first, then painted them by hand onto the ball, wrapping them around its panels so it reads from every angle.",
   "custom-totes":
-    "A set of hand-drawn tote bags, each designed around a different college: Wheaton, Johns Hopkins, Grove City and more. I drew every design by hand, matching each school's logo, mascot or colors.",
+    "A set of hand-drawn tote bags, each designed around a different college: Wheaton, Grove City and more. Working from reference images I found online, I drew every design by hand, matching each school's logo, mascot or colors.",
   "dickies-workshop":
     "Made at a Dickies 247 customization workshop. I designed the layout of my own shirt from a set of Dickies patches and transfers, then applied them with a heat press.\n\nThe challenge was composition: arranging logos, icons and type into a balanced layout that still felt like mine.",
   "architecture-pavilion":

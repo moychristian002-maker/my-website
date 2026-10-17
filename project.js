@@ -7,8 +7,8 @@ const src = (file) => `images/${p.folder}/${file}`;
 const caption = (file) => (p.captions || {})[file] || "";
 // Videos (.mp4) play silently on a loop in the gallery, like moving photos; each has a
 // matching "-poster.jpg" still that shows while it loads.
-const isVideo = (file) => /.mp4$/i.test(file);
-const poster = (file) => src(file.replace(/.mp4$/i, "-poster.jpg"));
+const isVideo = (file) => /\.mp4$/i.test(file);
+const poster = (file) => src(file.replace(/\.mp4$/i, "-poster.jpg"));
 
 // The page takes on the project's color world (applied with a fade by fade.js).
 document.title = `${p.title} — Christian Moy`;

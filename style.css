@@ -18,8 +18,9 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--body);
-  color: var(--text);
-  background: var(--bg);
+  color: var(--page-ink, var(--text));
+  background: var(--page-bg, var(--bg));
+  transition: background-color 0.6s ease, color 0.6s ease;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -225,4 +226,12 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
   .entry-head { flex-direction: column; gap: 0.25rem; }
   .meta { text-align: left; white-space: normal; }
   .meta br { display: none; }
+}
+
+/* Page color fade (fade.js): content fades out on leaving and in on arriving */
+.site-header, main, .site-footer { transition: opacity 0.45s ease; }
+.entering .site-header, .entering main, .entering .site-footer,
+.leaving .site-header, .leaving main, .leaving .site-footer { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  body, .site-header, main, .site-footer { transition: none; }
 }

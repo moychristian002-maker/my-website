@@ -5,9 +5,7 @@ const p = projects[pos];
 const [bg, ink] = colorWorlds[p.folder] || ["#ffffff", "#000000"];
 const src = (file) => `images/${p.folder}/${file}`;
 
-// The page takes on the project's color world.
-document.body.style.setProperty("--page-bg", bg);
-document.body.style.setProperty("--page-ink", ink);
+// The page takes on the project's color world (applied with a fade by fade.js).
 document.title = `${p.title} — Christian Moy`;
 
 document.getElementById("hero-img").src = src(p.images[0]);

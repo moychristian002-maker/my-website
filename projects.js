@@ -26,11 +26,12 @@ const projects = [
     tag: "Apparel · Hand Embroidery",
     category: "Apparel & Objects",
     folder: "olivia-dean-shirt",
-    images: ["img-3009.jpg"],
+    images: ["img-2857.jpg"],
     sections: [
-      ["stitching", ["img-2835.jpg", "img-2841.jpg", "img-2849.jpg"]],
-      ["the shirts", ["img-2829.jpg", "img-2842.jpg", "img-2857.jpg"]],
-      ["at the concert", ["img-2924.jpg", "dsc04701.jpg"]],
+      ["process", ["bookshelf-hoop.jpg", "img-2726.jpg", "img-1638.jpg", "img-1639.jpg", "img-1640.jpg"]],
+      ["reference", ["img-1641.jpg", "img-1642.jpg", "img-2843.jpg"]],
+      ["embroidery", ["img-2793.jpg", "img-2835.jpg", "img-2841.jpg", "img-2829.jpg", "img-2842.jpg"]],
+      ["at the concert", ["img-2924.jpg", "img-3009.jpg", "dsc04699.jpg", "dsc04701.jpg"]],
     ],
   },
   {

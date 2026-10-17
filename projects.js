@@ -99,14 +99,13 @@ const projects = [
     images: ["img-1567.jpg"],
     sections: [
       ["inspiration", ["gift-from-friend-1.jpg", "gift-from-friend-2.jpg"]],
-      ["little things about him", ["img-8052.jpg", "digitized-player.jpg", "brooklyn-bridge.jpg", "digitized-wilson.jpg", "digitized-timmy-time.jpg"]],
+      ["little things about him", ["digitized-player.jpg", "brooklyn-bridge.jpg", "digitized-wilson.jpg", "digitized-timmy-time.jpg"]],
       ["painting", ["img-1561.jpg"]],
       ["every angle", ["img-1573.jpg", "img-1568.jpg", "img-0945.jpg", "img-1571.jpg", "bridge-side.mp4"]],
     ],
     captions: {
       "gift-from-friend-1.jpg": "the ball my friend customized for my birthday",
-      "img-8052.jpg": "him dribbling",
-      "digitized-player.jpg": "my digitized drawing of him",
+      "digitized-player.jpg": "my digitized drawing of him dribbling",
       "brooklyn-bridge.jpg": "the Brooklyn Bridge at night",
     },
     crop: {

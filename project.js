@@ -43,6 +43,7 @@ groups.forEach(([label, files]) => {
   heading.textContent = label;
   const gallery = document.createElement("div");
   gallery.className = "article-gallery";
+  if (files.length === 1) gallery.classList.add("single");
   files.forEach((file) => {
     const i = p.images.indexOf(file);
     const b = document.createElement("button");

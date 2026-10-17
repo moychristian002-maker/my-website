@@ -238,3 +238,13 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 @media (prefers-reduced-motion: reduce) {
   body, .site-header, main, .site-footer { transition: none; }
 }
+
+/* Cover photo morph between the homepage and a project page (fade.js) */
+@view-transition { navigation: auto; }
+.instant body { transition: none; }
+::view-transition-group(hero) { animation-duration: 0.7s; animation-timing-function: cubic-bezier(0.2, 0, 0, 1); }
+::view-transition-old(hero), ::view-transition-new(hero) { height: 100%; object-fit: cover; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.5s; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}

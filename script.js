@@ -23,6 +23,7 @@ projects.forEach((p) => {
   card.className = "card";
   card.href = `project.html?p=${p.folder}`;
   card.dataset.category = p.category;
+  card.dataset.folder = p.folder;
   const world = colorWorlds[p.folder];
   if (world) card.style.setProperty("--accent", world[1] === "#ffffff" ? world[0] : world[1]);
   card.innerHTML = `

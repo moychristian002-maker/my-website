@@ -165,7 +165,7 @@ const projects = [
     images: ["img-5254.jpg"],
     sections: [
       ["the model", ["img-5257.jpg"]],
-      ["drawings", ["0f388bec-a149-4c7e-88c0-a62f68e508a5.jpg", "60cd3d24-203b-40f4-8562-266551f4b4f1.jpg"]],
+      ["drawings", ["60cd3d24-203b-40f4-8562-266551f4b4f1.jpg", "0f388bec-a149-4c7e-88c0-a62f68e508a5.jpg"]],
     ],
   },
   {

@@ -134,12 +134,18 @@ const projects = [
     images: ["dsc02234.jpg"],
     sections: [
       ["references (found online)", ["ref-seashells.jpg", "ref-trees.jpg", "ref-us-map.jpg", "ref-ivy.jpg", "ref-chipmunk.jpg"]],
-      ["process", ["img-2161.jpg", "img-2169.jpg", "img-2166.jpg", "img-2167.jpg", "img-2170.jpg", "img-2172.jpg", "img-2173.jpg"]],
+      ["process", ["img-2161.jpg"]],
+      ["the totes", ["img-2169.jpg", "img-2166.jpg", "img-2167.jpg", "img-2170.jpg", "img-2172.jpg", "img-2173.jpg"]],
     ],
     captions: {
       "img-2161.jpg": "my sketches, laid out with the totes",
     },
     crop: {
+      "img-2166.jpg": "62% 50%",
+      "img-2167.jpg": "50% 58%",
+      "img-2170.jpg": "57% 50%",
+      "img-2172.jpg": "100% 50%",
+      "img-2173.jpg": "100% 50%",
       "ref-seashells.jpg": "whole",
       "ref-trees.jpg": "whole",
       "ref-us-map.jpg": "whole",

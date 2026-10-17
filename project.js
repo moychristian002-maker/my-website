@@ -5,6 +5,7 @@ const p = projects[pos];
 const [bg, ink] = colorWorlds[p.folder] || ["#ffffff", "#000000"];
 const src = (file) => `images/${p.folder}/${file}`;
 const caption = (file) => (p.captions || {})[file] || "";
+const tileLabel = (file) => (p.labels || {})[file] || "";
 // Videos (.mp4) play silently on a loop in the gallery, like moving photos; each has a
 // matching "-poster.jpg" still that shows while it loads.
 const isVideo = (file) => /\.mp4$/i.test(file);
@@ -61,7 +62,7 @@ groups.forEach(([label, files]) => {
       const media = isVideo(file)
         ? `<video src="${src(file)}" poster="${poster(file)}" muted loop autoplay playsinline preload="metadata" aria-label="${p.title}, video ${i + 1}"></video>`
         : `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">`;
-      b.innerHTML = `${media}${caption(file) ? `<span class="caption">${caption(file)}</span>` : ""}`;
+      b.innerHTML = `${media}${tileLabel(file) ? `<span class="tile-label">${tileLabel(file)}</span>` : ""}${caption(file) ? `<span class="caption">${caption(file)}</span>` : ""}`;
       if (crop && crop !== "whole") b.firstElementChild.style.objectPosition = crop;
       b.addEventListener("click", () => openAt(i));
       gallery.appendChild(b);
@@ -222,7 +223,7 @@ function show() {
     lbImg.alt = `${p.title}, image ${index + 1}`;
   }
   lbCount.textContent = `${index + 1} / ${p.images.length}`;
-  lbCaption.textContent = caption(p.images[index]);
+  lbCaption.textContent = tileLabel(p.images[index]) || caption(p.images[index]);
 }
 
 function step(n) {

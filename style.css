@@ -178,7 +178,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
    The lightbox always shows the full photo. */
 .article-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
 .article-gallery.single { grid-template-columns: minmax(0, 1fr); max-width: calc(50% - 0.625rem); margin: 1.25rem auto 0; }
-.article-gallery button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.article-gallery button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; color: inherit; font: inherit; }
 .article-gallery img, .article-gallery video { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: var(--radius); transition: opacity 0.2s; }
 .article-gallery .whole img, .article-gallery .whole video { object-fit: contain; background: #fff; }
 .article-gallery.single .whole img, .article-gallery.single .whole video { aspect-ratio: auto; background: none; }
@@ -218,6 +218,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .lb-caption { display: block; margin-top: 0.75rem; font-style: italic; }
 .lb-caption:empty { display: none; }
 .article-gallery .caption { display: block; font-family: var(--body); margin-top: 0.5rem; font-size: 0.9rem; font-style: italic; text-align: left; color: inherit; opacity: 0.75; }
+.article-gallery .tile-label { display: block; margin-top: 0.75rem; font-family: var(--title); font-weight: 600; font-size: 1.05rem; text-transform: lowercase; text-align: center; }
 .lightbox button {
   position: absolute;
   background: none;

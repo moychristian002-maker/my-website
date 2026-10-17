@@ -194,7 +194,7 @@ const projects = [
       "sketch-3.jpg": "whole",
       "oblique-01.jpg": "whole",
     },
-    captions: {
+    labels: {
       "elevation-1.jpg": "elevation 1",
       "elevation-2.jpg": "elevation 2",
       "elevation-3.jpg": "elevation 3",

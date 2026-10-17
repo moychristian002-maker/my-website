@@ -5,6 +5,10 @@ const p = projects[pos];
 const [bg, ink] = colorWorlds[p.folder] || ["#ffffff", "#000000"];
 const src = (file) => `images/${p.folder}/${file}`;
 const caption = (file) => (p.captions || {})[file] || "";
+// Videos (.mp4) play silently on a loop in the gallery, like moving photos; each has a
+// matching "-poster.jpg" still that shows while it loads.
+const isVideo = (file) => /.mp4$/i.test(file);
+const poster = (file) => src(file.replace(/.mp4$/i, "-poster.jpg"));
 
 // The page takes on the project's color world (applied with a fade by fade.js).
 document.title = `${p.title} — Christian Moy`;
@@ -47,7 +51,10 @@ groups.forEach(([label, files]) => {
   files.forEach((file) => {
     const i = p.images.indexOf(file);
     const b = document.createElement("button");
-    b.innerHTML = `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">${caption(file) ? `<span class="caption">${caption(file)}</span>` : ""}`;
+    const media = isVideo(file)
+      ? `<video src="${src(file)}" poster="${poster(file)}" muted loop autoplay playsinline preload="metadata" aria-label="${p.title}, video ${i + 1}"></video>`
+      : `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">`;
+    b.innerHTML = `${media}${caption(file) ? `<span class="caption">${caption(file)}</span>` : ""}`;
     b.addEventListener("click", () => openAt(i));
     gallery.appendChild(b);
   });
@@ -68,6 +75,7 @@ nextLink.innerHTML = `<span>next</span>${next.title}`;
 // Lightbox
 const lightbox = document.getElementById("lightbox");
 const lbImg = document.getElementById("lb-img");
+const lbVideo = document.getElementById("lb-video");
 const lbCount = document.getElementById("lb-count");
 const lbCaption = document.getElementById("lb-caption");
 lightbox.style.setProperty("--lb-bg", bg);
@@ -83,12 +91,25 @@ function openAt(i) {
 
 function close() {
   lightbox.hidden = true;
+  lbVideo.pause();
   document.body.style.overflow = "";
 }
 
 function show() {
-  lbImg.src = src(p.images[index]);
-  lbImg.alt = `${p.title}, image ${index + 1}`;
+  const file = p.images[index];
+  const video = isVideo(file);
+  lbImg.hidden = video;
+  lbVideo.hidden = !video;
+  if (video) {
+    lbVideo.poster = poster(file);
+    lbVideo.src = src(file);
+    lbVideo.play().catch(() => {});
+  } else {
+    lbVideo.pause();
+    lbVideo.removeAttribute("src");
+    lbImg.src = src(file);
+    lbImg.alt = `${p.title}, image ${index + 1}`;
+  }
   lbCount.textContent = `${index + 1} / ${p.images.length}`;
   lbCaption.textContent = caption(p.images[index]);
 }

@@ -50,7 +50,7 @@ const projects = [
     sections: [
       ["inspiration", ["inspiration-peachypaintshop.jpg"]],
       ["design", ["sketch.jpg", "ai-mockup.jpg"]],
-      ["painting", ["img-0955.jpg", "img-1660.jpg", "img-1661.jpg"]],
+      ["painting", ["img-0955.jpg", "painting-img-1654.mp4", "img-1660.jpg", "painting-img-1656.mp4", "img-1661.jpg"]],
       ["the gift", ["img-6783.jpg"]],
     ],
     captions: {

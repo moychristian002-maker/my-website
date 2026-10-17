@@ -177,6 +177,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .article-gallery.single { columns: 1; max-width: max(280px, calc(50% - 0.625rem)); margin: 0 auto; }
 .article-gallery button { display: block; width: 100%; margin-bottom: 1.25rem; padding: 0; border: 0; background: none; cursor: zoom-in; break-inside: avoid; }
 .article-gallery img { width: 100%; display: block; border-radius: var(--radius); transition: opacity 0.2s; }
+.article-gallery video { width: 100%; display: block; border-radius: var(--radius); }
 .article-gallery button:hover img { opacity: 0.88; }
 .article-nav { display: flex; justify-content: space-between; gap: 2rem; margin-top: 4.5rem; padding-top: 2rem; border-top: 1px solid currentColor; }
 .article-nav a { font-family: var(--title); font-weight: 600; font-size: 1.15rem; text-transform: lowercase; text-decoration: none; max-width: 45%; }
@@ -200,6 +201,8 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .lightbox[hidden] { display: none; }
 .lightbox figure { max-width: 84vw; text-align: center; }
 .lightbox img { max-width: 84vw; max-height: 74vh; object-fit: contain; display: block; margin: 0 auto; }
+.lightbox video { max-width: 84vw; max-height: 74vh; display: block; margin: 0 auto; }
+.lightbox video[hidden], .lightbox img[hidden] { display: none; }
 .lightbox figcaption { margin-top: 1.4rem; }
 .lb-title { display: block; font-family: var(--title); font-weight: 700; font-size: clamp(1.4rem, 3vw, 2.1rem); line-height: 1.15; text-transform: lowercase; }
 .lb-sub { display: block; font-style: italic; font-size: 1.05rem; text-transform: lowercase; }

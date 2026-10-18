@@ -299,3 +299,9 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .booklet-controls button { width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 1px solid currentColor; background: none; color: inherit; font-size: 1.5rem; line-height: 1; cursor: pointer; transition: opacity 0.2s; }
 .booklet-controls button:disabled { opacity: 0.3; cursor: default; }
 .booklet-count { min-width: 4rem; text-align: center; font-style: italic; opacity: 0.75; }
+
+/* Words under a section heading (sections: [label, files, text]) */
+.section-text { max-width: 38rem; margin: -0.5rem auto 1.75rem; font-size: 1.05rem; line-height: 1.75; white-space: pre-line; }
+.section-text p + p { margin-top: 1rem; }
+.section-text + .article-gallery:not(.single) { margin-top: 0; }
+.section-text + .article-label { margin-top: 3.5rem; }

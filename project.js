@@ -41,12 +41,23 @@ if (p.details) details.hidden = false;
 // them into labeled `sections` (e.g. process vs. the finished piece).
 const sections = document.getElementById("sections");
 const groups = p.sections || [["process & details", p.images.slice(1)]];
-groups.forEach(([label, files]) => {
-  if (!files.length) return;
+groups.forEach(([label, files, text]) => {
+  if (!files.length && !text) return;
   const heading = document.createElement("h2");
   heading.className = "article-label";
   heading.textContent = label;
   sections.appendChild(heading);
+  // Optional words for the section (paragraphs split by a blank line, line breaks kept).
+  if (text) {
+    const body = document.createElement("div");
+    body.className = "section-text";
+    text.split("\n\n").forEach((para) => {
+      const el = document.createElement("p");
+      el.textContent = para;
+      body.appendChild(el);
+    });
+    sections.appendChild(body);
+  }
   // Two columns; with an odd count, the last photo sits centered on its own row below.
   const paired = files.length % 2 ? files.slice(0, -1) : files;
   const last = files.length % 2 ? files.slice(-1) : [];

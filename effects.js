@@ -3,6 +3,7 @@
 //   1. Scroll reveal: things below the fold fade and rise in as they scroll into view.
 //   2. Card hover (homepage): the page takes on the hovered project's color world.
 //   3. Title letters: the homepage name and project titles rise in letter by letter.
+//   4. Text lines: under a project title, the subtitle, write-up and details rise in line by line.
 (() => {
   const root = document.documentElement;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -86,6 +87,7 @@
   }
 
   // 3. Title letters ---------------------------------------------------------
+  let titleStart = 0; // when the title letters began, so the text below can follow them
   // The homepage name and each project title: letters rise in one after another
   // from behind the baseline, once on load. Screen readers get the plain title.
   if (!reduceMotion) {
@@ -110,6 +112,83 @@
         h.appendChild(wordEl);
       });
       h.classList.add("split");
+      titleStart = performance.now();
+    });
+  }
+
+  // 4. Text lines --------------------------------------------------------------
+  // Under a project title, the subtitle, write-up and details rise in line by line
+  // (the title's motion, per line). Lines are found at the current width once the
+  // fonts are ready; when the last one lands, the blocks get their plain text back
+  // so they reflow normally on resize and read normally for copy and screen readers.
+  const subtitle = document.getElementById("subtitle");
+  if (!reduceMotion && subtitle && subtitle.textContent.trim()) {
+    const AFTER_TITLE = 750; // ms after the title letters are created (they start at 450ms)
+    const STAGGER = 60;  // ms between lines
+    const MAX_STEPS = 14; // later lines share the last delay, so long write-ups don't drag
+    const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
+    const timeout = new Promise((done) => setTimeout(() => done("late"), 600));
+
+    Promise.race([fontsReady, timeout]).then((result) => {
+      if (result === "late") return; // the existing fade shows the text instead
+      const base = Math.max(0, titleStart + AFTER_TITLE - performance.now());
+      const blocks = [];
+      let n = 0;
+
+      const line = (html) => {
+        const outer = document.createElement("span");
+        outer.className = "line";
+        const inner = document.createElement("span");
+        inner.className = "line-in";
+        inner.innerHTML = html;
+        inner.style.animationDelay = `${base + Math.min(n++, MAX_STEPS) * STAGGER}ms`;
+        outer.appendChild(inner);
+        return outer;
+      };
+
+      // Split plain text into the lines it actually wraps to.
+      const splitText = (el) => {
+        const words = el.textContent.trim().split(/\s+/);
+        el.innerHTML = words.map((w) => `<span class="w">${w.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</span>`).join(" ");
+        const rows = [];
+        el.querySelectorAll(".w").forEach((w) => {
+          const top = w.offsetTop;
+          const last = rows[rows.length - 1];
+          if (last && Math.abs(last.top - top) < 4) last.words.push(w.innerHTML);
+          else rows.push({ top, words: [w.innerHTML] });
+        });
+        el.textContent = "";
+        rows.forEach((r) => el.appendChild(line(r.words.join(" "))));
+      };
+
+      const keep = (el) => { blocks.push([el, el.innerHTML]); el.classList.add("split-lines"); };
+
+      keep(subtitle);
+      splitText(subtitle);
+      const body = document.getElementById("body");
+      body.classList.add("split-lines");
+      body.querySelectorAll("p").forEach((para) => { keep(para); splitText(para); });
+
+      // Details: each "course / professor / materials" row is already one line.
+      const details = document.getElementById("details");
+      if (details && !details.hidden && details.children.length) {
+        keep(details);
+        const rows = [];
+        for (let el = details.firstElementChild; el; el = el.nextElementSibling) {
+          if (el.tagName === "DT") rows.push([el.textContent, ""]);
+          else if (el.tagName === "DD" && rows.length) rows[rows.length - 1][1] = el.textContent;
+        }
+        details.textContent = "";
+        const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+        rows.forEach(([term, value]) => details.appendChild(line(`<span class="dt">${esc(term)}</span><span class="dd">${esc(value)}</span>`)));
+      }
+
+      // Hand back the plain text once the last line has landed.
+      const all = document.querySelectorAll(".line-in");
+      const lastLine = all[all.length - 1];
+      if (lastLine) lastLine.addEventListener("animationend", () => {
+        blocks.forEach(([el, html]) => { el.innerHTML = html; });
+      }, { once: true });
     });
   }
 })();

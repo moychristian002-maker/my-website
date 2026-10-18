@@ -374,3 +374,11 @@ html, html * {
 /* The project head no longer fades as a block; its subtitle keeps the gentle rise */
 .project-page .article-head:has(.split) { animation: none; }
 .project-page .article-head:has(.split) .article-sub { animation: rise 0.7s cubic-bezier(0.2, 0, 0, 1) 0.6s both; }
+
+/* Text lines (effects.js): subtitle, write-up and details rise in line by line */
+.split-lines { animation: none !important; }
+.line { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.line-in { display: inline-block; animation: line-rise 0.8s cubic-bezier(0.2, 0, 0, 1) both; }
+@keyframes line-rise { from { transform: translateY(110%); } to { transform: none; } }
+.article-details .dt { font-family: var(--title); font-weight: 600; text-transform: lowercase; }
+.article-details .dd { font-style: italic; margin-left: 0.5rem; }

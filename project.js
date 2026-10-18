@@ -59,19 +59,26 @@ groups.forEach(([label, files, text, style]) => {
     sections.appendChild(body);
   }
   // Two columns; with an odd count, the last photo sits centered on its own row below.
-  // Uncropped ("natural") projects lay each pair out as one row of equal height, so
-  // photos of different shapes still line up without cropping.
-  const natural = p.fit === "natural";
+  // Pairs of cropped photos share the square grid. A pair that includes an uncropped
+  // image (a drawing, logo or board, or any photo in a "natural" project) becomes one
+  // row of equal height instead, so photos of different shapes still line up.
+  const isWhole = (file) => p.fit === "natural" || (p.crop || {})[file] === "whole";
   const paired = files.length % 2 ? files.slice(0, -1) : files;
   const last = files.length % 2 ? files.slice(-1) : [];
-  const groups2 = natural ? [] : [paired];
-  if (natural) for (let k = 0; k < paired.length; k += 2) groups2.push(paired.slice(k, k + 2));
-  [...groups2, last].forEach((group, n) => {
-    if (!group.length) return;
-    const isLast = group === last;
+  const rows = [];
+  for (let k = 0; k < paired.length; k += 2) {
+    const pair = paired.slice(k, k + 2);
+    const row = pair.some(isWhole);
+    const prev = rows[rows.length - 1];
+    if (!row && prev && !prev.row) prev.files.push(...pair); // keep square pairs in one grid
+    else rows.push({ files: pair, row });
+  }
+  if (last.length) rows.push({ files: last, single: true });
+  rows.forEach(({ files: group, row, single }) => {
+    const natural = row || (single && p.fit === "natural");
     const gallery = document.createElement("div");
-    gallery.className = isLast ? "article-gallery single" : "article-gallery";
-    if (natural) gallery.classList.add("natural", isLast ? "natural-single" : "natural-row");
+    gallery.className = single ? "article-gallery single" : "article-gallery";
+    if (natural) gallery.classList.add("natural", single ? "natural-single" : "natural-row");
     group.forEach((file) => {
       const i = p.images.indexOf(file);
       const b = document.createElement("button");

@@ -313,7 +313,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .article-gallery.natural-row { display: flex; gap: 1.25rem; align-items: flex-start; }
 .natural-row > button { flex: 1 1 0; min-width: 0; }
 .natural-row img, .natural-row video { height: auto; }
-.natural-row + .natural-row { margin-top: 1.25rem; }
+.article-gallery + .article-gallery:not(.single) { margin-top: 1.25rem; }
 @media (max-width: 640px) {
   .article-gallery.natural-row { flex-direction: column; }
   .natural-row > button { flex: none !important; width: 100%; }

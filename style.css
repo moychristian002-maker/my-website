@@ -176,13 +176,12 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 /* Gallery: an even grid of square tiles, each photo cropped to its main item
    (per-photo `crop` in projects.js sets the focus, or "whole" to fit it uncropped).
    The lightbox always shows the full photo. */
-.article-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
+.article-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: center; }
 .article-gallery.single { grid-template-columns: minmax(0, 1fr); max-width: calc(50% - 0.625rem); margin: 1.25rem auto 0; }
 .article-gallery button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; color: inherit; font: inherit; }
 .article-gallery img, .article-gallery video { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: var(--radius); transition: opacity 0.2s; }
-.article-gallery .whole img, .article-gallery .whole video { object-fit: contain; background: #fff; }
+.article-gallery .whole img, .article-gallery .whole video { aspect-ratio: auto; background: none; }
 .article-gallery.natural img, .article-gallery.natural video { aspect-ratio: auto; }
-.article-gallery.single .whole img, .article-gallery.single .whole video { aspect-ratio: auto; background: none; }
 .article-gallery button:hover img { opacity: 0.88; }
 @media (max-width: 640px) {
   .article-gallery { grid-template-columns: minmax(0, 1fr); }

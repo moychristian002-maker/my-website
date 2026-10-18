@@ -234,11 +234,19 @@ const projects = [
   },
   {
     title: "ArcStart: 3D Forms",
-    tag: "Architecture · Isometric & Concept",
+    tag: "ArcStart 2024 · Isometric Forms & Model",
     category: "Architecture",
     folder: "arcstart-3d-forms",
+    images: ["img-7768.jpg"],
+    sections: [
+      ["isometric views", ["forms-01.jpg", "forms-02.jpg", "forms-03.jpg", "forms-04.jpg"]],
+      ["color & references", ["forms-06.jpg", "forms-07.jpg", "forms-08.jpg", "forms-09.jpg"]],
+      ["concept", ["isometric-01.jpg"]],
+      ["making the model", ["img-7759.jpg", "img-7760.jpg", "img-7763.jpg", "img-7767.jpg"]],
+    ],
     crop: {
       "forms-01.jpg": "whole",
+      "forms-02.jpg": "whole",
       "forms-03.jpg": "whole",
       "forms-04.jpg": "whole",
       "forms-06.jpg": "whole",
@@ -246,14 +254,11 @@ const projects = [
       "forms-08.jpg": "whole",
       "forms-09.jpg": "whole",
       "isometric-01.jpg": "whole",
-      "isometric-02.jpg": "whole",
+      "img-7759.jpg": "whole",
+      "img-7760.jpg": "whole",
+      "img-7763.jpg": "whole",
+      "img-7767.jpg": "whole",
     },
-    images: ["forms-02.jpg"],
-    sections: [
-      ["isometric views", ["forms-01.jpg", "forms-03.jpg", "forms-04.jpg"]],
-      ["color & references", ["forms-06.jpg", "forms-07.jpg", "forms-08.jpg", "forms-09.jpg", "isometric-02.jpg"]],
-      ["concept", ["isometric-01.jpg"]],
-    ],
   },
   {
     title: "CineSense",
@@ -422,7 +427,7 @@ const descriptions = {
   "arcstart-basswood":
     "Made during ArcStart 2024, a three-week pre-college architecture program at the University of Michigan, in a workshop led by Osama Sukkar. The focus was tectonic design and gestural designing and modeling: thinking through making, by building directly with the material.\n\nWorking only with basswood and tacky glue, I layered sticks and planes into a vertical composition, letting the structure develop piece by piece at the studio table.",
   "arcstart-3d-forms":
-    "A series of form studies from ArcStart at the University of Michigan. I developed one interlocking form and drew it from four isometric viewpoints, northwest, southeast, southwest and northeast, each in its own color.\n\nThe form then grew into a concept for a room for rock climbing, supported by color palettes and material and atmosphere references.",
+    "A series of form studies from ArcStart 2024 at the University of Michigan. I developed one interlocking form and drew it from four isometric viewpoints, northwest, southeast, southwest and northeast, each in its own color.\n\nThe form grew into a concept for a room for rock climbing, supported by a palette of colors and patterns and a set of references. To bring it into three dimensions, I printed the patterns onto paper nets, folded them into the pieces of the form, and photographed the finished model in a lightbox with scale figures.",
   "designing-interactive-experiences":
     "CineSense is a concept developed in Designing Interactive Experiences: a wearable that uses haptics to help audiences \"feel every moment\" of a film, designed to make the cinema more accessible.\n\nThe process moved from a user journey map to sketches of possible haptic wearables (a blanket, a bracelet, a neck pillow, glasses), a storyboard of the cinema visit, wireframes for a companion app, and the final brand identity.",
   "graphics-volleyball":

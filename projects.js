@@ -301,6 +301,33 @@ const projects = [
     },
   },
   {
+    title: "EcoEats",
+    tag: "Designing Interactive Experiences · Service Design",
+    category: "Graphic & Interaction",
+    folder: "ecoeats",
+    fit: "natural", // show every image uncropped at its own shape
+    images: ["cover.jpg"],
+    // Follows the order and words of the course portfolio (Int. Ex. Portfolio, AE1).
+    sections: [
+      ["subelement 1 · case study", [], "My research began with an investigation into food and waste systems in London's public spaces, focusing specifically on the environmental impact of street food vendors. Coming from New York City and recently living in London and frequently visiting outdoor markets such as Brick Lane, I noticed how vibrant and diverse food cultures often come with an equally visible problem: excessive waste. After every weekend market, bins overflow with single-use containers, plastic cutlery and half-eaten food. This observation became the starting point for understanding how public eating habits and vendor systems contribute to food and packaging waste, and how design interventions could make sustainable behavior more intuitive and accessible.\n\nTo explore how real businesses are addressing similar issues, I was introduced by a friend to the Monmouth Coffee reusable cup scheme, a London-based initiative that completely removed disposable takeaway cups from their shops. Instead, they offer a reusable loan-cup system with a refundable deposit, supported by clear communication, easy return processes and an emphasis on long-term sustainability. What interested me was not just the environmental benefit, preventing hundreds of thousands of single-use cups from entering landfill each year, but how the system reshaped user behavior without feeling restrictive. It reframed sustainability as a normal, frictionless part of daily life. This idea became central to the direction of my project.\n\nInspired by Monmouth, I decided to broaden the concept from a café setting to a sustainable street-food vendor tent. Markets involve more complex behaviors than coffee shops: people eat while walking, carry food around crowded spaces and dispose of waste unpredictably. Many vendors have limited space, inconsistent packaging practices and little incentive to offer sustainable alternatives. My tent concept responds to this by providing a unified system in which all packaging, whether reusable, compostable or deposit-based, is integrated into the tent design itself. Customers can choose from several sustainable options, all clearly explained through signage and intuitive layouts. This system not only reduces waste but creates a cohesive experience that encourages small, consistent changes in behavior, similar to Monmouth's strategy but adapted for a more chaotic and mobile environment.\n\nA key moment for my design thinking came from the Design and Disability exhibition at the V&A, which reframed how I consider accessibility within sustainability systems. The exhibition emphasized that good design does not just reduce environmental impact; it must also reduce cognitive, physical and emotional barriers. This was directly relevant to my project. Many people want to act sustainably but find systems confusing, inaccessible or physically demanding. For example, in the exhibition, objects were designed to make everyday tasks easier for people with mobility challenges. This made me reconsider customers like pregnant individuals, elderly people or those carrying heavy bags in crowded markets. If sustainable packaging systems are hard to understand or inconvenient to use, many will simply revert to disposables.\n\nThis insight pushed me to focus on making my system intuitive and inclusive: clear bin design, minimal decision-making, lightweight packaging options, and a layout that supports users with different physical and cognitive needs. Sustainability should not be a burden; it should fit seamlessly into daily life."],
+      ["user journey · customer (me)", ["journey-customer.jpg"]],
+      ["proto persona", ["persona-priya.jpg"]],
+      ["user journey · priya", ["journey-priya.jpg"]],
+      ["swo analysis", ["swo.jpg"]],
+      ["research", [], "V&A Design & Disability Exhibit.\n\nMonmouth Coffee Company, n.d. Reusable cup scheme. [online] Available at: https://www.monmouthcoffee.co.uk/reusable-cup-scheme [Accessed 13 Nov. 2025].", "bibliography"],
+      ["subelement 2 · experience design", [], "Urban food markets generate large volumes of single-use packaging waste, creating environmental harm, visual clutter and operational challenges. Consumers want to act sustainably, but face barriers such as a lack of accessible alternatives, confusion about what is genuinely eco-friendly, and inconsistent systems across vendors. There is a need for a simple, universal and user-friendly solution that reduces waste while supporting both customers and vendors.\n\nMy design is a centralized reusable container deposit tent that serves the entire food vendor market. Instead of creating a new sustainable vendor, I shifted toward designing a market-wide infrastructure inspired by Monmouth Coffee's reusable coffee cup scheme. Because if we can do it with coffee, we can do it with food too. By offering a universal reusable container system, customers can pay a small deposit to receive a clean container, use it at any food stall in the market, and return it after eating for a refund or exchange. This eliminates the need for single-use containers and creates an easy, circular model that benefits everyone.\n\nInitially, my project began by exploring sustainable packaging solutions and analyzing how food vendors contribute to waste. Visiting markets like Brick Lane revealed a clear problem: overflowing bins, mixed waste, and a lack of consistent recycling or reuse options. I initially designed an entire eco-friendly food tent, but through research, I realized that this approach helped only one vendor rather than addressing the systemic issue.\n\nRevisiting my findings, I pivoted toward a service-based solution that supports the entire ecosystem. The Monmouth Coffee scheme showed me the power of simple deposit-return systems, while the V&A's Design and Disability exhibition highlighted the importance of clarity, accessibility and reducing cognitive load. These influences shaped the user-centered features of my service: intuitive signage, easy container return, inclusive usability, and a clean, welcoming tent environment."],
+      ["user journey · reusable container deposit system", ["journey-general.jpg"]],
+      ["iteration #1", ["iteration-1.jpg"], "Low fidelity storyboard of wasteful food packaging and overflowing waste bins."],
+      ["iteration #2", ["iteration-2.jpg"], "\u201cEcoEats\u201d: mid fidelity storyboard applying reusable and paper containers, with accessible seating nearby."],
+      ["paper prototype", ["paper-prototype-plan.jpg", "paper-prototype-film.mp4"]],
+      ["final", ["final-storyboard.jpg"]],
+    ],
+    captions: {
+      "paper-prototype-plan.jpg": "planning the paper prototype film",
+      "paper-prototype-film.mp4": "the paper prototype film (opens with sound)",
+    },
+  },
+  {
     title: "Husky Volleyball Graphics",
     tag: "Graphic Design · Northeastern Athletics",
     category: "Graphic & Interaction",
@@ -419,6 +446,7 @@ const colorWorlds = {
   "arcstart-basswood": ["#f1ede6", "#5a4a38"],
   "arcstart-3d-forms": ["#e9e5ee", "#6b3f8c"],
   "designing-interactive-experiences": ["#0b0b10", "#a58cff"],
+  "ecoeats": ["#232323", "#b9d98b"],
   "graphics-volleyball": ["#c41414", "#ffffff"],
   "graphics-ukrainian-melodies": ["#f3ecd9", "#1f4e8c"],
   "graphics": ["#2d2a35", "#f2a679"],
@@ -452,6 +480,8 @@ const descriptions = {
     "A project from ArcStart 2024 at the University of Michigan, where we learned to draw isometric views while also learning to create our own patterns in Illustrator. I developed one interlocking form and drew it from four viewpoints, northwest, southeast, southwest and northeast, each in its own color, alongside a palette of colors and patterns I designed.\n\nWe then had to choose one view and turn it into a room for \"something.\" Mine became a room for rock climbing. To bring it into three dimensions, I printed my patterns onto paper nets, folded them into the pieces of the form, and photographed the finished model in a lightbox with scale figures.",
   "designing-interactive-experiences":
     "A design process portfolio for Designing Interactive Experiences, in three subelements. It begins with an accessibility case study of FocusEx, a reading tool for people with ADHD, then moves into design ideation for Deaf and Hard of Hearing film audiences, and ends with CineSense, a haptic wearable prototype that lets them feel every moment of a film.",
+  "ecoeats":
+    "A service design project for Designing Interactive Experiences, in two subelements. It starts with a case study of food and packaging waste at London's street food markets, informed by Monmouth Coffee's reusable cup scheme and the V&A's Design and Disability exhibition, and becomes EcoEats: a market-wide reusable container deposit tent, developed through storyboards and a paper prototype film.",
   "graphics-volleyball":
     "Social media graphics for Northeastern Women's Volleyball, made as part of my role as team manager. The set includes player feature graphics and a \"This Is Husky Volley\" piece.\n\nEach graphic keeps the player as the focus while carrying a consistent Husky identity.",
   "graphics-ukrainian-melodies":

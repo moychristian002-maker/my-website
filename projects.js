@@ -262,6 +262,7 @@ const projects = [
     tag: "Designing Interactive Experiences · Haptic Wearable",
     category: "Graphic & Interaction",
     folder: "designing-interactive-experiences",
+    fit: "natural", // show every photo uncropped at its own shape
     images: ["cinesense.jpg"],
     // Follows the order and words of the course portfolio (Subelements II and III).
     sections: [
@@ -284,7 +285,6 @@ const projects = [
       "cinesense-film.mp4": "the CineSense film (opens with sound)",
     },
     crop: {
-      "paper-1.jpg": "50% 85%",
       "general-user-journey-map-1.jpg": "whole",
       "companion.jpg": "whole",
       "bsl-cinema.jpg": "whole",

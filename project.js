@@ -59,13 +59,19 @@ groups.forEach(([label, files, text, style]) => {
     sections.appendChild(body);
   }
   // Two columns; with an odd count, the last photo sits centered on its own row below.
+  // Uncropped ("natural") projects lay each pair out as one row of equal height, so
+  // photos of different shapes still line up without cropping.
+  const natural = p.fit === "natural";
   const paired = files.length % 2 ? files.slice(0, -1) : files;
   const last = files.length % 2 ? files.slice(-1) : [];
-  [paired, last].forEach((group, n) => {
+  const groups2 = natural ? [] : [paired];
+  if (natural) for (let k = 0; k < paired.length; k += 2) groups2.push(paired.slice(k, k + 2));
+  [...groups2, last].forEach((group, n) => {
     if (!group.length) return;
+    const isLast = group === last;
     const gallery = document.createElement("div");
-    gallery.className = n ? "article-gallery single" : "article-gallery";
-    if (p.fit === "natural") gallery.classList.add("natural");
+    gallery.className = isLast ? "article-gallery single" : "article-gallery";
+    if (natural) gallery.classList.add("natural", isLast ? "natural-single" : "natural-row");
     group.forEach((file) => {
       const i = p.images.indexOf(file);
       const b = document.createElement("button");
@@ -76,6 +82,14 @@ groups.forEach(([label, files, text, style]) => {
         : `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">`;
       b.innerHTML = `${media}${tileLabel(file) ? `<span class="tile-label">${tileLabel(file)}</span>` : ""}${caption(file) ? `<span class="caption">${caption(file)}</span>` : ""}`;
       if (crop && crop !== "whole") b.firstElementChild.style.objectPosition = crop;
+      if (natural) {
+        // Width in the row is proportional to the photo's shape, so heights match.
+        const el = b.firstElementChild;
+        const fit = (w, h) => { if (w && h) { b.style.flexGrow = w / h; el.style.aspectRatio = `${w} / ${h}`; } };
+        if (isVideo(file)) el.addEventListener("loadedmetadata", () => fit(el.videoWidth, el.videoHeight));
+        else if (el.complete) fit(el.naturalWidth, el.naturalHeight);
+        else el.addEventListener("load", () => fit(el.naturalWidth, el.naturalHeight));
+      }
       b.addEventListener("click", () => openAt(i));
       gallery.appendChild(b);
     });

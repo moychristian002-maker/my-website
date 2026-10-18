@@ -212,14 +212,20 @@ const projects = [
     },
   },
   {
-    title: "Basswood Model",
-    tag: "University of Michigan · ArcStart",
+    title: "Basswood Modeling",
+    tag: "ArcStart 2024 · University of Michigan",
     category: "Architecture",
     folder: "arcstart-basswood",
+    details: [
+      ["program", "ArcStart 2024, University of Michigan"],
+      ["led by", "Osama Sukkar"],
+      ["skills", "Tectonic design, gestural designing and modeling"],
+      ["materials", "Basswood, tacky glue"],
+    ],
     images: ["img-7796.jpg"],
     sections: [
-      ["making", ["img-7793.jpg"]],
-      ["the model", ["img-7797.jpg", "img-7798.jpg", "img-7800.jpg", "img-7802.jpg"]],
+      ["making", ["img-7793.jpg", "img-7794.jpg", "img-7795.jpg"]],
+      ["the model", ["img-7796.jpg", "img-7800.jpg"]],
     ],
   },
   {
@@ -410,7 +416,7 @@ const descriptions = {
   "architecture-cube":
     "A cube project that introduces basic model-making techniques and the principles of tectonic and spatial composition through physical models and orthographic drawings. It exercised hand-drawing plans, sections and elevations, photo editing in the Adobe suite, and portfolio compilation.\n\nThe concept of this cube is centered on the verb \"framing.\" Framing is not only about creating boundaries, but also about highlighting, enclosing and guiding perception. This cube explores framing as both a structural and a conceptual tool, emphasizing how frames define a space while leaving room for interpretation.\n\nThe process began with the construction of a skeletal cube using thin wooden sticks, creating a transparent framework. This initial structure served as a pure exercise in defining the edges and boundaries of the 6\" x 6\" cube without closing them, allowing me to experiment with the interplay of multiple frames layered within one another.\n\nThe next stage involved selectively filling some of these frames with planes, creating different spaces within one another. The addition of surfaces turned the skeletal structure into multiple spatial divisions, bringing out the nuance in the word \"framing.\"",
   "arcstart-basswood":
-    "Made during ArcStart, a three-week pre-college architecture program at the University of Michigan. The model is a vertical composition of basswood sticks and planes, layered to explore balance, rhythm and how light passes through a structure.\n\nPhotographed against the studio window, where the shadows become part of the piece.",
+    "Made during ArcStart 2024, a three-week pre-college architecture program at the University of Michigan, in a workshop led by Osama Sukkar. The focus was tectonic design and gestural designing and modeling: thinking through making, by building directly with the material.\n\nWorking only with basswood and tacky glue, I layered sticks and planes into a vertical composition, letting the structure develop piece by piece at the studio table.",
   "arcstart-3d-forms":
     "A series of form studies from ArcStart at the University of Michigan. I developed one interlocking form and drew it from four isometric viewpoints, northwest, southeast, southwest and northeast, each in its own color.\n\nThe form then grew into a concept for a room for rock climbing, supported by color palettes and material and atmosphere references.",
   "designing-interactive-experiences":

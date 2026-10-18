@@ -83,12 +83,15 @@ const projects = [
     folder: "senior-shirt",
     crop: {
       "20260831-033155072-ios.jpg": "whole",
+      "img-1717.jpg": "5% 50%",
+      "img-7672.jpg": "16% 50%",
     },
     images: ["20260831-214656384-ios.jpg"],
     sections: [
       ["stitching", ["20260831-033155072-ios.jpg"]],
       ["details", ["20260831-033207602-ios.jpg", "20260831-033215446-ios.jpg", "20260831-033228773-ios.jpg", "img-3284.jpg"]],
       ["the shirt", ["20260831-214656384-ios.jpg", "20260831-214726736-ios.jpg"]],
+      ["worn", ["img-1717.jpg", "img-7672.jpg"]],
     ],
   },
   {

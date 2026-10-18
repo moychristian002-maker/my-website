@@ -170,9 +170,15 @@ const projects = [
   },
   {
     title: "Frame by Frame",
-    tag: "Cube Project · Model & Drawings",
+    tag: "Subelement 1 · LADES4139 Fundamental Architectural Design",
     category: "Architecture",
     folder: "architecture-cube",
+    details: [
+      ["course", "LADES4139 Fundamental Architectural Design"],
+      ["professor", "Lena Vassilev"],
+      ["materials", "1/4 in. foam board, basswood, chipboard, foam, glue"],
+      ["tools", "X-Acto knife and scalpel, drafting board and pens"],
+    ],
     images: ["img-5173.jpg"],
     sections: [
       ["process sketches", ["sketch-1.jpg", "sketch-2.jpg", "sketch-3.jpg"]],
@@ -402,7 +408,7 @@ const descriptions = {
   "architecture-pavilion":
     "A pavilion study built around a single undulating roof. A thin white surface rises and falls over a basswood truss structure, creating sheltered pockets underneath.\n\nThe project moved from concept sketches to a physical model, then to an axonometric drawing and a render of the pavilion placed in a landscape.",
   "architecture-cube":
-    "The first part of a larger project, built around the verb \"framing.\" A frame does not simply contain; it directs focus and sets up relationships between interior and exterior, open and closed, solid and void. This cube explores framing as both a structural and a conceptual tool.\n\nI started with a skeletal cube of thin wooden sticks, a transparent framework that defined edges without enclosing them. Then I selectively filled some of the frames with planes, turning the open grid into spaces that suggest enclosure, separation and orientation. The result is a study of framing as an act of opening (sightlines, transparency, flow) and an act of closing (boundaries, privacy, focus).",
+    "A cube project that introduces basic model-making techniques and the principles of tectonic and spatial composition through physical models and orthographic drawings. It exercised hand-drawing plans, sections and elevations, photo editing in the Adobe suite, and portfolio compilation.\n\nThe concept of this cube is centered on the verb \"framing.\" Framing is not only about creating boundaries, but also about highlighting, enclosing and guiding perception. This cube explores framing as both a structural and a conceptual tool, emphasizing how frames define a space while leaving room for interpretation.\n\nThe process began with the construction of a skeletal cube using thin wooden sticks, creating a transparent framework. This initial structure served as a pure exercise in defining the edges and boundaries of the 6\" x 6\" cube without closing them, allowing me to experiment with the interplay of multiple frames layered within one another.\n\nThe next stage involved selectively filling some of these frames with planes, creating different spaces within one another. The addition of surfaces turned the skeletal structure into multiple spatial divisions, bringing out the nuance in the word \"framing.\"",
   "arcstart-basswood":
     "Made during ArcStart, a three-week pre-college architecture program at the University of Michigan. The model is a vertical composition of basswood sticks and planes, layered to explore balance, rhythm and how light passes through a structure.\n\nPhotographed against the studio window, where the shadows become part of the piece.",
   "arcstart-3d-forms":

@@ -219,6 +219,7 @@ const projects = [
     tag: "ArcStart 2024 · University of Michigan",
     category: "Architecture",
     folder: "arcstart-basswood",
+    fit: "natural", // show every photo uncropped at its own shape
     details: [
       ["program", "ArcStart 2024, University of Michigan"],
       ["led by", "Osama Sukkar"],

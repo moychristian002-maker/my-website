@@ -54,6 +54,7 @@ groups.forEach(([label, files]) => {
     if (!group.length) return;
     const gallery = document.createElement("div");
     gallery.className = n ? "article-gallery single" : "article-gallery";
+    if (p.fit === "natural") gallery.classList.add("natural");
     group.forEach((file) => {
       const i = p.images.indexOf(file);
       const b = document.createElement("button");

@@ -181,7 +181,7 @@ const projects = [
       ["sections", ["section-1.jpg", "section-2.jpg"]],
       ["plans", ["plan-1.jpg", "plan-2.jpg"]],
       ["oblique", ["oblique-01.jpg"]],
-      ["final cube", ["img-5186.jpg", "img-5190.jpg"]],
+      ["final cube", ["img-5186.jpg", "img-5173.jpg"]],
     ],
     // The original presentation, shown at the end as a booklet you can page through.
     booklet: [

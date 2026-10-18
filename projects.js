@@ -241,8 +241,8 @@ const projects = [
     sections: [
       ["isometric views", ["forms-01.jpg", "forms-02.jpg", "forms-03.jpg", "forms-04.jpg"]],
       ["color & patterns", ["forms-06.jpg"]],
+      ["paper prototype", ["img-7759.jpg", "img-7760.jpg", "img-7763.jpg", "img-7767.jpg"]],
       ["concept", ["isometric-01.jpg"]],
-      ["making the model", ["img-7759.jpg", "img-7760.jpg", "img-7763.jpg", "img-7767.jpg"]],
     ],
     crop: {
       "forms-01.jpg": "whole",

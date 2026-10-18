@@ -305,3 +305,5 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .section-text p + p { margin-top: 1rem; }
 .section-text + .article-gallery:not(.single) { margin-top: 0; }
 .section-text + .article-label { margin-top: 3.5rem; }
+.section-text.bibliography { font-size: 0.9rem; line-height: 1.6; overflow-wrap: anywhere; }
+.section-text.bibliography p { padding-left: 2rem; text-indent: -2rem; }

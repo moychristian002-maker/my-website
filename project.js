@@ -41,7 +41,7 @@ if (p.details) details.hidden = false;
 // them into labeled `sections` (e.g. process vs. the finished piece).
 const sections = document.getElementById("sections");
 const groups = p.sections || [["process & details", p.images.slice(1)]];
-groups.forEach(([label, files, text]) => {
+groups.forEach(([label, files, text, style]) => {
   if (!files.length && !text) return;
   const heading = document.createElement("h2");
   heading.className = "article-label";
@@ -50,7 +50,7 @@ groups.forEach(([label, files, text]) => {
   // Optional words for the section (paragraphs split by a blank line, line breaks kept).
   if (text) {
     const body = document.createElement("div");
-    body.className = "section-text";
+    body.className = style ? `section-text ${style}` : "section-text";
     text.split("\n\n").forEach((para) => {
       const el = document.createElement("p");
       el.textContent = para;

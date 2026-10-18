@@ -183,12 +183,18 @@
         rows.forEach(([term, value]) => details.appendChild(line(`<span class="dt">${esc(term)}</span><span class="dd">${esc(value)}</span>`)));
       }
 
-      // Hand back the plain text once the last line has landed.
+      // Hand back the plain text once the last line has landed. A timer backs this up,
+      // so the text can never stay hidden behind its mask if an animation stalls.
+      let restored = false;
+      const restore = () => {
+        if (restored) return;
+        restored = true;
+        blocks.forEach(([el, html]) => { el.innerHTML = html; });
+      };
       const all = document.querySelectorAll(".line-in");
       const lastLine = all[all.length - 1];
-      if (lastLine) lastLine.addEventListener("animationend", () => {
-        blocks.forEach(([el, html]) => { el.innerHTML = html; });
-      }, { once: true });
+      if (lastLine) lastLine.addEventListener("animationend", restore, { once: true });
+      setTimeout(restore, base + Math.min(n, MAX_STEPS) * STAGGER + 800 + 700);
     });
   }
 })();

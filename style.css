@@ -317,3 +317,15 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
   .article-gallery.natural-row { flex-direction: column; }
   .natural-row > button { flex: none !important; width: 100%; }
 }
+
+/* All text centered (Christian's preference) */
+.article-body, .section-text, .article-gallery .caption { text-align: center; }
+.section-text.bibliography p { padding-left: 0; text-indent: 0; }
+.article-details { display: block; text-align: center; }
+.article-details dt, .article-details dd { display: inline; }
+.article-details dd { margin-left: 0.5rem; }
+.article-details dd::after { content: "\A"; white-space: pre; }
+.entry, .columns > * { text-align: center; }
+.entry-head { flex-direction: column; align-items: center; gap: 0.2rem; }
+.meta, .compact .meta { text-align: center; white-space: normal; }
+.entry ul { list-style: none; margin: 0.7rem 0 0; padding: 0; }

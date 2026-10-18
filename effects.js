@@ -1,8 +1,7 @@
 // Small, quiet UI effects shared by both pages. Loaded last, after the cards
 // (script.js) and galleries (project.js) exist and fade.js has restored the scroll.
 //   1. Scroll reveal: things below the fold fade and rise in as they scroll into view.
-//   2. Custom cursor: a dot that grows into "view" / "open" / "turn" over things you can open.
-//   3. Card hover (homepage): the page takes on the hovered project's color world.
+//   2. Card hover (homepage): the page takes on the hovered project's color world.
 (() => {
   const root = document.documentElement;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -58,55 +57,7 @@
     if (pending.size) addEventListener("scroll", onScroll, { passive: true });
   }
 
-  // 2. Custom cursor ---------------------------------------------------------
-  if (finePointer) {
-    const cursor = document.createElement("div");
-    cursor.className = "cursor";
-    cursor.setAttribute("aria-hidden", "true");
-    cursor.innerHTML = `<span class="cursor-label"></span>`;
-    document.body.appendChild(cursor);
-    const label = cursor.firstChild;
-    root.classList.add("has-cursor");
-
-    let x = 0, y = 0, cx = 0, cy = 0, shown = false, running = false;
-    const ease = reduceMotion ? 1 : 0.28;
-    // Follows the mouse with a little easing; the loop stops once the dot catches up.
-    const tick = () => {
-      cx += (x - cx) * ease;
-      cy += (y - cy) * ease;
-      if (Math.abs(x - cx) < 0.1 && Math.abs(y - cy) < 0.1) { cx = x; cy = y; running = false; }
-      cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-      if (running) requestAnimationFrame(tick);
-    };
-
-    addEventListener("mousemove", (e) => {
-      x = e.clientX;
-      y = e.clientY;
-      if (!shown) { cx = x; cy = y; shown = true; cursor.classList.add("on"); }
-      if (!running) { running = true; requestAnimationFrame(tick); }
-    }, { passive: true });
-    document.addEventListener("mouseleave", () => { shown = false; cursor.classList.remove("on"); });
-
-    // What's under the pointer decides the cursor's shape.
-    const stateFor = (el) => {
-      if (!el || !el.closest) return ["", ""];
-      if (el.closest(".lightbox figure img, .lightbox figure video")) return ["", ""];
-      if (el.closest(".card")) return ["label", "view"];
-      if (el.closest(".booklet-stage")) return ["label", "turn"];
-      if (el.closest(".article-gallery button, .article-hero")) return ["label", "open"];
-      if (el.closest("a, button, [role='button'], label, video")) return ["link", ""];
-      return ["", ""];
-    };
-    document.addEventListener("mouseover", (e) => {
-      const [state, word] = stateFor(e.target);
-      cursor.dataset.state = state;
-      if (word) label.textContent = word;
-    });
-    addEventListener("mousedown", () => cursor.classList.add("down"));
-    addEventListener("mouseup", () => cursor.classList.remove("down"));
-  }
-
-  // 3. Card hover: preview the project's color world -------------------------
+  // 2. Card hover: preview the project's color world -------------------------
   // Uses the same --page-bg / --page-ink variables as fade.js, so clicking flows
   // straight into the page transition.
   if (finePointer && typeof colorWorlds !== "undefined") {

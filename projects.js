@@ -259,21 +259,41 @@ const projects = [
   },
   {
     title: "CineSense",
-    tag: "Designing Interactive Experiences · UX",
+    tag: "Designing Interactive Experiences · Haptic Wearable",
     category: "Graphic & Interaction",
     folder: "designing-interactive-experiences",
-    crop: {
-      "general-user-journey-map-1.jpg": "whole",
-      "haptic.jpg": "whole",
-      "bsl-cinema.jpg": "whole",
-      "img-1659.jpg": "whole",
-      "companion.jpg": "whole",
-    },
     images: ["cinesense.jpg"],
+    // Follows the order of the course portfolio (Subelements II and III).
     sections: [
-      ["research & ideas", ["general-user-journey-map-1.jpg", "haptic.jpg", "bsl-cinema.jpg", "img-1659.jpg"]],
-      ["companion app", ["companion.jpg"]],
+      ["proto persona", ["persona.jpg"]],
+      ["user journey", ["general-user-journey-map-1.jpg"]],
+      ["design proposal I · digital", ["companion.jpg"]],
+      ["design proposal II · physical", ["bsl-cinema.jpg"]],
+      ["paper prototype", ["img-0312.jpg", "paper-1.jpg", "paper-2.jpg", "paper-3.jpg", "paper-4.jpg"]],
+      ["research · haptics", ["haptic.jpg"]],
+      ["iteration I · ring & bracelet", ["img-0328.jpg", "img-0339.jpg"]],
+      ["iteration II · neck haptic", ["img-0336.jpg", "img-0337.jpg", "img-0338.jpg", "img-0340.jpg", "img-0341.jpg"]],
+      ["the cinesense experience", ["img-1659.jpg"]],
+      ["final iteration", ["img-0345.jpg", "img-0346.jpg", "img-0347.jpg", "img-0342.jpg", "img-0344.jpg", "img-0357.mp4", "img-0354.mp4", "img-0355.mp4"]],
+      ["iteration II and final", ["img-0350.jpg"]],
+      ["feel every moment", ["cinesense-film.mp4"]],
     ],
+    captions: {
+      "persona.jpg": "Kieran, 36, data analyst: the persona from the brief",
+      "img-0350.jpg": "iteration II (left) beside the final iteration (right)",
+      "cinesense-film.mp4": "the CineSense film (opens with sound)",
+    },
+    crop: {
+      "persona.jpg": "whole",
+      "paper-1.jpg": "50% 85%",
+      "general-user-journey-map-1.jpg": "whole",
+      "companion.jpg": "whole",
+      "bsl-cinema.jpg": "whole",
+      "haptic.jpg": "whole",
+      "img-1659.jpg": "whole",
+      "img-0350.jpg": "whole",
+      "cinesense-film.mp4": "whole",
+    },
   },
   {
     title: "Husky Volleyball Graphics",
@@ -426,7 +446,7 @@ const descriptions = {
   "arcstart-3d-forms":
     "A project from ArcStart 2024 at the University of Michigan, where we learned to draw isometric views while also learning to create our own patterns in Illustrator. I developed one interlocking form and drew it from four viewpoints, northwest, southeast, southwest and northeast, each in its own color, alongside a palette of colors and patterns I designed.\n\nWe then had to choose one view and turn it into a room for \"something.\" Mine became a room for rock climbing. To bring it into three dimensions, I printed my patterns onto paper nets, folded them into the pieces of the form, and photographed the finished model in a lightbox with scale figures.",
   "designing-interactive-experiences":
-    "CineSense is a concept developed in Designing Interactive Experiences: a wearable that uses haptics to help audiences \"feel every moment\" of a film, designed to make the cinema more accessible.\n\nThe process moved from a user journey map to sketches of possible haptic wearables (a blanket, a bracelet, a neck pillow, glasses), a storyboard of the cinema visit, wireframes for a companion app, and the final brand identity.",
+    "CineSense is a haptic wearable that lets Deaf and Hard of Hearing (DHH) audiences feel film: \"feel every moment.\" It began with a persona from the brief, Kieran, a 36-year-old data analyst who is profoundly deaf and uses British Sign Language. He loves film, but subtitled screenings are limited to specific times and days, which rules out spontaneous trips to the cinema.\n\nI mapped his journey to the cinema and developed two design proposals: a digital companion app for finding accessible screenings and controlling a wearable, and a physical multi-sensory wearable using haptics and temperature. Early development showed that past a certain point, more innovation reduces usability, so I simplified. Inspired by the familiar form of a wearable neck fan, the concept became a haptic neck device, and temperature feedback was dropped for relevance and safety.\n\nAfter a paper prototype, research into where on the body haptics are felt best, and a ring and bracelet iteration, I settled on the neck. The final iteration puts practicality over visual complexity: a wider band increases contact with the neck so vibrations are felt more clearly, the form follows the curve of the neck and shoulders, and the charging port moved to the outside so it can be worn while charging. The result is a single wearable for home viewing that makes haptics a realistic, accessible way to enhance film.",
   "graphics-volleyball":
     "Social media graphics for Northeastern Women's Volleyball, made as part of my role as team manager. The set includes player feature graphics and a \"This Is Husky Volley\" piece.\n\nEach graphic keeps the player as the focus while carrying a consistent Husky identity.",
   "graphics-ukrainian-melodies":

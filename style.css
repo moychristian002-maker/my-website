@@ -178,6 +178,8 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
    The lightbox always shows the full photo. */
 .article-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: center; }
 .article-gallery.single { grid-template-columns: minmax(0, 1fr); max-width: calc(50% - 0.625rem); margin: 1.25rem auto 0; }
+.article-gallery.single:has(.whole) { max-width: none; }
+.article-gallery.single .whole img, .article-gallery.single .whole video { width: auto; max-width: 100%; max-height: 80vh; margin: 0 auto; }
 .article-gallery button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; color: inherit; font: inherit; }
 .article-gallery img, .article-gallery video { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; border-radius: var(--radius); transition: opacity 0.2s; }
 .article-gallery .whole img, .article-gallery .whole video { aspect-ratio: auto; background: none; }

@@ -2,6 +2,7 @@
 // (script.js) and galleries (project.js) exist and fade.js has restored the scroll.
 //   1. Scroll reveal: things below the fold fade and rise in as they scroll into view.
 //   2. Card hover (homepage): the page takes on the hovered project's color world.
+//   3. Title letters: the homepage name and project titles rise in letter by letter.
 (() => {
   const root = document.documentElement;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -81,6 +82,34 @@
           paint(HOME);
         }, 150);
       });
+    });
+  }
+
+  // 3. Title letters ---------------------------------------------------------
+  // The homepage name and each project title: letters rise in one after another
+  // from behind the baseline, once on load. Screen readers get the plain title.
+  if (!reduceMotion) {
+    document.querySelectorAll(".hero h1, #title").forEach((h) => {
+      const text = h.textContent.trim();
+      if (!text) return;
+      h.setAttribute("aria-label", text);
+      h.textContent = "";
+      let i = 0;
+      text.split(/\s+/).forEach((word, w) => {
+        if (w) h.append(" ");
+        const wordEl = document.createElement("span");
+        wordEl.className = "word";
+        wordEl.setAttribute("aria-hidden", "true");
+        [...word].forEach((letter) => {
+          const c = document.createElement("span");
+          c.className = "char";
+          c.textContent = letter;
+          c.style.setProperty("--i", i++);
+          wordEl.appendChild(c);
+        });
+        h.appendChild(wordEl);
+      });
+      h.classList.add("split");
     });
   }
 })();

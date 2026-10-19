@@ -363,8 +363,8 @@ const projects = [
     },
   },
   {
-    title: "The Basics of Volley",
-    tag: "Northeastern Women’s Volleyball · Team Manager",
+    title: "Northeastern Women’s Volleyball",
+    tag: "Photography · Graphics",
     category: "Photography",
     folder: "photography-sports",
     crop: {

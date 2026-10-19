@@ -440,3 +440,4 @@ button.yt:hover .yt-play, a.yt:hover .yt-play { transform: translate(-50%, -50%)
 /* Click-to-play gallery videos (play: { file: "click" }): a tile, not a button */
 .article-gallery > .tile { display: block; width: 100%; }
 .article-gallery.single .tile.whole video { width: auto; max-width: 100%; max-height: 80vh; margin: 0 auto; aspect-ratio: auto; background: #000; }
+.hero-contact-line .line-in { display: block; }

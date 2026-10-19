@@ -4,6 +4,7 @@
 //   2. Card hover (homepage): the page takes on the hovered project's color world.
 //   3. Title letters: the homepage name and project titles rise in letter by letter.
 //   4. Text lines: under a project title, the subtitle, write-up and details rise in line by line.
+//   5. Hero lines: on the homepage, the credential and contact links rise in after the name.
 (() => {
   const root = document.documentElement;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -196,5 +197,49 @@
       if (lastLine) lastLine.addEventListener("animationend", restore, { once: true });
       setTimeout(restore, base + Math.min(n, MAX_STEPS) * STAGGER + 800 + 700);
     });
+  }
+
+  // 5. Hero lines ----------------------------------------------------------------
+  // On the homepage, the credential under the name and then the contact links rise in
+  // line by line, right after the name's letters. The original markup comes back once
+  // they land, so the links behave normally.
+  const credential = document.querySelector(".hero .credential");
+  const contact = document.querySelector(".hero .hero-contact");
+  if (!reduceMotion && credential) {
+    const START = Math.max(0, titleStart + 600 - performance.now()); // the name starts at 150ms
+    const STAGGER = 120;
+    const saved = [[credential, credential.innerHTML]];
+    let n = 0;
+    const wrap = (html) => {
+      const outer = document.createElement("span");
+      outer.className = "line";
+      const inner = document.createElement("span");
+      inner.className = "line-in";
+      inner.innerHTML = html;
+      inner.style.animationDelay = `${START + n++ * STAGGER}ms`;
+      outer.appendChild(inner);
+      return outer;
+    };
+    const lines = credential.innerHTML.split(/<br\s*\/?>/i).map((s) => s.trim()).filter(Boolean);
+    credential.textContent = "";
+    lines.forEach((html) => credential.appendChild(wrap(html)));
+    if (contact) {
+      saved.push([contact, contact.outerHTML]);
+      const row = wrap("");
+      contact.replaceWith(row);
+      row.firstChild.appendChild(contact);
+      row.classList.add("hero-contact-line");
+    }
+    let restored = false;
+    const restore = () => {
+      if (restored) return;
+      restored = true;
+      credential.innerHTML = saved[0][1];
+      const row = document.querySelector(".hero-contact-line");
+      if (row && contact) row.replaceWith(contact);
+    };
+    const last = document.querySelectorAll(".hero .line-in");
+    if (last.length) last[last.length - 1].addEventListener("animationend", restore, { once: true });
+    setTimeout(restore, START + n * STAGGER + 800 + 700);
   }
 })();

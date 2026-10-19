@@ -337,7 +337,7 @@ const projects = [
       ["tools", "Adobe Illustrator"],
     ],
     images: ["dawn-of-the-mourning-son.jpg"],
-    video: { youtube: "0DRDq0TRLhM", label: "watch the play", caption: "Dawn of the Mourning Son, full performance" },
+    video: { youtube: "0DRDq0TRLhM", embed: false, label: "watch the play", caption: "Dawn of the Mourning Son, full performance" },
     sections: [
       ["about the title", [], "“I chose the title Dawn of the Mourning Son because it captured multiple dimensions that my play deals with. Beyond being a phonetic pun, the ‘Dawn’ implies the rise of a new day, inspiring hope for the future. This is contrasted with ‘mourning,’ which describes the ‘night’ the main character has passed through in grief. Finally, the choice of the word ‘son’ wrestles with the main character’s idea of a father, how his late uncle replaced his absent father, and what it meant to lose him.”\n\n— Christopher D. Suh, playwright"],
       ["looking back", [], "This was one of my first times ever using Adobe Illustrator, and one of my first bigger design projects that required real critical thinking. Looking back, the visual hierarchy could be more balanced, and I could have experimented with a few more typefaces, but I think it turned out really nicely for one of my first times in Illustrator."],

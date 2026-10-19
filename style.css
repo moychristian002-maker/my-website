@@ -400,7 +400,7 @@ html, html * {
 /* Video (project.js): a YouTube thumbnail with a play button; the player loads on click */
 .video { margin-top: 3.5rem; }
 .yt { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; border-radius: var(--radius); overflow: hidden; background: #000; color: inherit; }
-button.yt { cursor: pointer; }
+button.yt, a.yt { cursor: pointer; }
 .yt img, .yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; display: block; }
 .yt-play {
   position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; border-radius: 50%;
@@ -411,5 +411,5 @@ button.yt { cursor: pointer; }
   content: ""; position: absolute; left: 54%; top: 50%; transform: translate(-50%, -50%);
   border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent var(--page-ink, #000);
 }
-button.yt:hover .yt-play { transform: translate(-50%, -50%) scale(1.08); }
+button.yt:hover .yt-play, a.yt:hover .yt-play { transform: translate(-50%, -50%) scale(1.08); }
 .yt-caption { margin-top: 0.75rem; text-align: center; font-size: 0.95rem; font-style: italic; opacity: 0.8; }

@@ -106,17 +106,21 @@ groups.forEach(([label, files, text, style]) => {
 document.querySelector(".article-hero").addEventListener("click", () => openAt(0));
 
 // Video: a YouTube video shown as its thumbnail with a play button. The player (a
-// standard YouTube embed) only loads once someone clicks play.
+// standard YouTube embed) only loads once someone clicks play. Videos whose owner has
+// turned off embedding (`embed: false`) open on YouTube in a new tab instead.
 if (p.video && p.video.youtube) {
   const id = p.video.youtube;
+  const watchUrl = `https://www.youtube.com/watch?v=${id}`;
+  const embed = p.video.embed !== false;
   const heading = document.createElement("h2");
   heading.className = "article-label";
   heading.textContent = p.video.label || "watch";
-  const box = document.createElement("button");
+  const box = document.createElement(embed ? "button" : "a");
   box.className = "yt";
-  box.setAttribute("aria-label", `Play: ${p.video.caption || p.title}`);
+  if (!embed) { box.href = watchUrl; box.target = "_blank"; box.rel = "noopener"; }
+  box.setAttribute("aria-label", `${embed ? "Play" : "Watch on YouTube"}: ${p.video.caption || p.title}`);
   box.innerHTML = `<img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play" aria-hidden="true"></span>`;
-  box.addEventListener("click", () => {
+  if (embed) box.addEventListener("click", () => {
     const frame = document.createElement("iframe");
     // YouTube needs to know which site embeds the player (else "error 153"), so send the origin.
     frame.referrerPolicy = "strict-origin-when-cross-origin";
@@ -131,7 +135,7 @@ if (p.video && p.video.youtube) {
   }, { once: true });
   const caption = document.createElement("p");
   caption.className = "yt-caption";
-  caption.innerHTML = `${p.video.caption ? `${p.video.caption.replace(/</g, "&lt;")} · ` : ""}<a href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">open on YouTube</a>`;
+  caption.innerHTML = `${p.video.caption ? `${p.video.caption.replace(/</g, "&lt;")} · ` : ""}<a href="${watchUrl}" target="_blank" rel="noopener">${embed ? "open on YouTube" : "plays on YouTube"}</a>`;
   const wrap = document.createElement("section");
   wrap.className = "video";
   wrap.append(heading, box, caption);

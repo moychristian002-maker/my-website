@@ -335,16 +335,6 @@ const projects = [
     images: ["dawn-of-the-mourning-son.jpg"],
   },
   {
-    title: "Handwritten Typography",
-    tag: "Typography · Custom Typeface",
-    category: "Graphic & Interaction",
-    folder: "handwritten-typography",
-    crop: {
-      "handwritten-typography2.jpg": "whole",
-    },
-    images: ["handwritten-typography1.jpg", "handwritten-typography2.jpg"],
-  },
-  {
     title: "TEDxNortheasternLDN",
     tag: "Event Design · 22 ft. Sign",
     category: "Graphic & Interaction",
@@ -465,8 +455,6 @@ const descriptions = {
     "A service design project for Designing Interactive Experiences, in two subelements. It starts with a case study of food and packaging waste at London's street food markets, informed by Monmouth Coffee's reusable cup scheme and the V&A's Design and Disability exhibition, and becomes EcoEats: a market-wide reusable container deposit tent, developed through storyboards and a paper prototype film.",
   "graphics":
     "A poster for Dawn of the Mourning Son, a short play about grief and healing. A lone silhouette set against a city skyline at dawn captures the play's quiet, reflective tone.",
-  "handwritten-typography":
-    "A custom typeface made from my own handwriting. I filled in Calligraphr character templates by hand, letter by letter, then scanned them to turn my handwriting into a working digital font.",
   "tedx":
     "As Events Officer for the TEDxNortheasternLDN Society, I coordinated logistics for the end-of-year TEDx event in London, including sourcing materials and managing the budget.\n\nI also delivered the event's 22 ft. sign within a 3-day deadline.",
   "photography-sports":

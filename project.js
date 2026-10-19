@@ -105,6 +105,37 @@ groups.forEach(([label, files, text, style]) => {
 });
 document.querySelector(".article-hero").addEventListener("click", () => openAt(0));
 
+// Video: a YouTube video shown as its thumbnail with a play button. The player (on the
+// privacy-enhanced youtube-nocookie domain) only loads once someone clicks play.
+if (p.video && p.video.youtube) {
+  const id = p.video.youtube;
+  const heading = document.createElement("h2");
+  heading.className = "article-label";
+  heading.textContent = p.video.label || "watch";
+  const box = document.createElement("button");
+  box.className = "yt";
+  box.setAttribute("aria-label", `Play: ${p.video.caption || p.title}`);
+  box.innerHTML = `<img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play" aria-hidden="true"></span>`;
+  box.addEventListener("click", () => {
+    const frame = document.createElement("iframe");
+    frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+    frame.title = p.video.caption || p.title;
+    frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    frame.allowFullscreen = true;
+    const holder = document.createElement("div");
+    holder.className = "yt";
+    holder.appendChild(frame);
+    box.replaceWith(holder);
+  }, { once: true });
+  const caption = document.createElement("p");
+  caption.className = "yt-caption";
+  caption.innerHTML = `${p.video.caption ? `${p.video.caption.replace(/</g, "&lt;")} · ` : ""}<a href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">open on YouTube</a>`;
+  const wrap = document.createElement("section");
+  wrap.className = "video";
+  wrap.append(heading, box, caption);
+  sections.appendChild(wrap);
+}
+
 // Booklet: a project's original presentation at the end of the page, shown as an open
 // book. Each image is a two-page spread; a portrait image (the cover) is a single page
 // on the right. Turning flips one page over the spine: the right page going forward,

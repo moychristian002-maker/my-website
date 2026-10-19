@@ -83,7 +83,7 @@ groups.forEach(([label, files, text, style]) => {
       const i = p.images.indexOf(file);
       const b = document.createElement("button");
       const crop = (p.crop || {})[file];
-      if (crop === "whole") b.classList.add("whole");
+      if (isWhole(file)) b.classList.add("whole");
       const media = isVideo(file)
         ? `<video src="${src(file)}" poster="${poster(file)}" muted loop autoplay playsinline preload="metadata" aria-label="${p.title}, video ${i + 1}"></video>`
         : `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">`;

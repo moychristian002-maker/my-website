@@ -93,10 +93,16 @@ groups.forEach(([label, files, text, style]) => {
     if (natural) gallery.classList.add("natural", single ? "natural-single" : "natural-row");
     group.forEach((file) => {
       const i = p.images.indexOf(file);
-      const b = document.createElement("button");
+      // Long videos with sound (`play: { "file.mp4": "click" }`) don't autoplay: they show
+      // their poster with player controls and play in place, with sound, when clicked.
+      const clickToPlay = isVideo(file) && (p.play || {})[file] === "click";
+      const b = document.createElement(clickToPlay ? "div" : "button");
+      if (clickToPlay) b.className = "tile";
       const crop = (p.crop || {})[file];
       if (isWhole(file)) b.classList.add("whole");
-      const media = isVideo(file)
+      const media = clickToPlay
+        ? `<video src="${src(file)}" poster="${poster(file)}" controls playsinline preload="none" aria-label="${p.title}, video ${i + 1}"></video>`
+        : isVideo(file)
         ? `<video src="${src(file)}" poster="${poster(file)}" muted loop autoplay playsinline preload="metadata" aria-label="${p.title}, video ${i + 1}"></video>`
         : `<img src="${src(file)}" alt="${p.title}, image ${i + 1}" loading="lazy">`;
       b.innerHTML = `${media}${tileLabel(file) ? `<span class="tile-label">${tileLabel(file)}</span>` : ""}${caption(file) ? `<span class="caption">${caption(file)}</span>` : ""}`;
@@ -105,11 +111,12 @@ groups.forEach(([label, files, text, style]) => {
         // Width in the row is proportional to the photo's shape, so heights match.
         const el = b.firstElementChild;
         const fit = (w, h) => { if (w && h) { b.style.flexGrow = w / h; el.style.aspectRatio = `${w} / ${h}`; } };
-        if (isVideo(file)) el.addEventListener("loadedmetadata", () => fit(el.videoWidth, el.videoHeight));
+        if (clickToPlay) { const img = new Image(); img.onload = () => fit(img.naturalWidth, img.naturalHeight); img.src = poster(file); }
+        else if (isVideo(file)) el.addEventListener("loadedmetadata", () => fit(el.videoWidth, el.videoHeight));
         else if (el.complete) fit(el.naturalWidth, el.naturalHeight);
         else el.addEventListener("load", () => fit(el.naturalWidth, el.naturalHeight));
       }
-      b.addEventListener("click", () => openAt(i));
+      if (!clickToPlay) b.addEventListener("click", () => openAt(i));
       gallery.appendChild(b);
     });
     sections.appendChild(gallery);

@@ -373,13 +373,18 @@ const projects = [
       "king-thirdjim14226.jpg": "whole",
       "meirelles-thirdsgraphicjim14204.jpg": "whole",
       "foggy-windowgraphic.jpg": "whole",
+      "reel-hunger-games.mp4": "whole",
+    },
+    play: {
+      "reel-hunger-games.mp4": "click",
     },
     images: ["0p1a4392.jpg"],
     sections: [
       ["practice", ["0p1a4399.jpg", "0p1a4414.jpg", "0p1a4435.jpg", "0p1a4551.jpg", "0p1a4563.jpg"]],
-      ["game day on the digi", ["20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg", "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg", "20260926-223622000-ios.jpg", "20260926-223640000-ios.jpg"], "Taken on my Sony Cybershot, the same digital camera I used for the Seven Sisters Cliffs photos."],
+      ["game day on the digi", ["20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg", "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg", "20260926-223622000-ios.jpg", "20260926-223640000-ios.jpg"], "A few photos from a game day, taken on my personal digital camera, the same Sony Cybershot I used for Seven Sisters Cliffs."],
       ["rule of thirds", ["callaway-thirdsgraphicjim13746.jpg", "daniels-thirdsgraphicjim14619.jpg", "king-thirdjim14226.jpg", "meirelles-thirdsgraphicjim14204.jpg"], "A series of player portraits for the team's social media, each composed on a rule-of-thirds grid so the athlete and the type share one structure."],
       ["this is husky volley", ["foggy-windowgraphic.jpg"]],
+      ["reels", ["reel-hunger-games.mp4"], "A team reel I filmed and edited for the team’s Instagram. Press play for sound."],
     ],
   },
   {
@@ -479,7 +484,7 @@ const descriptions = {
   "tedx":
     "As Events Officer for the TEDxNortheasternLDN Society, I coordinated logistics for the end-of-year TEDx event in London, including sourcing materials and managing the budget.\n\nI also delivered the event's 22 ft. sign within a 3-day deadline. Working with a small team, we cut each letter out by hand, spray-painted the red TEDx letters, added stands so every letter could stand on its own, and set the full sign up across the front of the event space.",
   "photography-sports":
-    "As team manager for Northeastern Women's Volleyball, I document the team and help tell its story. I photograph practices twice a week and games throughout the season, capturing the energy and the small moments of the sport.\n\nThe photos feed the team's Instagram, alongside the reels, stories and graphics I make for it, like the rule-of-thirds player series below.",
+    "As team manager for Northeastern Women's Volleyball, I document the team and help tell its story. I photograph practices twice a week, capturing the energy and the small moments of the sport, and I hope to start shooting games too.\n\nThe photos feed the team's Instagram, alongside the reels, stories and graphics I make for it, like the rule-of-thirds player series below.",
   "making-things-flanerie":
     "A photo essay for ARTF1110 Making Things, built around the idea of the flâneur: someone who wanders the city simply to observe it.\n\nI walked through Boston photographing everyday scenes, then layered black-and-white and color within single images to guide where the eye lands.",
   "photography-seven-sisters":

@@ -349,9 +349,9 @@ const projects = [
     category: "Graphic & Interaction",
     folder: "tedx",
     fit: "natural", // show every photo and timelapse uncropped
-    images: ["the-sign.jpg"],
+    images: ["copy-of-img-5242.jpg"],
     sections: [
-      ["making the sign", ["timelapse-cutting.mp4", "spray-painting.jpg", "timelapse-bracing.mp4", "timelapse-standing.mp4"]],
+      ["making the sign", ["timelapse-cutting.mp4", "spray-painting.jpg", "timelapse-bracing.mp4", "timelapse-standing.mp4", "the-sign.jpg"]],
       ["the event", ["copy-of-img-5242.jpg", "copy-of-img-5299.jpg", "the-event.jpg"]],
     ],
     captions: {
@@ -359,6 +359,7 @@ const projects = [
       "spray-painting.jpg": "spray-painting the red TEDx letters",
       "timelapse-bracing.mp4": "adding stands so each letter stands on its own",
       "timelapse-standing.mp4": "standing the sign up in the event space",
+      "the-sign.jpg": "the finished sign, ready for the event",
     },
   },
   {

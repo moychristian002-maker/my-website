@@ -348,7 +348,18 @@ const projects = [
     tag: "Event Design · 22 ft. Sign",
     category: "Graphic & Interaction",
     folder: "tedx",
-    images: ["copy-of-img-5242.jpg", "copy-of-img-5299.jpg"],
+    fit: "natural", // show every photo and timelapse uncropped
+    images: ["the-sign.jpg"],
+    sections: [
+      ["making the sign", ["timelapse-cutting.mp4", "spray-painting.jpg", "timelapse-bracing.mp4", "timelapse-standing.mp4"]],
+      ["the event", ["copy-of-img-5242.jpg", "copy-of-img-5299.jpg", "the-event.jpg"]],
+    ],
+    captions: {
+      "timelapse-cutting.mp4": "cutting out the letters",
+      "spray-painting.jpg": "spray-painting the red TEDx letters",
+      "timelapse-bracing.mp4": "adding stands so each letter stands on its own",
+      "timelapse-standing.mp4": "standing the sign up in the event space",
+    },
   },
   {
     title: "The Basics of Volley",
@@ -465,7 +476,7 @@ const descriptions = {
   "graphics":
     "A poster for Dawn of the Mourning Son, a short play about grief, suicide and healing, written and produced by my friend Chris as his junior project. The play deals with teen depression, loss and suicide, and he asked me to design its poster.\n\nFour objects carry the play’s themes, so I built them into the title lettering itself: a wine glass for alcohol (pleasure), a book for philosophy, a rosary for spirituality and religion, and a noose, the symbol of suicide and a big part of the play’s ending.\n\nBelow the title, the son looks off into the dawn over the city, with the faded figure of the father he lost behind him. I think the colors work really well together. It’s a less than ordinary dawn: not a bright, happy sky of red, yellow and pink, but one with some darkness in it, which sets the tone for the play’s subject.",
   "tedx":
-    "As Events Officer for the TEDxNortheasternLDN Society, I coordinated logistics for the end-of-year TEDx event in London, including sourcing materials and managing the budget.\n\nI also delivered the event's 22 ft. sign within a 3-day deadline.",
+    "As Events Officer for the TEDxNortheasternLDN Society, I coordinated logistics for the end-of-year TEDx event in London, including sourcing materials and managing the budget.\n\nI also delivered the event's 22 ft. sign within a 3-day deadline. Working with a small team, we cut each letter out by hand, spray-painted the red TEDx letters, added stands so every letter could stand on its own, and set the full sign up across the front of the event space.",
   "photography-sports":
     "As team manager for Northeastern Women's Volleyball, I document the team and help tell its story. I photograph practices twice a week and games throughout the season, capturing the energy and the small moments of the sport.\n\nThe photos feed the team's Instagram, alongside the reels, stories and graphics I make for it, like the rule-of-thirds player series below.",
   "making-things-flanerie":

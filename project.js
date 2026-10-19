@@ -19,6 +19,18 @@ document.getElementById("hero-img").alt = p.title;
 document.getElementById("title").textContent = p.title;
 document.getElementById("subtitle").textContent = p.tag;
 
+// A title with one very long word (e.g. "TEDxNortheasternLDN") can't wrap, so it
+// shrinks just enough to fit its column. Re-checked once fonts load and on resize.
+const fitTitle = () => {
+  const h = document.getElementById("title");
+  h.style.fontSize = "";
+  const over = h.scrollWidth / h.clientWidth;
+  if (over > 1.01) h.style.fontSize = `${parseFloat(getComputedStyle(h).fontSize) / over * 0.97}px`;
+};
+fitTitle();
+if (document.fonts) document.fonts.ready.then(fitTitle);
+addEventListener("resize", fitTitle);
+
 const body = document.getElementById("body");
 (descriptions[p.folder] || "").split("\n\n").filter(Boolean).forEach((para) => {
   const el = document.createElement("p");

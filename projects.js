@@ -392,24 +392,22 @@ const projects = [
     tag: "ARTF1110 Making Things",
     category: "Photography",
     folder: "making-things-flanerie",
-    crop: {
-      "flanerie-01.jpg": "whole",
-      "flanerie-02.jpg": "whole",
-      "flanerie-03.jpg": "whole",
-      "flanerie-04.jpg": "whole",
-      "flanerie-05.jpg": "whole",
-      "flanerie-06.jpg": "whole",
-      "flanerie-07.jpg": "whole",
-      "flanerie-08.jpg": "whole",
-      "flanerie-09.jpg": "whole",
-      "flanerie-10.jpg": "whole",
-      "flanerie-11.jpg": "whole",
-      "flanerie-12.jpg": "whole",
+    fit: "natural", // show every image uncropped at its own shape
+    images: ["flanerie-06.jpg"],
+    sections: [
+      ["artist inspiration", ["inspo-maier.jpg", "inspo-maier-mural.jpg", "inspo-cartier-bresson.jpg", "inspo-doisneau.jpg"], "My three artist inspirations:\n\nVivian Maier, for her ability to capture urban street life and ordinary life: buildings and portraits.\n\nHenri Cartier-Bresson, who photographed urban motion in the streets: people and architecture.\n\nRobert Doisneau, a French photographer who captured Parisian street life, romance and children at play."],
+    ],
+    captions: {
+      "inspo-maier.jpg": "photo by Vivian Maier (reference)",
+      "inspo-maier-mural.jpg": "a street mural of Vivian Maier (reference)",
+      "inspo-cartier-bresson.jpg": "photo by Henri Cartier-Bresson (reference)",
+      "inspo-doisneau.jpg": "photo by Robert Doisneau (reference)",
     },
-    images: [
-      "flanerie-06.jpg", "flanerie-01.jpg", "flanerie-02.jpg", "flanerie-03.jpg", "flanerie-04.jpg",
-      "flanerie-05.jpg", "flanerie-07.jpg", "flanerie-08.jpg", "flanerie-09.jpg", "flanerie-10.jpg",
-      "flanerie-11.jpg", "flanerie-12.jpg",
+    // The finished journal, shown at the end as a booklet you can page through.
+    bookletLabel: "the journal",
+    booklet: [
+      "booklet/page-01.jpg", "booklet/page-02.jpg", "booklet/page-03.jpg", "booklet/page-04.jpg",
+      "booklet/page-05.jpg", "booklet/page-06.jpg", "booklet/page-07.jpg",
     ],
   },
   {
@@ -486,7 +484,7 @@ const descriptions = {
   "photography-sports":
     "As team manager for Northeastern Women's Volleyball, I document the team and help tell its story. I photograph practices twice a week, capturing the energy and the small moments of the sport, and I hope to start shooting games too.\n\nThe photos feed the team's Instagram, alongside the reels, stories and graphics I make for it, like the rule-of-thirds player series below.",
   "making-things-flanerie":
-    "A photo essay for ARTF1110 Making Things, built around the idea of the flâneur: someone who wanders the city simply to observe it.\n\nI walked through Boston photographing everyday scenes, then layered black-and-white and color within single images to guide where the eye lands.",
+    "A photo journal for ARTF1110 Making Things, built around the idea of the flâneur: someone who wanders the city streets with no specific destination, purely to observe and experience modern urban life.\n\nI walked through Boston photographing everyday scenes, then layered black-and-white and color within single images to guide where the eye lands. The finished journal is at the end of the page; turn its pages to read it.",
   "photography-seven-sisters":
     "Photographs from a trip to the Seven Sisters cliffs on England's south coast, taken on a Sony Cybershot.\n\nThe older digital camera gives the images a soft, muted quality that suits the dusk light over the fields and coastline.",
 };

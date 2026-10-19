@@ -171,7 +171,7 @@ if (p.booklet) {
   const wrap = document.createElement("section");
   wrap.className = "booklet";
   wrap.innerHTML = `
-    <h2 class="article-label">the booklet</h2>
+    <h2 class="article-label">${p.bookletLabel || "the booklet"}</h2>
     <div class="booklet-stage" tabindex="0" role="region" aria-label="Booklet: use the arrow keys to turn pages">
       <div class="booklet-half l"></div>
       <div class="booklet-half r"></div>
@@ -253,13 +253,20 @@ if (p.booklet) {
     touchX = null;
   });
 
-  // Load every page up front (they're small) to learn which are single pages.
+  // Load every page up front (they're small) to learn which are single pages, and give
+  // the open book the shape of this journal's spreads.
+  const sizes = [];
   Promise.all(files.map((f, i) => new Promise((done) => {
     const img = new Image();
-    img.onload = () => { single[i] = img.naturalWidth < img.naturalHeight; done(); };
+    img.onload = () => { single[i] = img.naturalWidth < img.naturalHeight; sizes[i] = [img.naturalWidth, img.naturalHeight]; done(); };
     img.onerror = done;
     img.src = src(f);
-  }))).then(() => { show(at); status(); });
+  }))).then(() => {
+    const spread = sizes.find((s, i) => s && !single[i]);
+    if (spread) stage.style.aspectRatio = `${spread[0]} / ${spread[1]}`;
+    show(at);
+    status();
+  });
   status();
 }
 

@@ -117,10 +117,17 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 
 /* Project grid: image first, then a bold title with an italic subtitle */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* Wrapping rows, so a year's last, partly filled row sits centered */
+  --cols: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 3.5rem 2rem;
 }
+.grid > .card { flex: 0 0 calc((100% - (var(--cols) - 1) * 2rem) / var(--cols)); min-width: 0; }
+.grid > .year-heading { flex: 0 0 100%; }
+@media (max-width: 980px) { .grid { --cols: 2; } }
+@media (max-width: 640px) { .grid { --cols: 1; } }
 
 .card { display: block; text-decoration: none; text-align: center; color: inherit; }
 .card-img { overflow: hidden; aspect-ratio: 4 / 5; border-radius: var(--radius); background: #f3f3f3; }

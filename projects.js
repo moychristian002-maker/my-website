@@ -392,6 +392,11 @@ const projects = [
     tag: "ARTF1110 Making Things",
     category: "Photography",
     folder: "making-things-flanerie",
+    details: [
+      ["course", "ARTF1110 Making Things"],
+      ["camera", "Canon Rebel"],
+      ["typeface", "my own handwriting, made into a font"],
+    ],
     fit: "natural", // show every image uncropped at its own shape
     images: ["flanerie-06.jpg"],
     sections: [
@@ -484,7 +489,7 @@ const descriptions = {
   "photography-sports":
     "As team manager for Northeastern Women's Volleyball, I document the team and help tell its story. I photograph practices twice a week, capturing the energy and the small moments of the sport, and I hope to start shooting games too.\n\nThe photos feed the team's Instagram, alongside the reels, stories and graphics I make for it, like the rule-of-thirds player series below.",
   "making-things-flanerie":
-    "A photo journal for ARTF1110 Making Things, built around the idea of the flâneur: someone who wanders the city streets with no specific destination, purely to observe and experience modern urban life.\n\nI walked through Boston photographing everyday scenes, then layered black-and-white and color within single images to guide where the eye lands. The finished journal is at the end of the page; turn its pages to read it.",
+    "A photo journal for ARTF1110 Making Things, built around the idea of the flâneur: someone who wanders the city streets with no specific destination, purely to observe and experience modern urban life.\n\nEach day we walked and then journaled about the walk: what we saw and what we did with the camera. Because of that journaling, I wanted the piece to feel as journal-like as possible, so I turned my own handwriting into a font and set the whole journal in it.\n\nI shot it on a Canon Rebel, my first time using a \"real\" camera. I photographed everyday scenes around Boston, then layered black-and-white and color within single images to guide where the eye lands. The finished journal is at the end of the page; turn its pages to read it.",
   "photography-seven-sisters":
     "Photographs from a trip to the Seven Sisters cliffs on England's south coast, taken on a Sony Cybershot.\n\nThe older digital camera gives the images a soft, muted quality that suits the dusk light over the fields and coastline.",
 };

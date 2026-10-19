@@ -334,11 +334,13 @@ const projects = [
     folder: "graphics",
     details: [
       ["for", "Christopher D. Suh, writer and producer"],
+      ["tools", "Adobe Illustrator"],
     ],
     images: ["dawn-of-the-mourning-son.jpg"],
     video: { youtube: "0DRDq0TRLhM", label: "watch the play", caption: "Dawn of the Mourning Son, full performance" },
     sections: [
       ["about the title", [], "“I chose the title Dawn of the Mourning Son because it captured multiple dimensions that my play deals with. Beyond being a phonetic pun, the ‘Dawn’ implies the rise of a new day, inspiring hope for the future. This is contrasted with ‘mourning,’ which describes the ‘night’ the main character has passed through in grief. Finally, the choice of the word ‘son’ wrestles with the main character’s idea of a father, how his late uncle replaced his absent father, and what it meant to lose him.”\n\n— Christopher D. Suh, playwright"],
+      ["looking back", [], "This was one of my first times ever using Adobe Illustrator, and one of my first bigger design projects that required real critical thinking. Looking back, the visual hierarchy could be more balanced, and I could have experimented with a few more typefaces, but I think it turned out really nicely for one of my first times in Illustrator."],
     ],
   },
   {
@@ -461,7 +463,7 @@ const descriptions = {
   "ecoeats":
     "A service design project for Designing Interactive Experiences, in two subelements. It starts with a case study of food and packaging waste at London's street food markets, informed by Monmouth Coffee's reusable cup scheme and the V&A's Design and Disability exhibition, and becomes EcoEats: a market-wide reusable container deposit tent, developed through storyboards and a paper prototype film.",
   "graphics":
-    "A poster for Dawn of the Mourning Son, a short play about grief, suicide and healing, written and produced by my friend Chris as his junior project. He asked me to design the poster for it.\n\nThree objects carry the play’s themes, so I built them into the title lettering itself: a wine glass for alcohol (pleasure), a book for philosophy, and a rosary for spirituality and religion. Below, a lone figure looks up over a city skyline as the sky turns from night to dawn.",
+    "A poster for Dawn of the Mourning Son, a short play about grief, suicide and healing, written and produced by my friend Chris as his junior project. The play deals with teen depression, loss and suicide, and he asked me to design its poster.\n\nFour objects carry the play’s themes, so I built them into the title lettering itself: a wine glass for alcohol (pleasure), a book for philosophy, a rosary for spirituality and religion, and a noose, the symbol of suicide and a big part of the play’s ending.\n\nBelow the title, the son looks off into the dawn over the city, with the faded figure of the father he lost behind him. I think the colors work really well together. It’s a less than ordinary dawn: not a bright, happy sky of red, yellow and pink, but one with some darkness in it, which sets the tone for the play’s subject.",
   "tedx":
     "As Events Officer for the TEDxNortheasternLDN Society, I coordinated logistics for the end-of-year TEDx event in London, including sourcing materials and managing the budget.\n\nI also delivered the event's 22 ft. sign within a 3-day deadline.",
   "photography-sports":

@@ -381,7 +381,7 @@ const projects = [
     images: ["0p1a4392.jpg"],
     sections: [
       ["practice", ["0p1a4399.jpg", "0p1a4414.jpg", "0p1a4435.jpg", "0p1a4551.jpg", "0p1a4563.jpg"]],
-      ["game day on the digi", ["20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg", "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg", "20260926-223622000-ios.jpg", "20260926-223640000-ios.jpg"], "A few photos from a game day, taken on my personal digital camera, the same Sony Cybershot I used for Seven Sisters Cliffs."],
+      ["game day on the digi", ["20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg", "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg", "20260926-223622000-ios.jpg", "20260926-223640000-ios.jpg"], "A few photos from a game day, taken on my personal digital camera, the same Sony Cybershot I used for On the Digi."],
       ["rule of thirds", ["callaway-thirdsgraphicjim13746.jpg", "daniels-thirdsgraphicjim14619.jpg", "king-thirdjim14226.jpg", "meirelles-thirdsgraphicjim14204.jpg"], "A series of player portraits for the team's social media, each composed on a rule-of-thirds grid so the athlete and the type share one structure."],
       ["this is husky volley", ["foggy-windowgraphic.jpg"]],
       ["reels", ["reel-hunger-games.mp4"], "A team reel I filmed and edited for the team’s Instagram. Press play for sound."],
@@ -416,14 +416,17 @@ const projects = [
     ],
   },
   {
-    title: "Seven Sisters Cliffs",
-    tag: "Taken on Sony Cybershot",
+    title: "On the Digi",
+    tag: "Travel Photography · Sony Cybershot",
     category: "Photography",
     folder: "photography-seven-sisters",
-    images: ["20251007-140406000-ios.jpg"],
+    fit: "natural", // show every photo uncropped at its own shape
+    images: ["seven-sisters-dsc02920.jpg"],
     sections: [
-      ["the coast", ["20251007-141413000-ios.jpg"]],
-      ["the fields at dusk", ["20251007-163238000-ios.jpg", "20251007-163312000-ios.jpg", "20251007-163825000-ios.jpg", "20251007-164105000-ios.jpg", "20251007-164112000-ios.jpg"]],
+      ["seven sisters", ["seven-sisters-dsc02920.jpg", "seven-sisters-dsc02800.jpg", "seven-sisters-dsc02766.jpg", "20251007-141413000-ios.jpg", "20251007-163312000-ios.jpg", "seven-sisters-dsc02918.jpg"]],
+      ["paris", ["paris-dsc03805.jpg", "paris-dsc02656.jpg", "paris-dsc02626.jpg", "paris-dsc02714.jpg", "paris-dsc03771.jpg", "paris-dsc02683.jpg"]],
+      ["edinburgh", ["edinburgh-dsc03438.jpg", "edinburgh-dsc03472.jpg", "edinburgh-dsc03462.jpg", "edinburgh-dsc03389.jpg"]],
+      ["taiwan", ["taiwan-dsc03664.jpg", "taiwan-dsc03653.jpg", "taiwan-dsc03661.jpg", "taiwan-dsc03636.jpg", "taiwan-dsc03656.jpg", "taiwan-dsc03583.jpg"]],
     ],
   },
 ];
@@ -491,5 +494,5 @@ const descriptions = {
   "making-things-flanerie":
     "A photo journal for ARTF1110 Making Things, built around the idea of the flâneur: someone who wanders the city streets with no specific destination, purely to observe and experience modern urban life.\n\nEach day we walked and then journaled about the walk: what we saw and what we did with the camera. Because of that journaling, I wanted the piece to feel as journal-like as possible, so I turned my own handwriting into a font and set the whole journal in it.\n\nI shot it on a Canon Rebel, my first time using a \"real\" camera. I photographed everyday scenes around Boston, then layered black-and-white and color within single images to guide where the eye lands. The finished journal is at the end of the page; turn its pages to read it.",
   "photography-seven-sisters":
-    "Photographs from a trip to the Seven Sisters cliffs on England's south coast, taken on a Sony Cybershot.\n\nThe older digital camera gives the images a soft, muted quality that suits the dusk light over the fields and coastline.",
+    "Photographs from places I've traveled, all taken on my Sony Cybershot, an older digital camera I carry with me: the Seven Sisters cliffs on England's south coast, Paris, Edinburgh and Taiwan.\n\nThe digicam gives every place the same soft, muted quality, so the series reads as one way of looking: landscapes, streets, people and the small details I notice along the way.",
 };

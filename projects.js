@@ -328,16 +328,6 @@ const projects = [
     },
   },
   {
-    title: "Husky Volleyball Graphics",
-    tag: "Graphic Design · Northeastern Athletics",
-    category: "Graphic & Interaction",
-    folder: "graphics-volleyball",
-    images: [
-      "foggy-windowgraphic.jpg", "callaway-thirdsgraphicjim13746.jpg", "daniels-thirdsgraphicjim14619.jpg",
-      "king-thirdjim14226.jpg", "meirelles-thirdsgraphicjim14204.jpg",
-    ],
-  },
-  {
     title: "Ukrainian Melodies",
     tag: "Graphic Design · Poster Series",
     category: "Graphic & Interaction",
@@ -379,13 +369,22 @@ const projects = [
   },
   {
     title: "The Basics of Volley",
-    tag: "Northeastern Women’s Volleyball",
+    tag: "Northeastern Women’s Volleyball · Team Manager",
     category: "Photography",
     folder: "photography-sports",
+    crop: {
+      "callaway-thirdsgraphicjim13746.jpg": "whole",
+      "daniels-thirdsgraphicjim14619.jpg": "whole",
+      "king-thirdjim14226.jpg": "whole",
+      "meirelles-thirdsgraphicjim14204.jpg": "whole",
+      "foggy-windowgraphic.jpg": "whole",
+    },
     images: ["0p1a4392.jpg"],
     sections: [
       ["practice", ["0p1a4399.jpg", "0p1a4414.jpg", "0p1a4435.jpg", "0p1a4551.jpg", "0p1a4563.jpg"]],
       ["game day", ["20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg", "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg", "20260926-223622000-ios.jpg", "20260926-223640000-ios.jpg"]],
+      ["rule of thirds", ["callaway-thirdsgraphicjim13746.jpg", "daniels-thirdsgraphicjim14619.jpg", "king-thirdjim14226.jpg", "meirelles-thirdsgraphicjim14204.jpg"], "A series of player portraits for the team's social media, each composed on a rule-of-thirds grid so the athlete and the type share one structure."],
+      ["this is husky volley", ["foggy-windowgraphic.jpg"]],
     ],
   },
   {
@@ -447,7 +446,6 @@ const colorWorlds = {
   "arcstart-3d-forms": ["#e9e5ee", "#6b3f8c"],
   "designing-interactive-experiences": ["#0b0b10", "#a58cff"],
   "ecoeats": ["#232323", "#b9d98b"],
-  "graphics-volleyball": ["#c41414", "#ffffff"],
   "graphics-ukrainian-melodies": ["#f3ecd9", "#1f4e8c"],
   "graphics": ["#2d2a35", "#f2a679"],
   "tedx": ["#111111", "#e62b1e"],
@@ -482,8 +480,6 @@ const descriptions = {
     "A design process portfolio for Designing Interactive Experiences, in three subelements. It begins with an accessibility case study of FocusEx, a reading tool for people with ADHD, then moves into design ideation for Deaf and Hard of Hearing film audiences, and ends with CineSense, a haptic wearable prototype that lets them feel every moment of a film.",
   "ecoeats":
     "A service design project for Designing Interactive Experiences, in two subelements. It starts with a case study of food and packaging waste at London's street food markets, informed by Monmouth Coffee's reusable cup scheme and the V&A's Design and Disability exhibition, and becomes EcoEats: a market-wide reusable container deposit tent, developed through storyboards and a paper prototype film.",
-  "graphics-volleyball":
-    "Social media graphics for Northeastern Women's Volleyball, made as part of my role as team manager. The set includes player feature graphics and a \"This Is Husky Volley\" piece.\n\nEach graphic keeps the player as the focus while carrying a consistent Husky identity.",
   "graphics-ukrainian-melodies":
     "A poster series for Ukrainian Melodies, a music event. The posters pair traditional instruments, such as the violin, guitar and piano, with ornamental patterns and the blue and yellow of Ukraine.\n\nI explored several directions for the series before landing on the final poster.",
   "graphics":
@@ -493,7 +489,7 @@ const descriptions = {
   "tedx":
     "As Events Officer for the TEDxNortheasternLDN Society, I coordinated logistics for the end-of-year TEDx event in London, including sourcing materials and managing the budget.\n\nI also delivered the event's 22 ft. sign within a 3-day deadline.",
   "photography-sports":
-    "Photographs of Northeastern Women's Volleyball, taken as team manager. I shoot practices twice a week and games throughout the season, capturing the energy and the small moments of the sport.\n\nThese images also feed the team's Instagram, reels and stories.",
+    "As team manager for Northeastern Women's Volleyball, I document the team and help tell its story. I photograph practices twice a week and games throughout the season, capturing the energy and the small moments of the sport.\n\nThe photos feed the team's Instagram, alongside the reels, stories and graphics I make for it, like the rule-of-thirds player series below.",
   "making-things-flanerie":
     "A photo essay for ARTF1110 Making Things, built around the idea of the flâneur: someone who wanders the city simply to observe it.\n\nI walked through Boston photographing everyday scenes, then layered black-and-white and color within single images to guide where the eye lands.",
   "photography-seven-sisters":

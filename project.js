@@ -339,4 +339,3 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") step(1);
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();

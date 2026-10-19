@@ -48,4 +48,3 @@ projects.forEach((p) => {
   grid.appendChild(card);
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();

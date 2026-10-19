@@ -328,22 +328,6 @@ const projects = [
     },
   },
   {
-    title: "Ukrainian Melodies",
-    tag: "Graphic Design · Poster Series",
-    category: "Graphic & Interaction",
-    folder: "graphics-ukrainian-melodies",
-    crop: {
-      "20261013-163845580-ios.jpg": "whole",
-      "20261013-163846071-ios.jpg": "whole",
-      "20261013-163847681-ios.jpg": "whole",
-      "20261013-163848022-ios.jpg": "whole",
-    },
-    images: [
-      "20261013-164409000-ios.jpg", "20261013-163845580-ios.jpg", "20261013-163846071-ios.jpg",
-      "20261013-163847681-ios.jpg", "20261013-163848022-ios.jpg",
-    ],
-  },
-  {
     title: "Dawn of the Mourning Son",
     tag: "Graphic Design · Theater Poster",
     category: "Graphic & Interaction",
@@ -446,7 +430,6 @@ const colorWorlds = {
   "arcstart-3d-forms": ["#e9e5ee", "#6b3f8c"],
   "designing-interactive-experiences": ["#0b0b10", "#a58cff"],
   "ecoeats": ["#232323", "#b9d98b"],
-  "graphics-ukrainian-melodies": ["#f3ecd9", "#1f4e8c"],
   "graphics": ["#2d2a35", "#f2a679"],
   "tedx": ["#111111", "#e62b1e"],
   "photography-sports": ["#c41414", "#ffffff"],
@@ -480,8 +463,6 @@ const descriptions = {
     "A design process portfolio for Designing Interactive Experiences, in three subelements. It begins with an accessibility case study of FocusEx, a reading tool for people with ADHD, then moves into design ideation for Deaf and Hard of Hearing film audiences, and ends with CineSense, a haptic wearable prototype that lets them feel every moment of a film.",
   "ecoeats":
     "A service design project for Designing Interactive Experiences, in two subelements. It starts with a case study of food and packaging waste at London's street food markets, informed by Monmouth Coffee's reusable cup scheme and the V&A's Design and Disability exhibition, and becomes EcoEats: a market-wide reusable container deposit tent, developed through storyboards and a paper prototype film.",
-  "graphics-ukrainian-melodies":
-    "A poster series for Ukrainian Melodies, a music event. The posters pair traditional instruments, such as the violin, guitar and piano, with ornamental patterns and the blue and yellow of Ukraine.\n\nI explored several directions for the series before landing on the final poster.",
   "graphics":
     "A poster for Dawn of the Mourning Son, a short play about grief and healing. A lone silhouette set against a city skyline at dawn captures the play's quiet, reflective tone.",
   "handwritten-typography":

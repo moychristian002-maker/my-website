@@ -24,13 +24,28 @@
 
   <main id="top">
     <section class="hero" id="contact">
-      <h1>Christian Moy</h1>
-      <p class="credential">Candidate for the Bachelor of Fine Arts in Design<br>Northeastern University</p>
-      <p class="hero-contact">
-        <a href="mailto:moychristian002@gmail.com">moychristian002@gmail.com</a>
-        <span aria-hidden="true">·</span>
-        <a href="https://www.linkedin.com/in/christian-moy" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
+      <div class="hero-text">
+        <h1>Christian Moy</h1>
+        <p class="credential">Candidate for the Bachelor of Fine Arts in Design<br>Northeastern University</p>
+        <p class="hero-contact">
+          <a href="mailto:moychristian002@gmail.com">moychristian002@gmail.com</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://www.linkedin.com/in/christian-moy" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+      <div class="hero-pile">
+        <div class="pile" id="pile" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Featured projects. Swipe or use the arrow keys."></div>
+        <div class="pile-caption" aria-live="polite">
+          <span class="pile-title" id="pile-title"></span>
+          <span class="pile-sub" id="pile-sub"></span>
+        </div>
+        <div class="pile-controls">
+          <button class="pile-prev" id="pile-prev" aria-label="Previous project">&lsaquo;</button>
+          <span class="pile-count" id="pile-count"></span>
+          <button class="pile-next" id="pile-next" aria-label="Next project">&rsaquo;</button>
+        </div>
+        <a href="#work" class="pile-more">see all work &darr;</a>
+      </div>
     </section>
 
     <section id="work" class="section">
@@ -175,6 +190,7 @@
 
   <script src="projects.js"></script>
   <script src="script.js"></script>
+  <script src="pile.js"></script>
   <script src="fade.js"></script>
   <script src="effects.js"></script>
 </body>

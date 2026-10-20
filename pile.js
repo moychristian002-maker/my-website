@@ -192,6 +192,35 @@
     if (suppressClick || busy) { e.preventDefault(); suppressClick = false; }
   });
 
+  // Trackpad: a two-finger sideways swipe arrives as horizontal wheel events. The top
+  // photo follows the fingers; far enough and it flies off, otherwise it springs back.
+  // Vertical scrolling passes through to the page. Sideways swipes over the pile don't
+  // trigger the browser's back/forward gesture.
+  let wheelX = 0;
+  let wheelQuiet = null;
+  let wheelLocked = false; // after a fly-off, ignore the rest of that swipe's momentum
+  pile.addEventListener("wheel", (e) => {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+    e.preventDefault();
+    stop();
+    clearTimeout(wheelQuiet);
+    wheelQuiet = setTimeout(() => {
+      if (!wheelLocked && wheelX && !busy) { order[0].classList.remove("dragging"); layout(); }
+      wheelX = 0;
+      wheelLocked = false;
+    }, 180);
+    if (wheelLocked || busy) return;
+    const scale = e.deltaMode === 1 ? 16 : 1; // lines to pixels
+    wheelX -= e.deltaX * scale;
+    const card = order[0];
+    card.classList.add("dragging");
+    card.style.transform = `translate(${wheelX}px, 0) rotate(${wheelX * 0.06}deg)`;
+    if (Math.abs(wheelX) > 110) {
+      wheelLocked = true;
+      next(Math.sign(wheelX));
+    }
+  }, { passive: false });
+
   document.getElementById("pile-next").addEventListener("click", () => { stop(); next(1); });
   document.getElementById("pile-prev").addEventListener("click", () => { stop(); prev(); });
   pile.addEventListener("keydown", (e) => {

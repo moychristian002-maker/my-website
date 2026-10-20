@@ -458,7 +458,7 @@ button.yt:hover .yt-play, a.yt:hover .yt-play { transform: translate(-50%, -50%)
 .pile {
   position: relative;
   /* Sized from the screen height too, so the caption and arrows show without scrolling */
-  width: min(100%, 22rem, max(13rem, calc((100svh - 23.5rem) * 0.8)));
+  width: min(100%, 24rem, max(14rem, calc((100svh - 21.5rem) * 0.8)));
   aspect-ratio: 4 / 5;
   margin-bottom: 2.6rem;
   touch-action: pan-y;

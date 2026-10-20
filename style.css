@@ -457,9 +457,10 @@ button.yt:hover .yt-play, a.yt:hover .yt-play { transform: translate(-50%, -50%)
 .hero-pile { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .pile {
   position: relative;
-  width: min(100%, 24rem);
+  /* Sized from the screen height too, so the caption and arrows show without scrolling */
+  width: min(100%, 22rem, max(13rem, calc((100svh - 23.5rem) * 0.8)));
   aspect-ratio: 4 / 5;
-  margin-bottom: 2.75rem;
+  margin-bottom: 2.6rem;
   touch-action: pan-y;
   user-select: none;
   -webkit-user-select: none;

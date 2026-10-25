@@ -442,64 +442,84 @@ button.yt:hover .yt-play, a.yt:hover .yt-play { transform: translate(-50%, -50%)
 .article-gallery.single .tile.whole video { width: auto; max-width: 100%; max-height: 80vh; margin: 0 auto; aspect-ratio: auto; background: #000; }
 .hero-contact-line .line-in { display: block; }
 
-/* Hero pile (pile.js): name on the left, a swipeable pile of featured project photos on the right */
+/* Hero filmstrip (strip.js), after Christian's inspiration (Rue Studio): the name on top,
+   then every project's cover in one row across the screen; the selected one is bigger */
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 3rem 4rem;
-  max-width: 72rem;
-  min-height: calc(100svh - 6rem);
-  margin: 0 auto;
-  padding: 1.5rem 0 4rem;
+  text-align: center;
+  padding: 0.5rem 0 1rem;
 }
-.hero h1 { font-size: clamp(2.6rem, 5.2vw, 5.4rem); white-space: nowrap; }
-.hero-pile { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.pile {
+.hero h1 { font-size: clamp(2.6rem, min(7vw, 11svh), 5.6rem); white-space: nowrap; }
+.hero .credential { margin-top: 1rem; }
+.hero-strip { width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 1.75rem; }
+.hero-strip.arriving { animation: strip-in 1s cubic-bezier(0.2, 0, 0, 1) 0.7s both; }
+@keyframes strip-in { from { opacity: 0; transform: translateY(24px); } }
+
+/* Small labels: monospace caps, like the corner labels in the inspiration */
+.mono, nav a, .back, .article-nav span, .lb-count {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.strip-caption { display: flex; flex-direction: column; align-items: center; margin-bottom: 0.9rem; }
+.strip-index { opacity: 0.6; margin-bottom: 0.2rem; }
+.strip-title { font-family: var(--title); font-weight: 700; font-size: 1.3rem; line-height: 1.2; text-transform: lowercase; transition: color 0.3s; }
+.strip-sub { font-size: 0.95rem; font-style: italic; text-transform: lowercase; color: var(--muted); }
+
+/* The strip runs edge to edge and fades out at both sides (body clips the overflow, so no sideways scrollbar) */
+body { overflow-x: clip; }
+.strip {
   position: relative;
-  /* Sized from the screen height too, so the caption and arrows show without scrolling */
-  width: min(100%, 24rem, max(14rem, calc((100svh - 21.5rem) * 0.8)));
-  aspect-ratio: 4 / 5;
-  margin-bottom: 2.6rem;
+  width: 100vw;
+  height: var(--big, 300px);
+  overflow: hidden;
   touch-action: pan-y;
   user-select: none;
   -webkit-user-select: none;
   outline: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
-.pile:focus-visible { outline: 2px solid currentColor; outline-offset: 14px; border-radius: var(--radius); }
-.pile-card {
-  position: absolute;
-  inset: 0;
-  display: block;
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: #eee;
-  box-shadow: 0 22px 44px -22px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.12);
-  transition: transform 0.45s cubic-bezier(0.2, 0, 0, 1);
-  pointer-events: none;
-  -webkit-user-drag: none;
+.strip:focus-visible .strip-item.is-active .strip-img { outline: 2px solid currentColor; outline-offset: 4px; }
+.strip-track {
+  display: flex;
+  align-items: center;
+  gap: var(--gap, 14px);
+  height: 100%;
+  width: max-content;
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1);
   will-change: transform;
 }
-.pile-card.is-top { pointer-events: auto; }
-.pile-card.dragging { transition: none; }
-.pile-img, .pile-img img { display: block; width: 100%; height: 100%; }
-.pile-img img { object-fit: cover; pointer-events: none; -webkit-user-drag: none; }
-.pile-card.dropping { animation: pile-drop 0.7s cubic-bezier(0.2, 0, 0, 1) both; }
-@keyframes pile-drop { from { opacity: 0; transform: translateY(-48px) scale(1.05); } }
-.pile-caption { min-height: 3.7rem; transition: opacity 0.18s ease; }
-.pile-caption.swap { opacity: 0; }
-.pile-title { display: block; font-family: var(--title); font-weight: 700; font-size: 1.35rem; line-height: 1.2; text-transform: lowercase; transition: color 0.3s; }
-.pile-sub { display: block; margin-top: 0.15rem; font-size: 0.98rem; font-style: italic; text-transform: lowercase; color: var(--muted); }
-.pile-controls { display: flex; align-items: center; gap: 1rem; margin-top: 0.8rem; font-size: 0.85rem; color: var(--muted); }
-.pile-controls button { width: 2.3rem; height: 2.3rem; border-radius: 50%; border: 1px solid var(--page-ink, var(--text)); background: none; color: var(--page-ink, var(--text)); font-size: 1.35rem; line-height: 1; padding: 0 0 0.15rem; transition: background 0.2s, color 0.2s; }
-.pile-controls button:hover { background: var(--page-ink, var(--text)); color: var(--page-bg, var(--bg)); }
-.pile-more { margin-top: 1.4rem; font-style: italic; text-decoration: none; border-bottom: 1px solid currentColor; opacity: 0.7; transition: opacity 0.2s; }
-.pile-more:hover { opacity: 1; }
-@media (max-width: 820px) {
-  .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; gap: 3rem; padding: 3.5rem 0 3rem; }
-  .pile { width: min(75vw, 21rem); }
+.strip-item {
+  flex: none;
+  display: block;
+  width: calc(var(--small, 150px) * 0.8);
+  height: var(--small, 150px);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #eee;
+  -webkit-user-drag: none;
+  transition: width 0.6s cubic-bezier(0.2, 0, 0, 1), height 0.6s cubic-bezier(0.2, 0, 0, 1), border-radius 0.6s, opacity 0.3s;
 }
+.strip-item:not(.is-active):hover { opacity: 0.8; }
+.strip-item.is-active { width: calc(var(--big, 300px) * 0.8); height: var(--big, 300px); border-radius: var(--radius); }
+.strip-img, .strip-img img { display: block; width: 100%; height: 100%; }
+.strip-img img { object-fit: cover; pointer-events: none; -webkit-user-drag: none; }
+.strip.dragging .strip-track, .strip.no-anim .strip-track, .strip.no-anim .strip-item { transition: none; }
+
+.strip-controls { display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem; }
+.strip-controls button { background: none; border: 0; padding: 0.3rem 0; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; opacity: 0.6; transition: opacity 0.2s; }
+.strip-controls button:hover { opacity: 1; }
+.strip-more { margin-top: 0.6rem; text-decoration: none; opacity: 0.6; transition: opacity 0.2s; }
+.strip-more:hover { opacity: 1; }
+
 @media (prefers-reduced-motion: reduce) {
-  .pile-card, .pile-caption, .pile-title { transition: none; }
-  .pile-card.dropping { animation: none; }
+  .strip-track, .strip-item, .strip-title { transition: none; }
+  .hero-strip.arriving { animation: none; }
 }

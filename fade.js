@@ -32,8 +32,8 @@ function nameHero(el) {
   if (el) { el.style.viewTransitionName = "hero"; el.dataset.hero = ""; }
 }
 const cardImg = (folder) => document.querySelector(`.card[data-folder="${CSS.escape(folder || "")}"] .card-img`);
-// A project opened from the photo pile (pile.js) returns to the pile, not its grid card.
-const pileImg = (folder) => document.querySelector(`.pile-card[data-folder="${CSS.escape(folder || "")}"] .pile-img`);
+// A project opened from the homepage filmstrip (strip.js) returns to the strip, not its grid card.
+const stripImg = (folder) => document.querySelector(`.strip-item.is-active[data-folder="${CSS.escape(folder || "")}"] .strip-img`);
 
 if (morph) {
   // The crossfade handles color, so the page takes its colors at once.
@@ -52,16 +52,16 @@ if (morph) {
     // Arriving home from a project by a link: reopen the homepage where it was left
     // (or at the linked section), instantly, so the cover photo lands on a card that
     // is already in place. The back button restores the position by itself.
-    let folder = null, y = null, back = null, fromPile = false;
+    let folder = null, y = null, back = null, fromStrip = false;
     try {
       folder = sessionStorage.getItem("last-project");
       y = sessionStorage.getItem("home-scroll");
       back = sessionStorage.getItem("back-to-work");
-      fromPile = sessionStorage.getItem("last-source") === "pile";
+      fromStrip = sessionStorage.getItem("last-source") === "strip";
       sessionStorage.removeItem("back-to-work");
     } catch (e) {}
-    const target = (fromPile && pileImg(folder)) || cardImg(folder);
-    const onPile = !!target && target.classList.contains("pile-img");
+    const target = (fromStrip && stripImg(folder)) || cardImg(folder);
+    const onStrip = !!target && target.classList.contains("strip-img");
     const nav = performance.getEntriesByType("navigation")[0];
     if (nav && nav.type === "navigate" && /project\.html/.test(document.referrer)) {
       root.style.scrollBehavior = "auto";
@@ -70,7 +70,7 @@ if (morph) {
       else if (back) {
         if (y !== null) scrollTo(0, +y);
         // After previous/next, the last project may be another card; bring it into view.
-        const r = !onPile && target && target.getBoundingClientRect();
+        const r = !onStrip && target && target.getBoundingClientRect();
         if (r && (r.top < 0 || r.bottom > innerHeight)) target.scrollIntoView({ block: "center" });
       }
       requestAnimationFrame(() => requestAnimationFrame(() => { root.style.scrollBehavior = ""; }));
@@ -86,13 +86,13 @@ if (morph) {
   }
 
   document.addEventListener("click", (e) => {
-    const card = e.target.closest(".card, .pile-card");
-    if (!card || e.defaultPrevented) return; // a drag on the pile is not a click
-    const fromPile = card.classList.contains("pile-card");
-    nameHero(card.querySelector(fromPile ? ".pile-img" : ".card-img"));
+    const card = e.target.closest(".card, .strip-item");
+    if (!card || e.defaultPrevented) return; // a drag on the strip, or picking a small photo, is not an open
+    const fromStrip = card.classList.contains("strip-item");
+    nameHero(card.querySelector(fromStrip ? ".strip-img" : ".card-img"));
     try {
       sessionStorage.setItem("home-scroll", String(scrollY));
-      sessionStorage.setItem("last-source", fromPile ? "pile" : "grid");
+      sessionStorage.setItem("last-source", fromStrip ? "strip" : "grid");
     } catch (err) {}
   });
 } else {

@@ -3,12 +3,6 @@
 // The first image in the list is used as the cover. `category` must match a filter below.
 const categories = ["Apparel & Objects", "Architecture", "Graphic & Interaction", "Photography"];
 
-// The photo pile next to the name on the homepage (pile.js), top photo first. Folder names.
-const featured = [
-  "designing-interactive-experiences", "custom-denim", "design-perspectives-britpop-jeans",
-  "ecoeats", "architecture-cube", "photography-sports",
-];
-
 const projects = [
   {
     title: "CineSense",

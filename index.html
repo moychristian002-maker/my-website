@@ -7,7 +7,7 @@
   <meta name="description" content="Portfolio of Christian Moy, BFA Design student at Northeastern University. Product design, custom apparel, architecture models, typography, and photography.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Antic&family=MuseoModerno:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Antic&family=MuseoModerno:wght@500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script>try{var f=JSON.parse(sessionStorage.getItem("page-fade"));if(f){var r=document.documentElement;r.style.setProperty("--page-bg",f[0]);r.style.setProperty("--page-ink",f[1]);r.classList.add("entering")}}catch(e){}</script>
 </head>
@@ -33,18 +33,21 @@
           <a href="https://www.linkedin.com/in/christian-moy" target="_blank" rel="noopener">LinkedIn</a>
         </p>
       </div>
-      <div class="hero-pile">
-        <div class="pile" id="pile" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Featured projects. Swipe or use the arrow keys."></div>
-        <div class="pile-caption" aria-live="polite">
-          <span class="pile-title" id="pile-title"></span>
-          <span class="pile-sub" id="pile-sub"></span>
+      <div class="hero-strip">
+        <div class="strip-caption" aria-live="polite">
+          <span class="strip-index mono" id="strip-index"></span>
+          <span class="strip-title" id="strip-title"></span>
+          <span class="strip-sub" id="strip-sub"></span>
         </div>
-        <div class="pile-controls">
-          <button class="pile-prev" id="pile-prev" aria-label="Previous project">&lsaquo;</button>
-          <span class="pile-count" id="pile-count"></span>
-          <button class="pile-next" id="pile-next" aria-label="Next project">&rsaquo;</button>
+        <div class="strip" id="strip" tabindex="0" role="region" aria-roledescription="carousel" aria-label="All projects. Swipe, scroll sideways or use the arrow keys.">
+          <div class="strip-track" id="strip-track"></div>
         </div>
-        <a href="#work" class="pile-more">see all work &darr;</a>
+        <div class="strip-controls mono">
+          <button id="strip-prev" aria-label="Previous project">(prev)</button>
+          <span id="strip-count"></span>
+          <button id="strip-next" aria-label="Next project">(next)</button>
+        </div>
+        <a href="#work" class="strip-more mono">(see all work &darr;)</a>
       </div>
     </section>
 
@@ -190,7 +193,7 @@
 
   <script src="projects.js"></script>
   <script src="script.js"></script>
-  <script src="pile.js"></script>
+  <script src="strip.js"></script>
   <script src="fade.js"></script>
   <script src="effects.js"></script>
 </body>

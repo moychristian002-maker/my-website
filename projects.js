@@ -6,7 +6,7 @@ const categories = ["Apparel & Objects", "Architecture", "Graphic & Interaction"
 const projects = [
   {
     title: "CineSense",
-    tag: "Designing Interactive Experiences · For Deaf & Hard of Hearing Audiences",
+    tag: "Designing Interactive Experiences · For DHH Audiences",
     category: "Graphic & Interaction",
     year: 2026,
     folder: "designing-interactive-experiences",
@@ -73,7 +73,7 @@ const projects = [
   },
   {
     title: "The Art of Flânerie",
-    tag: "ARTF1110 Making Things · Photo Journal",
+    tag: "ARTF1110 Making Things · Photography Journal",
     category: "Photography",
     year: 2026,
     folder: "making-things-flanerie",
@@ -102,7 +102,7 @@ const projects = [
   },
   {
     title: "Olivia Dean Shirt",
-    tag: "Personal Project · Olivia Dean Concert",
+    tag: "Embroidery · Concert Attire",
     category: "Apparel & Objects",
     year: 2026,
     folder: "olivia-dean-shirt",
@@ -174,7 +174,7 @@ const projects = [
   },
   {
     title: "Senior Shirt",
-    tag: "Made with a Friend · Sewing & Embroidery",
+    tag: "Patchwork · Sewing & Embroidery",
     category: "Apparel & Objects",
     year: 2026,
     folder: "senior-shirt",
@@ -193,7 +193,7 @@ const projects = [
   },
   {
     title: "On the Digi",
-    tag: "Personal Project · Travel Photography",
+    tag: "Travel Photography",
     category: "Photography",
     year: 2026,
     folder: "photography-seven-sisters",
@@ -297,7 +297,7 @@ const projects = [
   },
   {
     title: "Custom Denim Jacket",
-    tag: "Personal Project · Birthday Gift for a Friend",
+    tag: "Birthday Gift",
     category: "Apparel & Objects",
     year: 2025,
     folder: "custom-denim",
@@ -323,7 +323,7 @@ const projects = [
   },
   {
     title: "Custom Basketball",
-    tag: "Personal Project · Birthday Gift for a Friend",
+    tag: "Birthday Gift",
     category: "Apparel & Objects",
     year: 2025,
     folder: "custom-basketball",
@@ -387,7 +387,7 @@ const projects = [
   },
   {
     title: "Dawn of the Mourning Son",
-    tag: "For a Friend's Play · Theater Poster",
+    tag: "Friend's Junior Project · Theater Poster",
     category: "Graphic & Interaction",
     year: 2024,
     folder: "graphics",

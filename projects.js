@@ -6,7 +6,7 @@ const categories = ["Apparel & Objects", "Architecture", "Graphic & Interaction"
 const projects = [
   {
     title: "CineSense",
-    tag: "Designing Interactive Experiences · Haptic Wearable",
+    tag: "Designing Interactive Experiences · For Deaf & Hard of Hearing Audiences",
     category: "Graphic & Interaction",
     year: 2026,
     folder: "designing-interactive-experiences",
@@ -73,7 +73,7 @@ const projects = [
   },
   {
     title: "The Art of Flânerie",
-    tag: "ARTF1110 Making Things",
+    tag: "ARTF1110 Making Things · Photo Journal",
     category: "Photography",
     year: 2026,
     folder: "making-things-flanerie",
@@ -102,7 +102,7 @@ const projects = [
   },
   {
     title: "Olivia Dean Shirt",
-    tag: "Apparel · Hand Embroidery",
+    tag: "Personal Project · Olivia Dean Concert",
     category: "Apparel & Objects",
     year: 2026,
     folder: "olivia-dean-shirt",
@@ -128,7 +128,7 @@ const projects = [
   },
   {
     title: "Northeastern Women’s Volleyball",
-    tag: "Photography · Graphics",
+    tag: "Northeastern Athletics · Team Manager",
     category: "Photography",
     year: 2026,
     folder: "photography-sports",
@@ -154,7 +154,7 @@ const projects = [
   },
   {
     title: "TEDxNortheasternLDN",
-    tag: "Event Design · 22 ft. Sign",
+    tag: "TEDxNortheasternLDN Society · Events Officer",
     category: "Graphic & Interaction",
     year: 2026,
     folder: "tedx",
@@ -174,7 +174,7 @@ const projects = [
   },
   {
     title: "Senior Shirt",
-    tag: "Apparel · Appliqué & Embroidery",
+    tag: "Made with a Friend · Sewing & Embroidery",
     category: "Apparel & Objects",
     year: 2026,
     folder: "senior-shirt",
@@ -193,7 +193,7 @@ const projects = [
   },
   {
     title: "On the Digi",
-    tag: "Travel Photography · Sony Cybershot",
+    tag: "Personal Project · Travel Photography",
     category: "Photography",
     year: 2026,
     folder: "photography-seven-sisters",
@@ -208,7 +208,7 @@ const projects = [
   },
   {
     title: "EcoEats",
-    tag: "Designing Interactive Experiences · Service Design",
+    tag: "Designing Interactive Experiences · Food Vendors & Packaging Waste",
     category: "Graphic & Interaction",
     year: 2025,
     folder: "ecoeats",
@@ -236,7 +236,7 @@ const projects = [
   },
   {
     title: "Frame by Frame",
-    tag: "Subelement 1 · LADES4139 Fundamental Architectural Design",
+    tag: "LADES4139 Fundamental Architectural Design · Model & Drawing Set",
     category: "Architecture",
     year: 2025,
     folder: "architecture-cube",
@@ -280,7 +280,8 @@ const projects = [
   },
   {
     title: "The Resting Line",
-    tag: "Pavilion · Model & Axonometric",
+    tag: "Fundamental Architectural Representation · Pavilion Model",
+    details: [["course", "Fundamental Architectural Representation"]],
     category: "Architecture",
     year: 2025,
     folder: "architecture-pavilion",
@@ -296,7 +297,7 @@ const projects = [
   },
   {
     title: "Custom Denim Jacket",
-    tag: "Apparel · Hand Painting",
+    tag: "Personal Project · Birthday Gift for a Friend",
     category: "Apparel & Objects",
     year: 2025,
     folder: "custom-denim",
@@ -322,7 +323,7 @@ const projects = [
   },
   {
     title: "Custom Basketball",
-    tag: "Product Design · Hand Painting",
+    tag: "Personal Project · Birthday Gift for a Friend",
     category: "Apparel & Objects",
     year: 2025,
     folder: "custom-basketball",
@@ -358,7 +359,7 @@ const projects = [
   },
   {
     title: "Custom Totes",
-    tag: "Product Design · Merchandise",
+    tag: "Personal Project · Gifts for Friends",
     category: "Apparel & Objects",
     year: 2025,
     folder: "custom-totes",
@@ -386,7 +387,7 @@ const projects = [
   },
   {
     title: "Dawn of the Mourning Son",
-    tag: "Graphic Design · Theater Poster",
+    tag: "For a Friend's Play · Theater Poster",
     category: "Graphic & Interaction",
     year: 2024,
     folder: "graphics",
@@ -485,11 +486,11 @@ const descriptions = {
   "custom-denim":
     "A birthday present for a friend: a plain denim jacket, hand-painted to celebrate the University of Pennsylvania with the Quaker mascot, the Penn shield, a \"Quakers\" pennant and a \"University of Pennsylvania\" banner.\n\nThe idea started with a painted Minnesota jacket by @peachypaintshop that I found on Pinterest. I sketched my own Penn version, used an image generator to color in the sketch as a quick mockup, then drew the outline onto the jacket and painted it by hand with acrylics.",
   "senior-shirt":
-    "A one-of-a-kind senior shirt. The lettering is cut from gingham and floral fabrics, appliquéd onto a white tee and finished with small embroidered flowers and details.\n\nEach letter was cut and placed by hand, so the shirt reads as playful and handmade rather than printed.",
+    "A senior shirt made with a friend, for him. He picked out the gingham and floral fabrics and laid out the lettering on the front; I sewed each letter onto the white tee by hand, and small embroidered flowers and details finish the front.\n\nI then designed the back and embroidered it, so the whole shirt reads as playful and handmade rather than printed.",
   "custom-basketball":
     "A birthday present for a friend. He customized a basketball for me on my birthday, and that became my inspiration: for his birthday, I wanted to return the favor.\n\nI filled the ball with small elements about him: his name in bubble lettering, a drawing of him dribbling, the Brooklyn Bridge at night, the Wilson logo redrawn with a bunny and a panda, a \"timmy time\" logo and his college logo. I digitized my ideas first, then painted them by hand onto the ball, wrapping them around its panels so it reads from every angle.",
   "custom-totes":
-    "A set of hand-drawn tote bags, each designed around a different college: Wheaton, Grove City and more. Working from reference images I found online, I drew every design by hand, matching each school's logo, mascot or colors.",
+    "A set of hand-drawn tote bags, made as gifts for friends, each designed around a different college: Wheaton, Grove City and more. Working from reference images I found online, I drew every design by hand, matching each school's logo, mascot or colors.",
   "architecture-pavilion":
     "A pavilion study built around a single undulating roof. A thin white surface rises and falls over a basswood truss structure, creating sheltered pockets underneath.\n\nThe project moved from concept sketches to a physical model, then to an axonometric drawing and a render of the pavilion placed in a landscape.",
   "architecture-cube":

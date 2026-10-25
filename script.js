@@ -24,13 +24,13 @@ const src = (p, file) => `images/${p.folder}/${file}`;
 
 // Projects are listed by year, most recent first, each year under its own heading.
 let lastYear = null;
-projects.forEach((p) => {
+projects.forEach((p, i) => {
   if (p.year && p.year !== lastYear) {
     lastYear = p.year;
     const heading = document.createElement("h3");
-    heading.className = "year-heading";
     heading.dataset.year = p.year;
-    heading.textContent = p.year;
+    heading.className = "year-heading mono";
+    heading.textContent = `(${p.year})`;
     grid.appendChild(heading);
   }
   const card = document.createElement("a");
@@ -43,6 +43,7 @@ projects.forEach((p) => {
   if (world) card.style.setProperty("--accent", world[1] === "#ffffff" ? world[0] : world[1]);
   card.innerHTML = `
     <div class="card-img"><img src="${src(p, p.images[0])}" alt="${p.title}" loading="lazy"></div>
+    <span class="card-index mono">(${String(i + 1).padStart(2, "0")})</span>
     <h3>${p.title}</h3>
     <p>${p.tag}</p>`;
   grid.appendChild(card);

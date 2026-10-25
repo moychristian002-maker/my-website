@@ -64,7 +64,7 @@
   // Uses the same --page-bg / --page-ink variables as fade.js, so clicking flows
   // straight into the page transition.
   if (finePointer && typeof colorWorlds !== "undefined") {
-    const HOME = ["#ffffff", "#000000"];
+    const HOME = ["#f4f3ee", "#000000"];
     let timer = null;
     const paint = ([bg, ink]) => {
       root.style.setProperty("--page-bg", bg);

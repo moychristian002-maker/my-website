@@ -1,9 +1,9 @@
-// Homepage filmstrip, after Christian's inspiration (Rue Studio): every project's cover in
-// one row across the screen, newest first. The selected project sits bigger in the middle,
-// with its number, title and subtitle above. Swipe, drag, scroll sideways on a trackpad,
-// use the arrows or click a small photo to move along; click the big photo to open the
-// project (fade.js morphs it into the project page). Until someone touches it, the strip
-// moves on by itself every few seconds.
+// Homepage filmstrip, recreating Christian's inspiration (Rue Studio): every project's cover
+// in one thin row across the middle of the screen, newest first. The selected project sits
+// bigger, toward the left, with its number, title and subtitle above its top-left corner.
+// Swipe, drag, scroll sideways on a trackpad, use the arrow keys or click a small photo to
+// move along; click the big photo to open the project (fade.js morphs it into the project
+// page). Until someone touches it, the strip moves on by itself every few seconds.
 (() => {
   const strip = document.getElementById("strip");
   const track = document.getElementById("strip-track");
@@ -11,17 +11,12 @@
 
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const n = projects.length;
-  const RATIO = 0.8; // photo width / height (4:5, like the project cards)
+  const RATIO = 0.75; // photo width / height (3:4, as in the inspiration)
   const MOVE_MS = 650; // a little longer than the CSS transition
   const num = (k) => String(k + 1).padStart(2, "0");
-  const accent = (p) => {
-    const w = colorWorlds[p.folder];
-    return w ? (w[1] === "#ffffff" ? w[0] : w[1]) : "";
-  };
   const indexEl = document.getElementById("strip-index");
   const titleEl = document.getElementById("strip-title");
   const subEl = document.getElementById("strip-sub");
-  const countEl = document.getElementById("strip-count");
 
   // Three copies of the list, so the strip never runs out at either end. The selection
   // always settles back into the middle copy, which is what screen readers see.
@@ -44,27 +39,26 @@
 
   let active = n; // index into items
   let offset = 0; // px, while a finger or mouse is dragging the strip
-  let big = 0, small = 0, gap = 0; // photo heights and spacing in px
+  let big = 0, small = 0, gap = 0, anchor = 0; // photo heights, spacing, selected photo's left edge (px)
 
-  // Size the strip so the caption, arrows and "see all work" fit in the first screen:
-  // measure where the hero would end without the strip, and give the strip what's left.
+  // Proportions measured from the inspiration: the big photo is 40% of the screen's height,
+  // the small ones a little under half of that, and the big one starts 20% in from the left.
   const measure = () => {
-    strip.style.setProperty("--big", "0px");
-    const more = document.querySelector(".strip-more");
-    const end = more ? more.getBoundingClientRect().bottom + scrollY : 0;
-    big = innerWidth < 700
-      ? Math.min((innerWidth * 0.6) / RATIO, innerHeight * 0.5)
-      : Math.max(170, Math.min(innerHeight - end - 28, 420));
-    small = big * 0.5;
-    gap = Math.max(10, big * 0.045);
-    strip.style.setProperty("--big", `${big}px`);
-    strip.style.setProperty("--small", `${small}px`);
-    strip.style.setProperty("--gap", `${gap}px`);
+    const phone = innerWidth < 700;
+    big = Math.min(innerHeight * 0.4, (innerWidth * (phone ? 0.5 : 0.3)) / RATIO);
+    small = big * 0.465;
+    gap = Math.max(6, small * 0.09);
+    anchor = innerWidth * (phone ? 0.12 : 0.2);
+    const host = strip.parentElement;
+    host.style.setProperty("--big", `${big}px`);
+    host.style.setProperty("--small", `${small}px`);
+    host.style.setProperty("--gap", `${gap}px`);
+    host.style.setProperty("--anchor", `${anchor}px`);
   };
 
   // Every photo before the selected one is small, so its position is easy to work out.
   const place = () => {
-    const x = strip.clientWidth / 2 - (active * (small * RATIO + gap) + (big * RATIO) / 2) + offset;
+    const x = anchor - active * (small * RATIO + gap) + offset;
     track.style.transform = `translateX(${x}px)`;
     items.forEach((it, k) => it.classList.toggle("is-active", k === active));
   };
@@ -80,9 +74,7 @@
     const i = projects.indexOf(p);
     indexEl.textContent = `(${num(i)})`;
     titleEl.textContent = p.title;
-    titleEl.style.color = accent(p);
     subEl.textContent = p.tag;
-    countEl.textContent = `${num(i)} / ${String(n).padStart(2, "0")}`;
   };
 
   // Once a move has finished, hop back to the same photo in the middle copy (it looks identical).
@@ -207,8 +199,6 @@
     }
   }, { passive: false });
 
-  document.getElementById("strip-next").addEventListener("click", () => { stop(); go(active + 1); });
-  document.getElementById("strip-prev").addEventListener("click", () => { stop(); go(active - 1); });
   strip.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") { e.preventDefault(); go(active + 1); }
     else if (e.key === "ArrowLeft") { e.preventDefault(); go(active - 1); }

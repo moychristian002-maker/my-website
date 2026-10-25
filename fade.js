@@ -8,7 +8,7 @@
 // next page's color, and the next page fades in. The head of each page applies the
 // stored color before the first paint, so nothing flashes.
 const FADE_MS = 600;
-const HOME = ["#ffffff", "#000000"];
+const HOME = ["#f4f3ee", "#000000"];
 const root = document.documentElement;
 const morph = "PageRevealEvent" in window;
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;

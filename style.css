@@ -445,7 +445,7 @@ button.yt:hover .yt-play, a.yt:hover .yt-play { transform: translate(-50%, -50%)
 /* Hero pile (pile.js): name on the left, a swipeable pile of featured project photos on the right */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
   align-items: center;
   gap: 3rem 4rem;
   max-width: 72rem;
@@ -453,7 +453,7 @@ button.yt:hover .yt-play, a.yt:hover .yt-play { transform: translate(-50%, -50%)
   margin: 0 auto;
   padding: 1.5rem 0 4rem;
 }
-.hero h1 { font-size: clamp(3rem, 7vw, 6rem); }
+.hero h1 { font-size: clamp(2.6rem, 5.2vw, 5.4rem); white-space: nowrap; }
 .hero-pile { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .pile {
   position: relative;

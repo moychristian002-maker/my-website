@@ -243,7 +243,19 @@
   // strip don't trigger the browser's back/forward gesture.
   let wheelX = 0;
   let wheelQuiet = null;
+  // Mouse scroll wheel: with the cursor over the strip, each notch moves one photo
+  // (down = next, up = previous). Mouse notches are told apart from trackpad scrolling,
+  // so scrolling up and down on a trackpad still scrolls the page.
+  const isMouseNotch = (e) =>
+    e.deltaX === 0 && e.deltaY !== 0 &&
+    (e.deltaMode !== 0 || (e.wheelDeltaY && Math.abs(e.wheelDeltaY) % 120 === 0));
   strip.addEventListener("wheel", (e) => {
+    if (isMouseNotch(e)) {
+      e.preventDefault();
+      stop();
+      go(active + Math.sign(e.deltaY));
+      return;
+    }
     if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
     e.preventDefault();
     stop();

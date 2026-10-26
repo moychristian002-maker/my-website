@@ -574,7 +574,7 @@ nav a { margin-left: 1.6rem; color: inherit; }
   width: 100vw;
   margin-left: calc(50% - 50vw);
 }
-.hero-strip.arriving { animation: strip-in 1s cubic-bezier(0.2, 0, 0, 1) 0.3s both; }
+.hero-strip.arriving .strip, .hero-strip.arriving .strip-caption { animation: strip-in 1s cubic-bezier(0.2, 0, 0, 1) 0.3s both; }
 @keyframes strip-in { from { opacity: 0; transform: translateY(24px); } }
 
 /* (01), then the title and subtitle, above the big photo's top-left corner */
@@ -657,5 +657,41 @@ body { overflow-x: clip; }
 }
 @media (prefers-reduced-motion: reduce) {
   .strip-track, .strip-item { transition: none; }
-  .hero-strip.arriving { animation: none; }
+  .hero-strip.arriving .strip, .hero-strip.arriving .strip-caption { animation: none; }
+}
+
+/* Intro (strip.js): the landing opens with the "about" blurb on its own, placed where the
+   filmstrip sits; the first move fades it out and brings the strip in */
+.intro {
+  position: absolute;
+  left: var(--anchor, 20vw);
+  top: 50%;
+  width: min(34rem, calc(100vw - var(--anchor, 20vw) - 1.5rem));
+  transform: translateY(-50%);
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.2, 0, 0, 1), visibility 0s linear 0.6s;
+}
+.hero.intro-on .intro {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.6s ease 0.2s, transform 0.8s cubic-bezier(0.2, 0, 0, 1) 0.2s, visibility 0s;
+}
+.hero:not(.intro-on) .intro { transform: translateY(calc(-50% - 20px)); }
+.intro-label { display: block; margin-bottom: 1.4rem; }
+.intro-text p:first-child { font-size: clamp(1.2rem, 1.9vw, 1.6rem); line-height: 1.45; }
+.intro-text p + p { margin-top: 1.2rem; font-size: 1rem; line-height: 1.6; opacity: 0.7; }
+.intro-go { margin-top: 1.8rem; padding: 0.3rem 0; background: none; border: 0; color: inherit; opacity: 0.75; transition: opacity 0.2s; }
+.intro-go:hover { opacity: 1; }
+/* While the intro shows, the strip and its caption wait out of sight */
+.hero.intro-on .strip, .hero.intro-on .strip-caption { opacity: 0; visibility: hidden; pointer-events: none; }
+@media (max-width: 700px) {
+  .intro-text p:first-child { font-size: 1.12rem; }
+  .intro-text p + p { font-size: 0.95rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro, .hero.intro-on .intro { transition: none; }
 }

@@ -109,18 +109,75 @@
   updateCaption();
   if (document.fonts) document.fonts.ready.then(() => { measure(); instantly(place); });
   addEventListener("resize", () => { measure(); instantly(place); });
-  if (!reduceMotion && !returning) strip.parentElement.classList.add("arriving");
+  // Intro: the landing opens with Christian's "about" blurb on its own, so it's read before
+  // the work. The first move (the button, a scroll or swipe, or an arrow/Enter/Space key)
+  // fades it out and brings in the filmstrip. Skipped when coming back from a project and
+  // once seen this session; the nav's ABOUT link (#intro) brings it back.
+  const hero = strip.closest(".hero");
+  const host = strip.parentElement;
+  const intro = document.getElementById("intro");
+  let introOn = false;
+  let seen = false;
+  try { seen = sessionStorage.getItem("intro-seen") === "1"; } catch (e) {}
+  const arrive = () => {
+    if (reduceMotion) return;
+    host.classList.remove("arriving");
+    void host.offsetWidth;
+    host.classList.add("arriving");
+  };
+  const showIntro = () => {
+    if (!intro) return;
+    introOn = true;
+    hero.classList.add("intro-on");
+    clearTimeout(timer);
+  };
+  const hideIntro = () => {
+    if (!introOn) return;
+    introOn = false;
+    hero.classList.remove("intro-on");
+    try { sessionStorage.setItem("intro-seen", "1"); } catch (e) {}
+    if (location.hash === "#intro") history.replaceState(null, "", location.pathname + location.search);
+    arrive();
+    schedule(SHOW_MS + 1200);
+  };
+  document.getElementById("intro-go")?.addEventListener("click", hideIntro);
+  // The first scroll down (or sideways swipe) at the top of the page reveals the work
+  // instead of moving the page.
+  addEventListener("wheel", (e) => {
+    if (!introOn || scrollY > 10) return;
+    if (e.deltaY > 0 || Math.abs(e.deltaX) > Math.abs(e.deltaY)) { e.preventDefault(); hideIntro(); }
+  }, { passive: false });
+  let touchY = null;
+  addEventListener("touchstart", (e) => { touchY = introOn && scrollY <= 10 ? e.touches[0].clientY : null; }, { passive: true });
+  addEventListener("touchmove", (e) => {
+    if (!introOn || touchY === null) return;
+    if (touchY - e.touches[0].clientY > 30) { e.preventDefault(); touchY = null; hideIntro(); }
+  }, { passive: false });
+  addEventListener("keydown", (e) => {
+    if (introOn && ["ArrowRight", "ArrowDown", "PageDown", "Enter", " "].includes(e.key) && !e.target.closest("a, button, input, textarea")) {
+      e.preventDefault();
+      hideIntro();
+    }
+  });
+  // Leaving the landing another way (e.g. the "(ALL WORK)" link) also counts as seen.
+  addEventListener("scroll", () => { if (introOn && scrollY > innerHeight * 0.5) hideIntro(); }, { passive: true });
+  // The nav's ABOUT link brings the blurb back.
+  document.querySelectorAll('a[href="#intro"]').forEach((a) => a.addEventListener("click", (e) => {
+    e.preventDefault();
+    scrollTo({ top: 0 });
+    showIntro();
+  }));
 
-  // Moves on by itself until the first touch, hover, focus or button press.
+  // Moves on by itself until the first touch, hover, focus or button press (not during the intro).
   let touched = false;
   let visible = true;
   let timer = null;
   const SHOW_MS = 3500;
   const schedule = (delay = SHOW_MS) => {
     clearTimeout(timer);
-    if (touched || reduceMotion) return;
+    if (touched || reduceMotion || introOn) return;
     timer = setTimeout(() => {
-      if (!touched && visible && !document.hidden) go(active + 1);
+      if (!touched && visible && !document.hidden && !introOn) go(active + 1);
       schedule();
     }, delay);
   };
@@ -129,6 +186,8 @@
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(strip);
   }
   schedule(returning ? SHOW_MS : SHOW_MS + 1200);
+  if (intro && (location.hash === "#intro" || (!returning && !seen))) showIntro();
+  else if (!returning) arrive();
   strip.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") stop(); });
   strip.addEventListener("focusin", stop);
 

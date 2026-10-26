@@ -101,6 +101,62 @@ const projects = [
     ],
   },
   {
+    title: "Husky Jerseys",
+    tag: "ARTF1111 Making Things · Woodworking",
+    category: "Apparel & Objects",
+    year: 2026,
+    folder: "woodworking",
+    details: [
+      ["course", "ARTF1111 Making Things"],
+      ["made for", "the Northeastern Women's Volleyball coaches"],
+      ["process", "designed in Illustrator, laser cut and engraved, then layered and glued"],
+    ],
+    crop: {
+      "proposal-sketches.jpg": "whole",
+      "first-sketch-iteration.jpg": "whole",
+      "huskyheadsketch.jpg": "whole",
+      "finalmcgournsketch.jpg": "whole",
+      "finalparkhurstsketch.jpg": "whole",
+      "finalsnydersketch.jpg": "whole",
+      "snyderjersey.jpg": "whole",
+      "final-finalparkhurstjersey.jpg": "whole",
+      "snyderfinalfinaljersey.jpg": "whole",
+      "final-curation-idea.jpg": "whole",
+    },
+    images: ["finalwoodmcgournjersey.jpg"],
+    sections: [
+      ["proposal", ["proposal-sketches.jpg"], "Three directions for the Objects project: a wall fixture, a functional shelf and a decorative gift. I chose the gift and combined the Husky with volleyball, in layered wood."],
+      ["first sketches", ["first-sketch-iteration.jpg", "huskyheadsketch.jpg"]],
+      ["prototypes", ["paper-prototype.jpg", "img-4007.jpg", "img-4002.jpg", "img-4004.jpg", "cardboard-prototype.jpg", "firstwoodprototype.jpg"]],
+      ["digital sketches", ["finalmcgournsketch.jpg", "finalparkhurstsketch.jpg", "finalsnydersketch.jpg", "final-finalparkhurstjersey.jpg", "snyderjersey.jpg", "snyderfinalfinaljersey.jpg"]],
+      ["laser-cut templates", ["mcgourntemplate.jpg", "parkhursttemplate.jpg", "snydertemplate.jpg"]],
+      ["the jerseys", ["finalwoodmcgournjersey.jpg", "finalwoodparkhurstjersey.jpg", "finalwoodsnyderjersey.jpg"]],
+      ["concept mockups", ["ai-developed-image-based-on-sketch.jpg", "img-1668.jpg", "final-curation-idea.jpg"]],
+      ["the process", ["final-presentation.mp4"]],
+    ],
+    labels: {
+      "finalmcgournsketch.jpg": "McGourn",
+      "finalparkhurstsketch.jpg": "Parkhurst",
+      "finalsnydersketch.jpg": "Snyder",
+      "final-finalparkhurstjersey.jpg": "Parkhurst, redesigned",
+      "snyderjersey.jpg": "Snyder, redesign 1",
+      "snyderfinalfinaljersey.jpg": "Snyder, redesign 2",
+    },
+    captions: {
+      "paper-prototype.jpg": "paper prototype",
+      "img-4007.jpg": "first cardboard version",
+      "img-4002.jpg": "building the cardboard prototype",
+      "img-4004.jpg": "building the cardboard prototype",
+      "cardboard-prototype.jpg": "cardboard prototype",
+      "firstwoodprototype.jpg": "first wood prototype",
+      "ai-developed-image-based-on-sketch.jpg": "AI-generated mockup, made from my sketch",
+      "img-1668.jpg": "AI-generated mockup",
+      "final-curation-idea.jpg": "AI-generated mockup of the final curation idea",
+      "final-presentation.mp4": "my final presentation video: sketching, template making, laser cutting and gluing",
+    },
+    play: { "final-presentation.mp4": "click" },
+  },
+  {
     title: "Olivia Dean Shirt",
     tag: "Embroidery · Concert Attire",
     category: "Apparel & Objects",
@@ -474,11 +530,14 @@ const colorWorlds = {
   "tedx": ["#111111", "#e62b1e"],
   "photography-sports": ["#c41414", "#ffffff"],
   "making-things-flanerie": ["#eceee6", "#3d4a1f"],
+  "woodworking": ["#e8d9c0", "#4a3222"],
   "photography-seven-sisters": ["#2b2b2b", "#f5d9b5"],
 };
 
 // Short write-up shown on each project's page. Separate paragraphs with a blank line ("\n\n").
 const descriptions = {
+  "woodworking":
+    "Three layered wood jerseys made for the Northeastern Women's Volleyball coaches, for the Objects project in my Making Things class. Each one carries a name and the Husky, built up in layers so the stripes and lettering stand out from the jersey.\n\nI started with proposal sketches for a wall fixture, a shelf and a decorative gift, and chose the gift. From there I sketched the jerseys by hand and digitally, tested the idea in paper and cardboard, then drew the final pieces in Illustrator, laser cut and engraved them, and layered and glued them together. The video at the end walks through the whole process.",
   "design-perspectives-britpop-jeans":
     "Made for \"Design in London,\" an ungraded exhibition for my Design Perspectives lecture that highlighted material culture and curation. Alongside the piece, I wrote its museum label:\n\nEmerging from the 1990s Britpop and swagger of Cool Britannia, \"Britpop in the Streets\" reimagines the rebellious confidence of a generation through a contemporary lens. The distressed denim, patched with frayed motifs of the rival bands Oasis and Blur and a Union Jack, recalls the working-class pride and unfiltered attitude that defined the movement. The striped burgundy tie adds a note of rebellion against conformity, an echo of the sharp yet chaotic fashion contrasts of the time.\n\nBands like Oasis and Blur did not only define the sound of Britpop; they shaped its visual language. Oasis represented the \"northern grit\" of Manchester's working-class bravado, and Blur embodied \"southern cool,\" the sharp, art-school irony of London. That tension showed up in London's fashion scene as a mix of tailoring and streetwear, rebellion and reinvention. London in this period blurred the lines between music, art and style, turning youth culture into couture.\n\nChains of pearls and silver hardware carry the same spirit of experimentation and chaotic fashion. It stands as a wearable piece of London's creative energy, where music and design continue to collide and evolve.",
   "olivia-dean-shirt":

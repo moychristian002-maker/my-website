@@ -695,3 +695,34 @@ body { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   .intro, .hero.intro-on .intro { transition: none; }
 }
+
+/* Contact form (contact.js): the last section; the nav's CONTACT link jumps here */
+.contact-section { padding-bottom: 6rem; }
+.contact-wrap { max-width: 38rem; text-align: left; }
+.contact-lede { font-size: clamp(1.15rem, 1.7vw, 1.4rem); line-height: 1.45; margin-bottom: 2rem; }
+.contact-form { display: flex; flex-direction: column; }
+.contact-form label { margin: 1.25rem 0 0.4rem; opacity: 0.7; }
+.contact-form label:first-child { margin-top: 0; }
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 0.6rem 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 1.05rem;
+  resize: vertical;
+}
+.contact-form textarea { min-height: 7rem; line-height: 1.55; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: inherit; opacity: 0.35; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-bottom-width: 2px; }
+.cf-honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.cf-send { align-self: flex-start; margin-top: 1.75rem; padding: 0.3rem 0; background: none; border: 0; color: inherit; opacity: 0.8; transition: opacity 0.2s; }
+.cf-send:hover { opacity: 1; }
+.cf-send:disabled { opacity: 0.35; }
+.cf-status { min-height: 1.5em; margin-top: 1rem; font-size: 0.95rem; font-style: italic; }
+.cf-status[data-kind="error"] { color: #b3261e; }
+.contact-alt { margin-top: 2.5rem; opacity: 0.7; }
+.contact-alt a { text-decoration: none; border-bottom: 1px solid currentColor; }

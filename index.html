@@ -24,7 +24,7 @@
   </header>
 
   <main id="top">
-    <section class="hero" id="contact">
+    <section class="hero">
       <h1 class="sr-only">Christian Moy</h1>
       <div class="hero-strip">
         <!-- The landing opens with this blurb; the filmstrip takes its place on the first move (strip.js) -->
@@ -193,12 +193,31 @@
       </div>
       </div>
     </section>
+
+    <section id="contact" class="section contact-section">
+      <h2 class="section-title"><span class="mono">(05)</span> <span class="mono">Contact</span></h2>
+      <div class="contact-wrap">
+        <p class="contact-lede">Have a project, a question or just want to say hi? Send me a message and I'll get back to you.</p>
+        <form class="contact-form" id="contact-form" novalidate>
+          <label class="mono" for="cf-email">Your email</label>
+          <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="you@example.com">
+          <label class="mono" for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="6" required placeholder="Write your message here"></textarea>
+          <!-- Spam trap: people never fill this in, bots do -->
+          <input type="text" name="_honey" class="cf-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="cf-send mono">(Send message &rarr;)</button>
+          <p class="cf-status" id="cf-status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="contact-alt mono">Or email <a href="mailto:moychristian002@gmail.com">moychristian002@gmail.com</a></p>
+      </div>
+    </section>
   </main>
 
 
   <script src="projects.js"></script>
   <script src="script.js"></script>
   <script src="strip.js"></script>
+  <script src="contact.js"></script>
   <script src="fade.js"></script>
   <script src="effects.js"></script>
 </body>

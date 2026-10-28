@@ -461,7 +461,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .side-by-side .article-gallery.single { max-width: none; margin-top: 1.25rem; }
 .side-by-side .article-gallery.single:first-child { margin-top: 0; }
 /* A section marked "small" keeps its photos compact (e.g. the volleyball reels) */
-.article-gallery.small { max-width: 34rem; }
+.article-gallery.small { max-width: 26rem; }
 .side-by-side + .article-label, .side-by-side + .side-by-side, .section-text + .side-by-side, .article-gallery + .side-by-side { margin-top: 4.5rem; }
 @media (max-width: 860px) {
   .side-by-side { display: block; width: auto; margin-left: 0; }

@@ -86,15 +86,6 @@ const projects = [
     ],
     fit: "natural", // show every image uncropped at its own shape
     images: ["flanerie-06.jpg"],
-    sections: [
-      ["artist inspiration", ["inspo-maier.jpg", "inspo-maier-mural.jpg", "inspo-cartier-bresson.jpg", "inspo-doisneau.jpg"], "My three artist inspirations:\n\nVivian Maier, for her ability to capture urban street life and ordinary life: buildings and portraits.\n\nHenri Cartier-Bresson, who photographed urban motion in the streets: people and architecture.\n\nRobert Doisneau, a French photographer who captured Parisian street life, romance and children at play."],
-    ],
-    captions: {
-      "inspo-maier.jpg": "photo by Vivian Maier (reference)",
-      "inspo-maier-mural.jpg": "a street mural of Vivian Maier (reference)",
-      "inspo-cartier-bresson.jpg": "photo by Henri Cartier-Bresson (reference)",
-      "inspo-doisneau.jpg": "photo by Robert Doisneau (reference)",
-    },
     // The finished journal, shown at the end as a booklet you can page through.
     bookletLabel: "the journal",
     booklet: [

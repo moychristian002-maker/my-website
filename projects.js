@@ -199,7 +199,7 @@ const projects = [
     images: ["0p1a4392.jpg"],
     sections: [
       ["practice", ["0p1a4399.jpg", "0p1a4414.jpg", "0p1a4435.jpg", "0p1a4551.jpg", "0p1a4563.jpg"]],
-      ["game day on the digi", ["20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg", "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg", "20260926-223622000-ios.jpg", "20260926-223640000-ios.jpg"], "A few photos from a game day, taken on my personal digital camera, the same Sony Cybershot I used for On the Digi."],
+      ["game day on the digi", ["20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg", "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg"], "A few photos from a game day, taken on my personal digital camera, the same Sony Cybershot I used for On the Digi."],
       ["rule of thirds", ["callaway-thirdsgraphicjim13746.jpg", "daniels-thirdsgraphicjim14619.jpg", "king-thirdjim14226.jpg", "meirelles-thirdsgraphicjim14204.jpg"], "A series of player portraits for the team's social media, each composed on a rule-of-thirds grid so the athlete and the type share one structure."],
       ["this is husky volley", ["foggy-windowgraphic.jpg"]],
       ["reels", ["reel-hunger-games.mp4", "reel-term-child.mp4"], "Team reels I filmed and edited for the team’s Instagram. Press play for sound."],

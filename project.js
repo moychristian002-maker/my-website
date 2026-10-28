@@ -54,22 +54,39 @@ if (p.details) details.hidden = false;
 // them into labeled `sections` (e.g. process vs. the finished piece).
 const sections = document.getElementById("sections");
 const groups = p.sections || [["process & details", p.images.slice(1)]];
+let sideCount = 0;
 groups.forEach(([label, files, text, style]) => {
   if (!files.length && !text) return;
   const heading = document.createElement("h2");
   heading.className = "article-label";
   heading.textContent = label;
-  sections.appendChild(heading);
+  // A "side" section puts its words beside its photos (text and photos swap sides from
+  // one such section to the next); on narrow screens they stack again.
+  const side = style === "side" && text && files.length;
+  let textHost = sections;
+  let target = sections;
+  if (side) {
+    const wrap = document.createElement("div");
+    wrap.className = sideCount++ % 2 ? "side-by-side flip" : "side-by-side";
+    textHost = document.createElement("div");
+    textHost.className = "side-text";
+    target = document.createElement("div");
+    target.className = "side-media";
+    wrap.append(heading, textHost, target);
+    sections.appendChild(wrap);
+  } else {
+    sections.appendChild(heading);
+  }
   // Optional words for the section (paragraphs split by a blank line, line breaks kept).
   if (text) {
     const body = document.createElement("div");
-    body.className = style ? `section-text ${style}` : "section-text";
+    body.className = style && !side ? `section-text ${style}` : "section-text";
     text.split("\n\n").forEach((para) => {
       const el = document.createElement("p");
       el.textContent = para;
       body.appendChild(el);
     });
-    sections.appendChild(body);
+    textHost.appendChild(body);
   }
   // Two columns; with an odd count, the last photo sits centered on its own row below.
   // Pairs of cropped photos share the square grid. A pair that includes an uncropped
@@ -120,7 +137,7 @@ groups.forEach(([label, files, text, style]) => {
       if (!clickToPlay) b.addEventListener("click", () => openAt(i));
       gallery.appendChild(b);
     });
-    sections.appendChild(gallery);
+    target.appendChild(gallery);
   });
 });
 document.querySelector(".article-hero").addEventListener("click", () => openAt(0));

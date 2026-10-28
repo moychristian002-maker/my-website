@@ -109,6 +109,7 @@ groups.forEach(([label, files, text, style]) => {
     const gallery = document.createElement("div");
     gallery.className = single ? "article-gallery single" : "article-gallery";
     if (natural) gallery.classList.add("natural", single ? "natural-single" : "natural-row");
+    if (style === "small") gallery.classList.add("small"); // e.g. phone-shaped reels, kept compact
     group.forEach((file) => {
       const i = p.images.indexOf(file);
       // Long videos with sound (`play: { "file.mp4": "click" }`) don't autoplay: they show

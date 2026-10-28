@@ -446,8 +446,8 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .article-nav span { margin-bottom: 0.35rem; opacity: 0.7; }
 
 /* Side by side: a section marked "side" in projects.js puts its words beside the photos
-   they describe, as wide as the opening (cover + title). Text stays in view while a tall
-   stack of photos scrolls past; every other one is flipped. Stacks on narrow screens. */
+   they describe, as wide as the opening (cover + title). Whichever column is shorter stays in view while the
+   other scrolls past; every other one is flipped. Stacks on narrow screens. */
 .side-by-side {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 0 clamp(2rem, 5vw, 4rem);
   align-items: start;
@@ -456,14 +456,14 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 .side-by-side > .article-label { grid-column: 1 / -1; }
 .side-by-side.flip { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
 .side-by-side.flip .side-text { order: 2; }
-.side-text { position: sticky; top: 2rem; }
+.side-text, .side-media { position: sticky; top: 2rem; }
 .side-by-side .section-text { max-width: none; margin: 0; }
 .side-by-side .article-gallery.single { max-width: none; margin-top: 1.25rem; }
 .side-by-side .article-gallery.single:first-child { margin-top: 0; }
 .side-by-side + .article-label, .side-by-side + .side-by-side, .section-text + .side-by-side, .article-gallery + .side-by-side { margin-top: 4.5rem; }
 @media (max-width: 860px) {
   .side-by-side { display: block; width: auto; margin-left: 0; }
-  .side-text { position: static; }
+  .side-text, .side-media { position: static; }
   .side-by-side .section-text { margin-bottom: 1.75rem; }
 }
 

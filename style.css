@@ -669,6 +669,7 @@ body { overflow-x: clip; }
   text-align: left;
 }
 .hero-bottom a { text-decoration: none; justify-self: start; }
+.hb-center { grid-column: 2; } /* the first column stays empty, so the rest keep their places */
 .hb-blurb { max-width: 15rem; }
 .hb-links a { margin-left: 1.6rem; }
 

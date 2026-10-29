@@ -18,7 +18,6 @@ document.title = `${p.title} — Christian Moy`;
 // logo; the homepage keeps the 3:4 one in `images`.
 document.getElementById("hero-img").src = src(p.pageCover || p.images[0]);
 document.getElementById("hero-img").alt = p.title;
-document.getElementById("index").textContent = `(${String(pos + 1).padStart(2, "0")})`;
 document.getElementById("title").textContent = p.title;
 document.getElementById("subtitle").textContent = p.tag;
 

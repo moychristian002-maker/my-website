@@ -46,7 +46,6 @@ byYear.forEach(([p, i]) => {
   if (world) card.style.setProperty("--accent", world[1] === "#ffffff" ? world[0] : world[1]);
   card.innerHTML = `
     <div class="card-img"><img src="${src(p, p.images[0])}" alt="${p.title}" loading="lazy"></div>
-    <span class="card-index mono">(${String(i + 1).padStart(2, "0")})</span>
     <h3>${p.title}</h3>
     <p>${p.tag}</p>`;
   grid.appendChild(card);

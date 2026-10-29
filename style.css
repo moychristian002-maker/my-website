@@ -145,8 +145,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
   transition: transform 0.6s ease;
 }
 .card:hover .card-img img { transform: scale(1.03); }
-.card-index { display: block; margin-top: 0.9rem; }
-.card h3 { margin-top: 0.5rem; font-size: 1.05rem; font-weight: 700; line-height: 1.2; transition: color 0.3s; }
+.card h3 { margin-top: 0.9rem; font-size: 1.05rem; font-weight: 700; line-height: 1.2; transition: color 0.3s; }
 .card p { margin-top: 0.1rem; font-size: 0.88rem; font-style: italic; line-height: 1.35; text-transform: lowercase; opacity: 0.75; }
 .card:hover h3 { color: var(--accent, var(--text)); }
 
@@ -379,11 +378,10 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 }
 
 /* Project pages, in the landing page's language (each keeps its own color world):
-   left-aligned text, a (01) number over the title, numbered mono section labels with a
+   left-aligned text, numbered mono section labels with a
    thin rule, and the facts as a small two-column list */
 .article { max-width: 64rem; }
 .article-head { text-align: left; }
-.article-index { display: block; margin-bottom: 1rem; }
 .article-top .article-head h1 { font-size: clamp(2rem, 3.6vw, 3.2rem); line-height: 1.05; }
 .article-sub { font-size: 1rem; line-height: 1.4; }
 .article-body { max-width: 38rem; margin: 0 0 3.5rem; font-size: 1.02rem; line-height: 1.7; text-align: left; }
@@ -612,7 +610,6 @@ nav a { margin-left: 1.6rem; color: inherit; }
   max-width: 17rem;
   text-align: left;
 }
-.strip-index { margin-bottom: 1.1rem; }
 .strip-title { font-family: var(--title); font-weight: 700; font-size: 1.05rem; line-height: 1.2; text-transform: lowercase; }
 .strip-sub { font-size: 0.88rem; font-style: italic; line-height: 1.35; text-transform: lowercase; }
 

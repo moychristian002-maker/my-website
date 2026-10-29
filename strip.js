@@ -13,8 +13,6 @@
   const n = projects.length;
   const RATIO = 0.75; // photo width / height (3:4, as in the inspiration)
   const MOVE_MS = 650; // a little longer than the CSS transition
-  const num = (k) => String(k + 1).padStart(2, "0");
-  const indexEl = document.getElementById("strip-index");
   const titleEl = document.getElementById("strip-title");
   const subEl = document.getElementById("strip-sub");
 
@@ -71,8 +69,6 @@
 
   const updateCaption = () => {
     const p = items[active].project;
-    const i = projects.indexOf(p);
-    indexEl.textContent = `(${num(i)})`;
     titleEl.textContent = p.title;
     subEl.textContent = p.tag;
   };
@@ -110,8 +106,8 @@
   if (document.fonts) document.fonts.ready.then(() => { measure(); instantly(place); });
   addEventListener("resize", () => { measure(); instantly(place); });
   // Intro: the landing opens with Christian's "about" blurb on its own, so it's read before
-  // the work. The first move (the button, a scroll or swipe, or an arrow/Enter/Space key)
-  // fades it out and brings in the filmstrip. Skipped when coming back from a project and
+  // the work. The "(VIEW WORK →)" button fades it out and brings in the filmstrip. Skipped
+  // when coming back from a project and
   // once seen this session; the nav's ABOUT link (#intro) brings it back.
   const hero = strip.closest(".hero");
   const host = strip.parentElement;
@@ -140,27 +136,10 @@
     arrive();
     schedule(SHOW_MS + 1200);
   };
+  // Only the "(VIEW WORK →)" button swaps the blurb for the strip: moving the mouse,
+  // scrolling or swiping leaves the text where it is (Christian's choice), and the page
+  // scrolls down to the work as usual.
   document.getElementById("intro-go")?.addEventListener("click", hideIntro);
-  // The first scroll down (or sideways swipe) at the top of the page reveals the work
-  // instead of moving the page.
-  addEventListener("wheel", (e) => {
-    if (!introOn || scrollY > 10) return;
-    if (e.deltaY > 0 || Math.abs(e.deltaX) > Math.abs(e.deltaY)) { e.preventDefault(); hideIntro(); }
-  }, { passive: false });
-  let touchY = null;
-  addEventListener("touchstart", (e) => { touchY = introOn && scrollY <= 10 ? e.touches[0].clientY : null; }, { passive: true });
-  addEventListener("touchmove", (e) => {
-    if (!introOn || touchY === null) return;
-    if (touchY - e.touches[0].clientY > 30) { e.preventDefault(); touchY = null; hideIntro(); }
-  }, { passive: false });
-  addEventListener("keydown", (e) => {
-    if (introOn && ["ArrowRight", "ArrowDown", "PageDown", "Enter", " "].includes(e.key) && !e.target.closest("a, button, input, textarea")) {
-      e.preventDefault();
-      hideIntro();
-    }
-  });
-  // Leaving the landing another way (e.g. the "(ALL WORK)" link) also counts as seen.
-  addEventListener("scroll", () => { if (introOn && scrollY > innerHeight * 0.5) hideIntro(); }, { passive: true });
   // The nav's ABOUT link brings the blurb back.
   document.querySelectorAll('a[href="#intro"]').forEach((a) => a.addEventListener("click", (e) => {
     e.preventDefault();

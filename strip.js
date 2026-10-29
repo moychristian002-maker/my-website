@@ -80,14 +80,22 @@
   const HOME = ["#f4f3ee", "#000000"];
   let tintReady = false; // set once everything below is in place
   let heroInView = true;
-  let painted = "";
+  let stripTinted = false; // whether the page's current colors came from the strip
   function tint() {
     if (!tintReady) return;
-    const world = (!introOn && heroInView && colorWorlds[items[active].project.folder]) || HOME;
-    if (world.join() === painted) return;
-    painted = world.join();
-    document.documentElement.style.setProperty("--page-bg", world[0]);
-    document.documentElement.style.setProperty("--page-ink", world[1]);
+    const root = document.documentElement;
+    if (heroInView) {
+      // Always (re)apply while the landing is in view: fade.js also paints the page on load.
+      const world = (!introOn && colorWorlds[items[active].project.folder]) || HOME;
+      root.style.setProperty("--page-bg", world[0]);
+      root.style.setProperty("--page-ink", world[1]);
+      stripTinted = true;
+    } else if (stripTinted) {
+      // Scrolled down to the work: back to off-white, leaving the card hover in charge.
+      root.style.setProperty("--page-bg", HOME[0]);
+      root.style.setProperty("--page-ink", HOME[1]);
+      stripTinted = false;
+    }
   }
 
   // Once a move has finished, hop back to the same photo in the middle copy (it looks identical).
@@ -193,6 +201,8 @@
   if (intro && location.hash === "#intro") requestAnimationFrame(() => scrollTo({ top: 0, behavior: "instant" }));
   // After fade.js has set the page's starting colors.
   requestAnimationFrame(() => { tintReady = true; tint(); });
+  setTimeout(tint, 400); // and again once fade.js's own arrival paint has run
+  addEventListener("pageshow", (e) => { if (e.persisted) setTimeout(tint, 100); }); // back button
   strip.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") stop(); });
   strip.addEventListener("focusin", stop);
 
@@ -275,9 +285,15 @@
     }
   }, { passive: false });
 
+  // ← and → move the strip whenever it's on screen (no need to click it first); Enter on
+  // the focused strip opens the selected project.
+  addEventListener("keydown", (e) => {
+    if (introOn || !heroInView || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.target.closest && e.target.closest("input, textarea, select, [contenteditable]")) return;
+    if (e.key === "ArrowRight") { e.preventDefault(); stop(); go(active + 1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); stop(); go(active - 1); }
+  });
   strip.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") { e.preventDefault(); go(active + 1); }
-    else if (e.key === "ArrowLeft") { e.preventDefault(); go(active - 1); }
-    else if (e.key === "Enter") items[active].click();
+    if (e.key === "Enter") items[active].click();
   });
 })();

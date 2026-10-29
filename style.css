@@ -613,6 +613,8 @@ nav a { margin-left: 1.6rem; color: inherit; }
 }
 .strip-title { font-family: var(--title); font-weight: 700; font-size: 1.05rem; line-height: 1.2; text-transform: lowercase; }
 .strip-sub { font-size: 0.88rem; font-style: italic; line-height: 1.35; text-transform: lowercase; }
+/* Neutral start (strip.js): no project picked yet, so no title or subtitle */
+.hero-strip.neutral .strip-caption { opacity: 0; visibility: hidden; }
 
 /* The strip runs edge to edge and fades out at both sides (body clips the overflow) */
 body { overflow-x: clip; }

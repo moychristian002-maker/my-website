@@ -1,9 +1,9 @@
 // Homepage filmstrip, recreating Christian's inspiration (Rue Studio): every project's cover
-// in one thin row across the middle of the screen, newest first. The selected project sits
-// bigger, toward the left, with its number, title and subtitle above its top-left corner.
-// Swipe, drag, scroll sideways on a trackpad, use the arrow keys or click a small photo to
-// move along; click the big photo to open the project (fade.js morphs it into the project
-// page). Until someone touches it, the strip moves on by itself every few seconds.
+// in one thin row across the middle of the screen, in Christian's "see this first" order. It
+// starts neutral (all small, page off-white); once a project is picked it sits bigger, toward
+// the left, with its title and subtitle above its top-left corner, and the page takes on its
+// colors. Swipe, drag, scroll, use the arrow keys or click a small photo to move along; click
+// the big photo to open the project (fade.js morphs it into the project page).
 (() => {
   const strip = document.getElementById("strip");
   const track = document.getElementById("strip-track");
@@ -36,6 +36,10 @@
   }
 
   let active = n; // index into items
+  // The landing starts neutral: every photo small, no project picked and the page off-white.
+  // The first move (arrow key, scroll, swipe, drag or click) picks one. Coming back from a
+  // project skips this, so its photo can morph back into place.
+  let neutral = true;
   let offset = 0; // px, while a finger or mouse is dragging the strip
   let big = 0, small = 0, gap = 0, anchor = 0; // photo heights, spacing, selected photo's left edge (px)
 
@@ -58,7 +62,8 @@
   const place = () => {
     const x = anchor - active * (small * RATIO + gap) + offset;
     track.style.transform = `translateX(${x}px)`;
-    items.forEach((it, k) => it.classList.toggle("is-active", k === active));
+    items.forEach((it, k) => it.classList.toggle("is-active", !neutral && k === active));
+    strip.parentElement.classList.toggle("neutral", neutral);
   };
   const instantly = (fn) => {
     strip.classList.add("no-anim");
@@ -86,7 +91,7 @@
     const root = document.documentElement;
     if (heroInView) {
       // Always (re)apply while the landing is in view: fade.js also paints the page on load.
-      const world = (!introOn && colorWorlds[items[active].project.folder]) || HOME;
+      const world = (!introOn && !neutral && colorWorlds[items[active].project.folder]) || HOME;
       root.style.setProperty("--page-bg", world[0]);
       root.style.setProperty("--page-ink", world[1]);
       stripTinted = true;
@@ -106,6 +111,7 @@
     if (k !== active) { active = k; instantly(place); }
   };
   const go = (k) => {
+    neutral = false;
     active = Math.max(0, Math.min(items.length - 1, k));
     offset = 0;
     place();
@@ -113,6 +119,8 @@
     clearTimeout(settle);
     settle = setTimeout(recenter, reduceMotion ? 0 : MOVE_MS);
   };
+  // One photo along; from the neutral start, the first step picks the photo in the big spot.
+  const step = (d) => go(neutral ? active : active + d);
 
   // Coming back from a project opened from the strip: select it again, so the photo morphs
   // back onto the strip (fade.js looks for it there).
@@ -121,7 +129,7 @@
     const last = sessionStorage.getItem("last-project");
     if (sessionStorage.getItem("last-source") === "strip" && /project\.html/.test(document.referrer)) {
       const i = projects.findIndex((p) => p.folder === last);
-      if (i >= 0) { active = n + i; returning = true; }
+      if (i >= 0) { active = n + i; returning = true; neutral = false; }
     }
   } catch (e) {}
 
@@ -150,7 +158,6 @@
     if (!intro) return;
     introOn = true;
     hero.classList.add("intro-on");
-    clearTimeout(timer);
     tint();
   };
   const hideIntro = () => {
@@ -160,7 +167,6 @@
     try { sessionStorage.setItem("intro-seen", "1"); } catch (e) {}
     if (location.hash === "#intro") history.replaceState(null, "", location.pathname + location.search);
     arrive();
-    schedule(SHOW_MS + 1200);
     tint();
   };
   // Only the "(VIEW WORK →)" button swaps the blurb for the strip: moving the mouse,
@@ -174,26 +180,11 @@
     showIntro();
   }));
 
-  // Moves on by itself until the first touch, hover, focus or button press (not during the intro).
-  let touched = false;
-  let visible = true;
-  let timer = null;
-  const SHOW_MS = 3500;
-  const schedule = (delay = SHOW_MS) => {
-    clearTimeout(timer);
-    if (touched || reduceMotion || introOn) return;
-    timer = setTimeout(() => {
-      if (!touched && visible && !document.hidden && !introOn) go(active + 1);
-      schedule();
-    }, delay);
-  };
-  const stop = () => { touched = true; clearTimeout(timer); };
+  // The strip doesn't move on its own: it waits, neutral, for the visitor to pick a project.
   if ("IntersectionObserver" in window) {
-    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(strip);
     // Color only while most of the landing is on screen; scrolling down to the work turns it off.
     new IntersectionObserver(([e]) => { heroInView = e.intersectionRatio >= 0.5; tint(); }, { threshold: [0, 0.5, 1] }).observe(hero);
   }
-  schedule(returning ? SHOW_MS : SHOW_MS + 1200);
   if (intro && (location.hash === "#intro" || (!returning && !seen))) showIntro();
   else if (!returning) arrive();
   // Arriving from a project page's ABOUT link (index.html#intro): start at the very top,
@@ -203,14 +194,11 @@
   requestAnimationFrame(() => { tintReady = true; tint(); });
   setTimeout(tint, 400); // and again once fade.js's own arrival paint has run
   addEventListener("pageshow", (e) => { if (e.persisted) setTimeout(tint, 100); }); // back button
-  strip.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") stop(); });
-  strip.addEventListener("focusin", stop);
 
   // Dragging (mouse or finger): the strip follows, then lands on the nearest photo.
   let drag = null;
   let suppressClick = false;
   strip.addEventListener("pointerdown", (e) => {
-    stop();
     if (e.button !== 0) return;
     drag = { id: e.pointerId, x: e.clientX, y: e.clientY, moved: false };
     suppressClick = false;
@@ -246,9 +234,8 @@
     const item = e.target.closest(".strip-item");
     if (suppressClick) { e.preventDefault(); suppressClick = false; return; }
     if (!item) return;
-    if (item !== items[active]) {
+    if (neutral || item !== items[active]) {
       e.preventDefault();
-      stop();
       go(items.indexOf(item));
     }
   });
@@ -267,13 +254,11 @@
   strip.addEventListener("wheel", (e) => {
     if (isMouseNotch(e)) {
       e.preventDefault();
-      stop();
-      go(active + Math.sign(e.deltaY));
+      step(Math.sign(e.deltaY));
       return;
     }
     if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
     e.preventDefault();
-    stop();
     clearTimeout(wheelQuiet);
     wheelQuiet = setTimeout(() => { wheelX = 0; }, 200);
     wheelX += e.deltaX * (e.deltaMode === 1 ? 16 : 1);
@@ -290,8 +275,8 @@
   addEventListener("keydown", (e) => {
     if (introOn || !heroInView || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
     if (e.target.closest && e.target.closest("input, textarea, select, [contenteditable]")) return;
-    if (e.key === "ArrowRight") { e.preventDefault(); stop(); go(active + 1); }
-    else if (e.key === "ArrowLeft") { e.preventDefault(); stop(); go(active - 1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); step(1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); step(-1); }
   });
   strip.addEventListener("keydown", (e) => {
     if (e.key === "Enter") items[active].click();

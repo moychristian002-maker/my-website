@@ -22,9 +22,12 @@ const src = (p, file) => `images/${p.folder}/${file}`;
   filters.appendChild(b);
 });
 
-// Projects are listed by year, most recent first, each year under its own heading.
+// Projects are listed by year, most recent first, each year under its own heading. Within a
+// year they keep the order of the projects list (Christian's "see this first" order), and
+// each card keeps its number from that list, the same as on the landing strip.
+const byYear = projects.map((p, i) => [p, i]).sort(([a, i], [b, j]) => (b.year || 0) - (a.year || 0) || i - j);
 let lastYear = null;
-projects.forEach((p, i) => {
+byYear.forEach(([p, i]) => {
   if (p.year && p.year !== lastYear) {
     lastYear = p.year;
     const heading = document.createElement("h3");

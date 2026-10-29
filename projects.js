@@ -51,6 +51,63 @@ const projects = [
     },
   },
   {
+    title: "EcoEats",
+    tag: "Designing Interactive Experiences · Food Vendors & Packaging Waste",
+    category: "Graphic & Interaction",
+    year: 2025,
+    folder: "ecoeats",
+    fit: "natural", // show every image uncropped at its own shape
+    images: ["cover-branding.png"], // the EcoEats logo, on its own green
+    pageCover: "cover-branding-wide.png", // the same, wide, at the top of the project page
+    // Follows the order and words of the course portfolio (Int. Ex. Portfolio, AE1).
+    sections: [
+      ["subelement 1 · case study", ["journey-customer.jpg"], "My research began with an investigation into food and waste systems in London's public spaces, focusing specifically on the environmental impact of street food vendors. Coming from New York City and recently living in London and frequently visiting outdoor markets such as Brick Lane, I noticed how vibrant and diverse food cultures often come with an equally visible problem: excessive waste. After every weekend market, bins overflow with single-use containers, plastic cutlery and half-eaten food. This observation became the starting point for understanding how public eating habits and vendor systems contribute to food and packaging waste, and how design interventions could make sustainable behavior more intuitive and accessible.\n\nTo explore how real businesses are addressing similar issues, I was introduced by a friend to the Monmouth Coffee reusable cup scheme, a London-based initiative that completely removed disposable takeaway cups from their shops. Instead, they offer a reusable loan-cup system with a refundable deposit, supported by clear communication, easy return processes and an emphasis on long-term sustainability. What interested me was not just the environmental benefit, preventing hundreds of thousands of single-use cups from entering landfill each year, but how the system reshaped user behavior without feeling restrictive. It reframed sustainability as a normal, frictionless part of daily life. This idea became central to the direction of my project.\n\nInspired by Monmouth, I decided to broaden the concept from a café setting to a sustainable street-food vendor tent. Markets involve more complex behaviors than coffee shops: people eat while walking, carry food around crowded spaces and dispose of waste unpredictably. Many vendors have limited space, inconsistent packaging practices and little incentive to offer sustainable alternatives. My tent concept responds to this by providing a unified system in which all packaging, whether reusable, compostable or deposit-based, is integrated into the tent design itself. Customers can choose from several sustainable options, all clearly explained through signage and intuitive layouts. This system not only reduces waste but creates a cohesive experience that encourages small, consistent changes in behavior, similar to Monmouth's strategy but adapted for a more chaotic and mobile environment.\n\nA key moment for my design thinking came from the Design and Disability exhibition at the V&A, which reframed how I consider accessibility within sustainability systems. The exhibition emphasized that good design does not just reduce environmental impact; it must also reduce cognitive, physical and emotional barriers. This was directly relevant to my project. Many people want to act sustainably but find systems confusing, inaccessible or physically demanding. For example, in the exhibition, objects were designed to make everyday tasks easier for people with mobility challenges. This made me reconsider customers like pregnant individuals, elderly people or those carrying heavy bags in crowded markets. If sustainable packaging systems are hard to understand or inconvenient to use, many will simply revert to disposables.\n\nThis insight pushed me to focus on making my system intuitive and inclusive: clear bin design, minimal decision-making, lightweight packaging options, and a layout that supports users with different physical and cognitive needs. Sustainability should not be a burden; it should fit seamlessly into daily life.", "side"],
+      ["proto persona", ["persona-priya.jpg"]],
+      ["user journey · priya", ["journey-priya.jpg"]],
+      ["swo analysis", ["swo.jpg"]],
+      ["research", [], "V&A Design & Disability Exhibit.\n\nMonmouth Coffee Company, n.d. Reusable cup scheme. [online] Available at: https://www.monmouthcoffee.co.uk/reusable-cup-scheme [Accessed 13 Nov. 2025].", "bibliography"],
+      ["subelement 2 · experience design", ["journey-general.jpg"], "Urban food markets generate large volumes of single-use packaging waste, creating environmental harm, visual clutter and operational challenges. Consumers want to act sustainably, but face barriers such as a lack of accessible alternatives, confusion about what is genuinely eco-friendly, and inconsistent systems across vendors. There is a need for a simple, universal and user-friendly solution that reduces waste while supporting both customers and vendors.\n\nMy design is a centralized reusable container deposit tent that serves the entire food vendor market. Instead of creating a new sustainable vendor, I shifted toward designing a market-wide infrastructure inspired by Monmouth Coffee's reusable coffee cup scheme. Because if we can do it with coffee, we can do it with food too. By offering a universal reusable container system, customers can pay a small deposit to receive a clean container, use it at any food stall in the market, and return it after eating for a refund or exchange. This eliminates the need for single-use containers and creates an easy, circular model that benefits everyone.\n\nInitially, my project began by exploring sustainable packaging solutions and analyzing how food vendors contribute to waste. Visiting markets like Brick Lane revealed a clear problem: overflowing bins, mixed waste, and a lack of consistent recycling or reuse options. I initially designed an entire eco-friendly food tent, but through research, I realized that this approach helped only one vendor rather than addressing the systemic issue.\n\nRevisiting my findings, I pivoted toward a service-based solution that supports the entire ecosystem. The Monmouth Coffee scheme showed me the power of simple deposit-return systems, while the V&A's Design and Disability exhibition highlighted the importance of clarity, accessibility and reducing cognitive load. These influences shaped the user-centered features of my service: intuitive signage, easy container return, inclusive usability, and a clean, welcoming tent environment.", "side"],
+      ["iteration #1", ["iteration-1.jpg"], "Low fidelity storyboard of wasteful food packaging and overflowing waste bins.", "side"],
+      ["iteration #2", ["iteration-2.jpg"], "\u201cEcoEats\u201d: mid fidelity storyboard applying reusable and paper containers, with accessible seating nearby.", "side"],
+      ["paper prototype", ["paper-prototype-plan.jpg", "paper-prototype-film.mp4"]],
+      ["final", ["final-storyboard.jpg"]],
+    ],
+    captions: {
+      "journey-customer.jpg": "user journey · customer (me)",
+      "journey-general.jpg": "user journey · reusable container deposit system",
+      "paper-prototype-plan.jpg": "planning the paper prototype film",
+      "paper-prototype-film.mp4": "the paper prototype film (opens with sound)",
+    },
+  },
+  {
+    title: "Northeastern Women’s Volleyball",
+    tag: "Northeastern Athletics · Team Manager",
+    category: "Photography",
+    year: 2026,
+    folder: "photography-sports",
+    crop: {
+      "callaway-thirdsgraphicjim13746.jpg": "whole",
+      "daniels-thirdsgraphicjim14619.jpg": "whole",
+      "king-thirdjim14226.jpg": "whole",
+      "meirelles-thirdsgraphicjim14204.jpg": "whole",
+      "foggy-windowgraphic.jpg": "whole",
+      "reel-hunger-games.mp4": "whole",
+      "reel-term-child.mp4": "whole",
+    },
+    play: {
+      "reel-hunger-games.mp4": "click",
+      "reel-term-child.mp4": "click",
+    },
+    images: ["0p1a4392.jpg"],
+    sections: [
+      ["practice", ["0p1a4399.jpg", "0p1a4414.jpg", "0p1a4435.jpg", "0p1a4464.jpg", "0p1a4546.jpg", "0p1a4551.jpg", "0p1a4563.jpg"]],
+      ["game day on the digi", ["20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg", "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg"], "A few photos from a game day, taken on my personal digital camera, the same Sony Cybershot I used for On the Digi."],
+      ["rule of thirds", ["callaway-thirdsgraphicjim13746.jpg", "daniels-thirdsgraphicjim14619.jpg", "king-thirdjim14226.jpg", "meirelles-thirdsgraphicjim14204.jpg"], "A series of player portraits I made for fun (they weren't posted), each composed on a rule-of-thirds grid so the athlete and the type share one structure."],
+      ["this is husky volley", ["foggy-windowgraphic.jpg"]],
+      ["reels", ["reel-hunger-games.mp4", "reel-term-child.mp4"], "Team reels I filmed and edited for the team’s Instagram. Press play for sound.", "small"],
+    ],
+  },
+  {
     title: "Britpop in the Streets",
     tag: "LADES4143 Design Perspectives · Design in London Exhibition",
     category: "Apparel & Objects",
@@ -71,27 +128,6 @@ const projects = [
       ["research", ["design-perspectives-exhibition.jpg", "pants.jpg"]],
       ["making", ["20251015-162148581-ios.jpg", "20251015-213942165-ios.jpg", "20251016-025705095-ios.jpg", "20251016-025707684-ios.jpg"]],
       ["at design in london", ["20251015-132707498-ios.jpg", "20251016-130604196-ios.jpg", "20251016-130609928-ios.jpg", "20251016-130616885-ios.jpg", "20251016-131807173-ios.jpg"], "Emerging from the 1990s Britpop and swagger of Cool Britannia, \"Britpop in the Streets\" reimagines the rebellious confidence of a generation through a contemporary lens. The distressed denim, patched with frayed motifs of the rival bands Oasis and Blur and a Union Jack, recalls the working-class pride and unfiltered attitude that defined the movement. The striped burgundy tie adds a note of rebellion against conformity, an echo of the sharp yet chaotic fashion contrasts of the time.\n\nBands like Oasis and Blur did not only define the sound of Britpop; they shaped its visual language. Oasis represented the \"northern grit\" of Manchester's working-class bravado, and Blur embodied \"southern cool,\" the sharp, art-school irony of London. That tension showed up in London's fashion scene as a mix of tailoring and streetwear, rebellion and reinvention. London in this period blurred the lines between music, art and style, turning youth culture into couture.\n\nChains of pearls and silver hardware carry the same spirit of experimentation and chaotic fashion. It stands as a wearable piece of London's creative energy, where music and design continue to collide and evolve.", "side"],
-    ],
-  },
-  {
-    title: "The Art of Flânerie",
-    tag: "ARTF1110 Making Things · Photography Journal",
-    category: "Photography",
-    year: 2026,
-    folder: "making-things-flanerie",
-    details: [
-      ["course", "ARTF1110 Making Things"],
-      ["camera", "Canon Rebel"],
-      ["typeface", "my own handwriting, made into a font"],
-      ["layout", "Adobe InDesign"],
-    ],
-    fit: "natural", // show every image uncropped at its own shape
-    images: ["flanerie-06.jpg"],
-    // The finished journal, shown at the end as a booklet you can page through.
-    bookletLabel: "the journal",
-    booklet: [
-      "booklet/page-01.jpg", "booklet/page-02.jpg", "booklet/page-03.jpg", "booklet/page-04.jpg",
-      "booklet/page-05.jpg", "booklet/page-06.jpg", "booklet/page-07.jpg",
     ],
   },
   {
@@ -152,6 +188,45 @@ const projects = [
     play: { "final-presentation.mp4": "click" },
   },
   {
+    title: "Basswood Modeling",
+    tag: "ArcStart 2024 · University of Michigan",
+    category: "Architecture",
+    year: 2024,
+    folder: "arcstart-basswood",
+    fit: "natural", // show every photo uncropped at its own shape
+    details: [
+      ["program", "ArcStart 2024, University of Michigan"],
+      ["led by", "Osama Sukkar"],
+      ["skills", "Tectonic design, gestural designing and modeling"],
+      ["materials", "Basswood, tacky glue"],
+    ],
+    images: ["img-7796.jpg"],
+    sections: [
+      ["making", ["img-7793.jpg", "img-7794.jpg", "img-7795.jpg"]],
+      ["the model", ["img-7796.jpg", "img-7800.jpg"]],
+    ],
+  },
+  {
+    title: "TEDxNortheasternLDN",
+    tag: "TEDxNortheasternLDN Society · Events Officer",
+    category: "Graphic & Interaction",
+    year: 2026,
+    folder: "tedx",
+    fit: "natural", // show every photo and timelapse uncropped
+    images: ["copy-of-img-5242.jpg"],
+    sections: [
+      ["making the sign", ["timelapse-cutting.mp4", "spray-painting.jpg", "timelapse-bracing.mp4", "timelapse-standing.mp4", "the-sign.jpg"]],
+      ["the event", ["copy-of-img-5242.jpg", "copy-of-img-5299.jpg", "the-event.jpg"]],
+    ],
+    captions: {
+      "timelapse-cutting.mp4": "cutting out the letters",
+      "spray-painting.jpg": "spray-painting the red TEDx letters",
+      "timelapse-bracing.mp4": "adding stands so each letter stands on its own",
+      "timelapse-standing.mp4": "standing the sign up in the event space",
+      "the-sign.jpg": "the finished sign, ready for the event",
+    },
+  },
+  {
     title: "Olivia Dean Shirt",
     tag: "Embroidery · Concert Attire",
     category: "Apparel & Objects",
@@ -178,52 +253,87 @@ const projects = [
     },
   },
   {
-    title: "Northeastern Women’s Volleyball",
-    tag: "Northeastern Athletics · Team Manager",
-    category: "Photography",
-    year: 2026,
-    folder: "photography-sports",
-    crop: {
-      "callaway-thirdsgraphicjim13746.jpg": "whole",
-      "daniels-thirdsgraphicjim14619.jpg": "whole",
-      "king-thirdjim14226.jpg": "whole",
-      "meirelles-thirdsgraphicjim14204.jpg": "whole",
-      "foggy-windowgraphic.jpg": "whole",
-      "reel-hunger-games.mp4": "whole",
-      "reel-term-child.mp4": "whole",
-    },
-    play: {
-      "reel-hunger-games.mp4": "click",
-      "reel-term-child.mp4": "click",
-    },
-    images: ["0p1a4392.jpg"],
-    sections: [
-      ["practice", ["0p1a4399.jpg", "0p1a4414.jpg", "0p1a4435.jpg", "0p1a4464.jpg", "0p1a4546.jpg", "0p1a4551.jpg", "0p1a4563.jpg"]],
-      ["game day on the digi", ["20260926-171918000-ios.jpg", "20260926-175621000-ios.jpg", "20260926-180555000-ios.jpg", "20260926-181336000-ios.jpg", "20260926-185303000-ios.jpg", "20260926-193210000-ios.jpg"], "A few photos from a game day, taken on my personal digital camera, the same Sony Cybershot I used for On the Digi."],
-      ["rule of thirds", ["callaway-thirdsgraphicjim13746.jpg", "daniels-thirdsgraphicjim14619.jpg", "king-thirdjim14226.jpg", "meirelles-thirdsgraphicjim14204.jpg"], "A series of player portraits I made for fun (they weren't posted), each composed on a rule-of-thirds grid so the athlete and the type share one structure."],
-      ["this is husky volley", ["foggy-windowgraphic.jpg"]],
-      ["reels", ["reel-hunger-games.mp4", "reel-term-child.mp4"], "Team reels I filmed and edited for the team’s Instagram. Press play for sound.", "small"],
+    title: "Custom Basketball",
+    tag: "Birthday Gift",
+    category: "Apparel & Objects",
+    year: 2025,
+    folder: "custom-basketball",
+    details: [
+      ["materials", "Basketball, acrylic paint, Posca paint pens, Sharpie, paper"],
     ],
-  },
-  {
-    title: "TEDxNortheasternLDN",
-    tag: "TEDxNortheasternLDN Society · Events Officer",
-    category: "Graphic & Interaction",
-    year: 2026,
-    folder: "tedx",
-    fit: "natural", // show every photo and timelapse uncropped
-    images: ["copy-of-img-5242.jpg"],
+    images: ["img-1573.jpg"],
     sections: [
-      ["making the sign", ["timelapse-cutting.mp4", "spray-painting.jpg", "timelapse-bracing.mp4", "timelapse-standing.mp4", "the-sign.jpg"]],
-      ["the event", ["copy-of-img-5242.jpg", "copy-of-img-5299.jpg", "the-event.jpg"]],
+      ["inspiration", ["gift-from-friend-1.jpg", "gift-from-friend-2.jpg"]],
+      ["little things about him", ["digitized-player.jpg", "brooklyn-bridge.jpg", "digitized-wilson.jpg", "digitized-timmy-time.jpg"]],
+      ["painting", ["img-1561.jpg", "img-1567.jpg"]],
+      ["every angle", ["img-1568.jpg", "img-0945.jpg", "img-1571.jpg", "bridge-side.mp4"]],
     ],
     captions: {
-      "timelapse-cutting.mp4": "cutting out the letters",
-      "spray-painting.jpg": "spray-painting the red TEDx letters",
-      "timelapse-bracing.mp4": "adding stands so each letter stands on its own",
-      "timelapse-standing.mp4": "standing the sign up in the event space",
-      "the-sign.jpg": "the finished sign, ready for the event",
+      "gift-from-friend-1.jpg": "the ball my friend customized for my birthday",
+      "digitized-player.jpg": "my digitized drawing of him dribbling",
+      "brooklyn-bridge.jpg": "the Brooklyn Bridge at night",
     },
+    crop: {
+      "gift-from-friend-1.jpg": "50% 72%",
+      "gift-from-friend-2.jpg": "50% 75%",
+      "digitized-player.jpg": "whole",
+      "brooklyn-bridge.jpg": "whole",
+      "digitized-wilson.jpg": "whole",
+      "digitized-timmy-time.jpg": "whole",
+      "img-1561.jpg": "50% 70%",
+      "img-1567.jpg": "55% 50%",
+      "img-1568.jpg": "50% 45%",
+      "img-0945.jpg": "62% 50%",
+      "img-1571.jpg": "50% 60%",
+      "bridge-side.mp4": "50% 70%",
+    },
+  },
+  {
+    title: "Custom Denim Jacket",
+    tag: "Birthday Gift",
+    category: "Apparel & Objects",
+    year: 2025,
+    folder: "custom-denim",
+    crop: {
+      "sketch.jpg": "whole",
+    },
+    details: [
+      ["materials", "Denim jacket, acrylic paint and medium"],
+    ],
+    images: ["img-1658.jpg"],
+    sections: [
+      ["inspiration", ["inspiration-peachypaintshop.jpg"]],
+      ["design", ["sketch.jpg", "ai-mockup.jpg"]],
+      ["painting", ["img-0955.jpg", "painting-img-1654.mp4", "img-1660.jpg", "painting-img-1656.mp4", "img-1661.jpg"]],
+      ["the gift", ["img-6783.jpg"]],
+    ],
+    captions: {
+      "inspiration-peachypaintshop.jpg": "design inspiration by @peachypaintshop on Etsy, found on Pinterest",
+      "sketch.jpg": "my sketch of the design",
+      "ai-mockup.jpg": "AI-generated color mockup, based on my sketch",
+      "img-6783.jpg": "my friend wearing the jacket",
+    },
+  },
+  {
+    title: "The Art of Flânerie",
+    tag: "ARTF1110 Making Things · Photography Journal",
+    category: "Photography",
+    year: 2026,
+    folder: "making-things-flanerie",
+    details: [
+      ["course", "ARTF1110 Making Things"],
+      ["camera", "Canon Rebel"],
+      ["typeface", "my own handwriting, made into a font"],
+      ["layout", "Adobe InDesign"],
+    ],
+    fit: "natural", // show every image uncropped at its own shape
+    images: ["flanerie-06.jpg"],
+    // The finished journal, shown at the end as a booklet you can page through.
+    bookletLabel: "the journal",
+    booklet: [
+      "booklet/page-01.jpg", "booklet/page-02.jpg", "booklet/page-03.jpg", "booklet/page-04.jpg",
+      "booklet/page-05.jpg", "booklet/page-06.jpg", "booklet/page-07.jpg",
+    ],
   },
   {
     title: "Senior Shirt",
@@ -258,35 +368,6 @@ const projects = [
       ["edinburgh", ["edinburgh-dsc03438.jpg", "edinburgh-dsc03472.jpg", "edinburgh-dsc03462.jpg", "edinburgh-dsc03389.jpg"]],
       ["taiwan", ["taiwan-dsc03664.jpg", "taiwan-dsc03653.jpg", "taiwan-dsc03661.jpg", "taiwan-dsc03636.jpg", "taiwan-dsc03656.jpg", "taiwan-dsc03583.jpg"]],
     ],
-  },
-  {
-    title: "EcoEats",
-    tag: "Designing Interactive Experiences · Food Vendors & Packaging Waste",
-    category: "Graphic & Interaction",
-    year: 2025,
-    folder: "ecoeats",
-    fit: "natural", // show every image uncropped at its own shape
-    images: ["cover-branding.png"], // the EcoEats logo, on its own green
-    pageCover: "cover-branding-wide.png", // the same, wide, at the top of the project page
-    // Follows the order and words of the course portfolio (Int. Ex. Portfolio, AE1).
-    sections: [
-      ["subelement 1 · case study", ["journey-customer.jpg"], "My research began with an investigation into food and waste systems in London's public spaces, focusing specifically on the environmental impact of street food vendors. Coming from New York City and recently living in London and frequently visiting outdoor markets such as Brick Lane, I noticed how vibrant and diverse food cultures often come with an equally visible problem: excessive waste. After every weekend market, bins overflow with single-use containers, plastic cutlery and half-eaten food. This observation became the starting point for understanding how public eating habits and vendor systems contribute to food and packaging waste, and how design interventions could make sustainable behavior more intuitive and accessible.\n\nTo explore how real businesses are addressing similar issues, I was introduced by a friend to the Monmouth Coffee reusable cup scheme, a London-based initiative that completely removed disposable takeaway cups from their shops. Instead, they offer a reusable loan-cup system with a refundable deposit, supported by clear communication, easy return processes and an emphasis on long-term sustainability. What interested me was not just the environmental benefit, preventing hundreds of thousands of single-use cups from entering landfill each year, but how the system reshaped user behavior without feeling restrictive. It reframed sustainability as a normal, frictionless part of daily life. This idea became central to the direction of my project.\n\nInspired by Monmouth, I decided to broaden the concept from a café setting to a sustainable street-food vendor tent. Markets involve more complex behaviors than coffee shops: people eat while walking, carry food around crowded spaces and dispose of waste unpredictably. Many vendors have limited space, inconsistent packaging practices and little incentive to offer sustainable alternatives. My tent concept responds to this by providing a unified system in which all packaging, whether reusable, compostable or deposit-based, is integrated into the tent design itself. Customers can choose from several sustainable options, all clearly explained through signage and intuitive layouts. This system not only reduces waste but creates a cohesive experience that encourages small, consistent changes in behavior, similar to Monmouth's strategy but adapted for a more chaotic and mobile environment.\n\nA key moment for my design thinking came from the Design and Disability exhibition at the V&A, which reframed how I consider accessibility within sustainability systems. The exhibition emphasized that good design does not just reduce environmental impact; it must also reduce cognitive, physical and emotional barriers. This was directly relevant to my project. Many people want to act sustainably but find systems confusing, inaccessible or physically demanding. For example, in the exhibition, objects were designed to make everyday tasks easier for people with mobility challenges. This made me reconsider customers like pregnant individuals, elderly people or those carrying heavy bags in crowded markets. If sustainable packaging systems are hard to understand or inconvenient to use, many will simply revert to disposables.\n\nThis insight pushed me to focus on making my system intuitive and inclusive: clear bin design, minimal decision-making, lightweight packaging options, and a layout that supports users with different physical and cognitive needs. Sustainability should not be a burden; it should fit seamlessly into daily life.", "side"],
-      ["proto persona", ["persona-priya.jpg"]],
-      ["user journey · priya", ["journey-priya.jpg"]],
-      ["swo analysis", ["swo.jpg"]],
-      ["research", [], "V&A Design & Disability Exhibit.\n\nMonmouth Coffee Company, n.d. Reusable cup scheme. [online] Available at: https://www.monmouthcoffee.co.uk/reusable-cup-scheme [Accessed 13 Nov. 2025].", "bibliography"],
-      ["subelement 2 · experience design", ["journey-general.jpg"], "Urban food markets generate large volumes of single-use packaging waste, creating environmental harm, visual clutter and operational challenges. Consumers want to act sustainably, but face barriers such as a lack of accessible alternatives, confusion about what is genuinely eco-friendly, and inconsistent systems across vendors. There is a need for a simple, universal and user-friendly solution that reduces waste while supporting both customers and vendors.\n\nMy design is a centralized reusable container deposit tent that serves the entire food vendor market. Instead of creating a new sustainable vendor, I shifted toward designing a market-wide infrastructure inspired by Monmouth Coffee's reusable coffee cup scheme. Because if we can do it with coffee, we can do it with food too. By offering a universal reusable container system, customers can pay a small deposit to receive a clean container, use it at any food stall in the market, and return it after eating for a refund or exchange. This eliminates the need for single-use containers and creates an easy, circular model that benefits everyone.\n\nInitially, my project began by exploring sustainable packaging solutions and analyzing how food vendors contribute to waste. Visiting markets like Brick Lane revealed a clear problem: overflowing bins, mixed waste, and a lack of consistent recycling or reuse options. I initially designed an entire eco-friendly food tent, but through research, I realized that this approach helped only one vendor rather than addressing the systemic issue.\n\nRevisiting my findings, I pivoted toward a service-based solution that supports the entire ecosystem. The Monmouth Coffee scheme showed me the power of simple deposit-return systems, while the V&A's Design and Disability exhibition highlighted the importance of clarity, accessibility and reducing cognitive load. These influences shaped the user-centered features of my service: intuitive signage, easy container return, inclusive usability, and a clean, welcoming tent environment.", "side"],
-      ["iteration #1", ["iteration-1.jpg"], "Low fidelity storyboard of wasteful food packaging and overflowing waste bins.", "side"],
-      ["iteration #2", ["iteration-2.jpg"], "\u201cEcoEats\u201d: mid fidelity storyboard applying reusable and paper containers, with accessible seating nearby.", "side"],
-      ["paper prototype", ["paper-prototype-plan.jpg", "paper-prototype-film.mp4"]],
-      ["final", ["final-storyboard.jpg"]],
-    ],
-    captions: {
-      "journey-customer.jpg": "user journey · customer (me)",
-      "journey-general.jpg": "user journey · reusable container deposit system",
-      "paper-prototype-plan.jpg": "planning the paper prototype film",
-      "paper-prototype-film.mp4": "the paper prototype film (opens with sound)",
-    },
   },
   {
     title: "Frame by Frame",
@@ -350,68 +431,6 @@ const projects = [
     ],
   },
   {
-    title: "Custom Denim Jacket",
-    tag: "Birthday Gift",
-    category: "Apparel & Objects",
-    year: 2025,
-    folder: "custom-denim",
-    crop: {
-      "sketch.jpg": "whole",
-    },
-    details: [
-      ["materials", "Denim jacket, acrylic paint and medium"],
-    ],
-    images: ["img-1658.jpg"],
-    sections: [
-      ["inspiration", ["inspiration-peachypaintshop.jpg"]],
-      ["design", ["sketch.jpg", "ai-mockup.jpg"]],
-      ["painting", ["img-0955.jpg", "painting-img-1654.mp4", "img-1660.jpg", "painting-img-1656.mp4", "img-1661.jpg"]],
-      ["the gift", ["img-6783.jpg"]],
-    ],
-    captions: {
-      "inspiration-peachypaintshop.jpg": "design inspiration by @peachypaintshop on Etsy, found on Pinterest",
-      "sketch.jpg": "my sketch of the design",
-      "ai-mockup.jpg": "AI-generated color mockup, based on my sketch",
-      "img-6783.jpg": "my friend wearing the jacket",
-    },
-  },
-  {
-    title: "Custom Basketball",
-    tag: "Birthday Gift",
-    category: "Apparel & Objects",
-    year: 2025,
-    folder: "custom-basketball",
-    details: [
-      ["materials", "Basketball, acrylic paint, Posca paint pens, Sharpie, paper"],
-    ],
-    images: ["img-1573.jpg"],
-    sections: [
-      ["inspiration", ["gift-from-friend-1.jpg", "gift-from-friend-2.jpg"]],
-      ["little things about him", ["digitized-player.jpg", "brooklyn-bridge.jpg", "digitized-wilson.jpg", "digitized-timmy-time.jpg"]],
-      ["painting", ["img-1561.jpg", "img-1567.jpg"]],
-      ["every angle", ["img-1568.jpg", "img-0945.jpg", "img-1571.jpg", "bridge-side.mp4"]],
-    ],
-    captions: {
-      "gift-from-friend-1.jpg": "the ball my friend customized for my birthday",
-      "digitized-player.jpg": "my digitized drawing of him dribbling",
-      "brooklyn-bridge.jpg": "the Brooklyn Bridge at night",
-    },
-    crop: {
-      "gift-from-friend-1.jpg": "50% 72%",
-      "gift-from-friend-2.jpg": "50% 75%",
-      "digitized-player.jpg": "whole",
-      "brooklyn-bridge.jpg": "whole",
-      "digitized-wilson.jpg": "whole",
-      "digitized-timmy-time.jpg": "whole",
-      "img-1561.jpg": "50% 70%",
-      "img-1567.jpg": "55% 50%",
-      "img-1568.jpg": "50% 45%",
-      "img-0945.jpg": "62% 50%",
-      "img-1571.jpg": "50% 60%",
-      "bridge-side.mp4": "50% 70%",
-    },
-  },
-  {
     title: "Custom Totes",
     tag: "Personal Project · Gifts for Friends",
     category: "Apparel & Objects",
@@ -454,25 +473,6 @@ const projects = [
     sections: [
       ["about the title", [], "“I chose the title Dawn of the Mourning Son because it captured multiple dimensions that my play deals with. Beyond being a phonetic pun, the ‘Dawn’ implies the rise of a new day, inspiring hope for the future. This is contrasted with ‘mourning,’ which describes the ‘night’ the main character has passed through in grief. Finally, the choice of the word ‘son’ wrestles with the main character’s idea of a father, how his late uncle replaced his absent father, and what it meant to lose him.”\n\n— Christopher D. Suh, playwright"],
       ["looking back", [], "This was one of my first times ever using Adobe Illustrator, and one of my first bigger design projects that required real critical thinking. Looking back, the visual hierarchy could be more balanced, and I could have experimented with a few more typefaces, but I think it turned out really nicely for one of my first times in Illustrator."],
-    ],
-  },
-  {
-    title: "Basswood Modeling",
-    tag: "ArcStart 2024 · University of Michigan",
-    category: "Architecture",
-    year: 2024,
-    folder: "arcstart-basswood",
-    fit: "natural", // show every photo uncropped at its own shape
-    details: [
-      ["program", "ArcStart 2024, University of Michigan"],
-      ["led by", "Osama Sukkar"],
-      ["skills", "Tectonic design, gestural designing and modeling"],
-      ["materials", "Basswood, tacky glue"],
-    ],
-    images: ["img-7796.jpg"],
-    sections: [
-      ["making", ["img-7793.jpg", "img-7794.jpg", "img-7795.jpg"]],
-      ["the model", ["img-7796.jpg", "img-7800.jpg"]],
     ],
   },
   {

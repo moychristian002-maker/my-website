@@ -196,16 +196,14 @@
     <section id="contact" class="section contact-section">
       <h2 class="section-title"><span class="mono">(05)</span> <span class="mono">Contact</span></h2>
       <div class="contact-wrap">
-        <p class="contact-lede">Have a project, a question or just want to say hi? Send me a message and I'll get back to you.</p>
+        <p class="contact-lede">Have a project, a question or just want to say hi? Write me a message and I'll get back to you.</p>
         <form class="contact-form" id="contact-form" novalidate>
-          <label class="mono" for="cf-email">Your email</label>
-          <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="you@example.com">
+          <label class="mono" for="cf-name">Your name</label>
+          <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your name">
           <label class="mono" for="cf-message">Message</label>
           <textarea id="cf-message" name="message" rows="6" required placeholder="Write your message here"></textarea>
-          <!-- Spam trap: people never fill this in, bots do -->
-          <input type="text" name="_honey" class="cf-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button type="submit" class="cf-send mono">(Send message &rarr;)</button>
-          <p class="cf-status" id="cf-status" role="status" aria-live="polite"></p>
+          <p class="cf-status" id="cf-status" role="status" aria-live="polite">This opens your email app with your message ready to send.</p>
         </form>
         <p class="contact-alt mono">Or email <a href="mailto:moychristian002@gmail.com">moychristian002@gmail.com</a></p>
       </div>

@@ -14,12 +14,16 @@
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = document.getElementById("cf-name").value.trim();
+    const emailField = document.getElementById("cf-email");
+    const email = emailField.value.trim();
     const field = document.getElementById("cf-message");
     const message = field.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say("Please enter a valid email address.", "error"); emailField.focus(); return; }
     if (!message) { say("Please write a message.", "error"); field.focus(); return; }
 
-    const subject = name ? `Portfolio message from ${name}` : "Portfolio message";
-    const body = name ? `${message}\n\n${name}` : message;
+    // Their address goes in the message too, so Christian always knows where to reply.
+    const subject = `Portfolio message from ${name || email}`;
+    const body = `${message}\n\n${name ? `${name}\n` : ""}${email}`;
     location.href = `mailto:${TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     say(`Your email app should open with the message ready to send. If it doesn't, email me at ${TO}.`, "ok");
   });

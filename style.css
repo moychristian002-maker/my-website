@@ -670,14 +670,16 @@ body { overflow-x: clip; }
 }
 .hero-bottom a { text-decoration: none; justify-self: start; }
 .hb-center { grid-column: 2; } /* the first column stays empty, so the rest keep their places */
-.hb-blurb { max-width: 15rem; }
+.hb-center, .hb-links { white-space: nowrap; }
+/* The credential sits just before EMAIL / LINKEDIN, so it stays on one line on laptops too */
+.hero-bottom { grid-template-columns: minmax(0, 35%) 1fr max-content auto; column-gap: 2.5rem; }
 .hb-links a { margin-left: 1.6rem; }
 
 @media (max-width: 700px) {
   .header-center { display: none; }
   .site-header { grid-template-columns: auto 1fr; }
   nav a { margin-left: 0.9rem; }
-  .hero-bottom { grid-template-columns: 1fr auto; row-gap: 0.9rem; }
+  .hero-bottom { grid-template-columns: 1fr auto; row-gap: 0.9rem; column-gap: 1rem; }
   .hb-links a { margin-left: 0; margin-right: 1rem; }
   .hb-links { justify-self: end; }
   .strip-caption { max-width: 70vw; }

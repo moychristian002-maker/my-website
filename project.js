@@ -190,8 +190,14 @@ if (p.booklet) {
   const files = p.booklet;
   const wrap = document.createElement("section");
   wrap.className = "booklet";
+  // A one-line how-to above the book, worded for touch screens or a mouse.
+  const touch = matchMedia("(hover: none)").matches;
+  const hint = touch
+    ? "Tap the right page to turn forward and the left page to go back, or swipe."
+    : "Click the right page to turn forward and the left page to go back, or use the arrows below.";
   wrap.innerHTML = `
     <h2 class="article-label">${p.bookletLabel || "the booklet"}</h2>
+    <p class="booklet-hint">${hint}</p>
     <div class="booklet-stage" tabindex="0" role="region" aria-label="Booklet: use the arrow keys to turn pages">
       <div class="booklet-half l"></div>
       <div class="booklet-half r"></div>

@@ -474,6 +474,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
   font-family: "Space Mono", ui-monospace, monospace; font-size: 0.9rem;
 }
 .booklet-count { font-family: "Space Mono", ui-monospace, monospace; font-size: 0.72rem; font-style: normal; letter-spacing: 0.04em; }
+.booklet-hint { margin: -0.5rem 0 1.5rem; font-size: 0.92rem; font-style: italic; opacity: 0.75; }
 
 /* Effects (effects.js) ---------------------------------------------------- */
 /* Paper grain: a faint, static noise over every page, in any color world */

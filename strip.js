@@ -71,7 +71,24 @@
     const p = items[active].project;
     titleEl.textContent = p.title;
     subEl.textContent = p.tag;
+    tint();
   };
+
+  // While the strip is in view, the page takes on the selected project's color world, like
+  // hovering a card further down. The About blurb and the rest of the page stay off-white.
+  // Uses the same --page-bg / --page-ink variables as fade.js and the card hover.
+  const HOME = ["#f4f3ee", "#000000"];
+  let tintReady = false; // set once everything below is in place
+  let heroInView = true;
+  let painted = "";
+  function tint() {
+    if (!tintReady) return;
+    const world = (!introOn && heroInView && colorWorlds[items[active].project.folder]) || HOME;
+    if (world.join() === painted) return;
+    painted = world.join();
+    document.documentElement.style.setProperty("--page-bg", world[0]);
+    document.documentElement.style.setProperty("--page-ink", world[1]);
+  }
 
   // Once a move has finished, hop back to the same photo in the middle copy (it looks identical).
   let settle = null;
@@ -126,6 +143,7 @@
     introOn = true;
     hero.classList.add("intro-on");
     clearTimeout(timer);
+    tint();
   };
   const hideIntro = () => {
     if (!introOn) return;
@@ -135,6 +153,7 @@
     if (location.hash === "#intro") history.replaceState(null, "", location.pathname + location.search);
     arrive();
     schedule(SHOW_MS + 1200);
+    tint();
   };
   // Only the "(VIEW WORK →)" button swaps the blurb for the strip: moving the mouse,
   // scrolling or swiping leaves the text where it is (Christian's choice), and the page
@@ -163,6 +182,8 @@
   const stop = () => { touched = true; clearTimeout(timer); };
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(strip);
+    // Color only while most of the landing is on screen; scrolling down to the work turns it off.
+    new IntersectionObserver(([e]) => { heroInView = e.intersectionRatio >= 0.5; tint(); }, { threshold: [0, 0.5, 1] }).observe(hero);
   }
   schedule(returning ? SHOW_MS : SHOW_MS + 1200);
   if (intro && (location.hash === "#intro" || (!returning && !seen))) showIntro();
@@ -170,6 +191,8 @@
   // Arriving from a project page's ABOUT link (index.html#intro): start at the very top,
   // not wherever the browser scrolled to find #intro.
   if (intro && location.hash === "#intro") requestAnimationFrame(() => scrollTo({ top: 0, behavior: "instant" }));
+  // After fade.js has set the page's starting colors.
+  requestAnimationFrame(() => { tintReady = true; tint(); });
   strip.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") stop(); });
   strip.addEventListener("focusin", stop);
 

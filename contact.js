@@ -6,7 +6,7 @@
   const form = document.getElementById("contact-form");
   if (!form) return;
   const TO = "moychristian002@gmail.com";
-  const ENDPOINT = "https://script.google.com/macros/s/AKfycbwLfzdbUdmzowI9UOCe7y7r7QPDBrum1K5xS2l0sgvJy-1Cyi0wxJvCrkjG92kTQ1NU/exec"; // the Apps Script web app
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbwpuazKeDTzGfeo_cTVj5jMl4ynWIeg7fSO002R-igVCWHXFX3AyAhF7E3wiwJ5-5CV/exec"; // the Apps Script web app
   const status = document.getElementById("cf-status");
   const button = form.querySelector(".cf-send");
   const say = (text, kind) => {

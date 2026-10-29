@@ -167,6 +167,9 @@
   schedule(returning ? SHOW_MS : SHOW_MS + 1200);
   if (intro && (location.hash === "#intro" || (!returning && !seen))) showIntro();
   else if (!returning) arrive();
+  // Arriving from a project page's ABOUT link (index.html#intro): start at the very top,
+  // not wherever the browser scrolled to find #intro.
+  if (intro && location.hash === "#intro") requestAnimationFrame(() => scrollTo({ top: 0, behavior: "instant" }));
   strip.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") stop(); });
   strip.addEventListener("focusin", stop);
 

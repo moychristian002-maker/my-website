@@ -14,7 +14,9 @@ const poster = (file) => src(file.replace(/\.mp4$/i, "-poster.jpg"));
 // The page takes on the project's color world (applied with a fade by fade.js).
 document.title = `${p.title} — Christian Moy`;
 
-document.getElementById("hero-img").src = src(p.images[0]);
+// `pageCover` (optional) is a different cover for this page only, e.g. a wide version of a
+// logo; the homepage keeps the 3:4 one in `images`.
+document.getElementById("hero-img").src = src(p.pageCover || p.images[0]);
 document.getElementById("hero-img").alt = p.title;
 document.getElementById("index").textContent = `(${String(pos + 1).padStart(2, "0")})`;
 document.getElementById("title").textContent = p.title;
@@ -323,7 +325,7 @@ function close() {
 }
 
 function show() {
-  const file = p.images[index];
+  const file = index === 0 && p.pageCover ? p.pageCover : p.images[index];
   const video = isVideo(file);
   lbImg.hidden = video;
   lbVideo.hidden = !video;

@@ -6,7 +6,7 @@
   const form = document.getElementById("contact-form");
   if (!form) return;
   const TO = "moychristian002@gmail.com";
-  const ENDPOINT = ""; // the Apps Script web app URL, ending in /exec
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbwLfzdbUdmzowI9UOCe7y7r7QPDBrum1K5xS2l0sgvJy-1Cyi0wxJvCrkjG92kTQ1NU/exec"; // the Apps Script web app
   const status = document.getElementById("cf-status");
   const button = form.querySelector(".cf-send");
   const say = (text, kind) => {

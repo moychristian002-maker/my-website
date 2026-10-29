@@ -15,8 +15,8 @@
   };
   if (!ENDPOINT) say("This opens your email app with your message ready to send.");
 
-  const openEmailApp = (name, email, message) => {
-    const subject = `Portfolio message from ${name || email}`;
+  const openEmailApp = (name, email, topic, message) => {
+    const subject = topic || `Portfolio message from ${name || email}`;
     const body = `${message}\n\n${name ? `${name}\n` : ""}${email}`;
     location.href = `mailto:${TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
@@ -26,6 +26,7 @@
     const name = document.getElementById("cf-name").value.trim();
     const emailField = document.getElementById("cf-email");
     const email = emailField.value.trim();
+    const subject = document.getElementById("cf-subject").value.trim();
     const field = document.getElementById("cf-message");
     const message = field.value.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say("Please enter a valid email address.", "error"); emailField.focus(); return; }
@@ -33,7 +34,7 @@
     if (document.getElementById("cf-website").value) return; // a bot filled in the hidden field
 
     if (!ENDPOINT) {
-      openEmailApp(name, email, message);
+      openEmailApp(name, email, subject, message);
       say(`Your email app should open with the message ready to send. If it doesn't, email me at ${TO}.`, "ok");
       return;
     }
@@ -42,7 +43,7 @@
     say("Sending…");
     try {
       // A plain form post, so the browser sends it straight to Google with no extra checks.
-      const res = await fetch(ENDPOINT, { method: "POST", body: new URLSearchParams({ name, email, message }) });
+      const res = await fetch(ENDPOINT, { method: "POST", body: new URLSearchParams({ name, email, subject, message }) });
       const data = await res.json();
       if (!data.ok) throw new Error(data.error || "send failed");
       form.reset();

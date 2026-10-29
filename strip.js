@@ -173,6 +173,9 @@
   // scrolling or swiping leaves the text where it is (Christian's choice), and the page
   // scrolls down to the work as usual.
   document.getElementById("intro-go")?.addEventListener("click", hideIntro);
+  // The photo pile beside the blurb: a click brings the back photo to the front.
+  const pile = document.getElementById("intro-pile");
+  pile?.addEventListener("click", () => pile.classList.toggle("swapped"));
   // The nav's ABOUT link brings the blurb back.
   document.querySelectorAll('a[href="#intro"]').forEach((a) => a.addEventListener("click", (e) => {
     e.preventDefault();

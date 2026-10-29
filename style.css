@@ -741,6 +741,8 @@ body { overflow-x: clip; }
 .contact-form input:focus, .contact-form textarea:focus { outline: none; border-bottom-width: 2px; }
 .cf-send { align-self: flex-start; margin-top: 1.75rem; padding: 0.3rem 0; background: none; border: 0; color: inherit; opacity: 0.8; transition: opacity 0.2s; }
 .cf-send:hover { opacity: 1; }
+.cf-send:disabled { opacity: 0.35; }
+.cf-honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .cf-status { min-height: 1.5em; margin-top: 1rem; font-size: 0.95rem; font-style: italic; }
 .cf-status[data-kind="error"] { color: #b3261e; }
 .contact-alt { margin-top: 2.5rem; opacity: 0.7; }

@@ -672,7 +672,10 @@ body { overflow-x: clip; }
 .hb-center { grid-column: 2; } /* the first column stays empty, so the rest keep their places */
 .hb-center, .hb-links { white-space: nowrap; }
 /* The credential sits just before EMAIL / LINKEDIN, so it stays on one line on laptops too */
-.hero-bottom { grid-template-columns: minmax(0, 35%) 1fr max-content auto; column-gap: 2.5rem; }
+.hero-bottom { grid-template-columns: minmax(0, 28%) 1fr max-content auto; column-gap: clamp(1rem, 3vw, 2.5rem); }
+@media (min-width: 701px) and (max-width: 800px) {
+  .hero-bottom { grid-template-columns: 0 auto minmax(0, 1fr) auto; } /* too tight for one line: the credential may wrap */
+}
 .hb-links a { margin-left: 1.6rem; }
 
 @media (max-width: 700px) {

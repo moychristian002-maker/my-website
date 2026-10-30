@@ -565,7 +565,7 @@ button.yt:hover .yt-play, a.yt:hover .yt-play { transform: translate(-50%, -50%)
   max-width: none;
   padding: 1.1rem var(--edge);
 }
-.site-header nav { justify-self: end; }
+.site-header nav { justify-self: end; grid-column: -2 / -1; } /* always the last column, even with no middle label (homepage) */
 .header-center { text-decoration: none; }
 nav a { margin-left: 1.6rem; color: inherit; }
 .logo:hover, .header-center:hover, nav a:hover, .hero-bottom a:hover { opacity: 0.55; }

@@ -193,6 +193,44 @@ const projects = [
     play: { "final-presentation.mp4": "click" },
   },
   {
+    title: "Senior Night Plaques",
+    tag: "Northeastern Women's Volleyball · Laser Cutting",
+    category: "Apparel & Objects",
+    year: 2026,
+    folder: "senior-night-plaques",
+    details: [
+      ["made for", "the Northeastern Women's Volleyball seniors"],
+      ["process", "designed in Illustrator, then laser-cut from wood with vector cutting and raster engraving"],
+    ],
+    crop: {
+      "design-canko-1.jpg": "whole",
+      "design-canko-2.jpg": "whole",
+      "design-daniels-notes.jpg": "whole",
+      "design-process.mp4": "whole",
+      "signatures.jpg": "whole",
+      "cutting-offcut.jpg": "whole",
+      "cutting-numbers.jpg": "whole",
+      "plaque-gennari.jpg": "whole",
+      "plaque-daniels.jpg": "whole",
+      "plaque-canko.jpg": "whole",
+    },
+    images: ["plaque-canko.jpg"],
+    sections: [
+      ["design", ["design-canko-1.jpg", "design-canko-2.jpg", "design-daniels-notes.jpg", "design-process.mp4"]],
+      ["signatures", ["signatures.jpg"], "", "small"],
+      ["laser cutting", ["cutting-offcut.jpg", "cutting-numbers.jpg"]],
+      ["the plaques", ["plaque-gennari.jpg", "plaque-daniels.jpg"]],
+    ],
+    labels: {
+      "design-canko-1.jpg": "Canko, version 1",
+      "design-canko-2.jpg": "Canko, version 2",
+      "design-daniels-notes.jpg": "Daniels, with notes",
+      "plaque-gennari.jpg": "Gennari",
+      "plaque-daniels.jpg": "Daniels",
+      "plaque-canko.jpg": "Canko",
+    },
+  },
+  {
     title: "Basswood Modeling",
     tag: "ArcStart 2024 · University of Michigan",
     category: "Architecture",
@@ -534,11 +572,14 @@ const colorWorlds = {
   "photography-sports": ["#c41414", "#ffffff"],
   "making-things-flanerie": ["#eceee6", "#3d4a1f"],
   "woodworking": ["#e8d9c0", "#4a3222"],
+  "senior-night-plaques": ["#efe6d6", "#3b2a1c"],
   "photography-seven-sisters": ["#2b2b2b", "#f5d9b5"],
 };
 
 // Short write-up shown on each project's page. Separate paragraphs with a blank line ("\n\n").
 const descriptions = {
+  "senior-night-plaques":
+    "Senior Night gifts for the three seniors on Northeastern Women's Volleyball: Gennari, Daniels and Canko. Each plaque is built around the player's jersey number, with photos of her playing set inside the digits, her last name, her signature and the Husky.\n\nI designed them in Illustrator, then laser-cut them from wood, combining vector cutting and raster engraving: the numbers are cut out and raised off the board, and the photos are engraved into them, so the depth and shading come from the wood itself.",
   "woodworking":
     "Three layered wood jerseys made for the Northeastern Women's Volleyball coaches, for the Objects project in my Making Things class. Each one carries a name and the Husky, built up in layers so the stripes and lettering stand out from the jersey.\n\nI started with proposal sketches for a wall fixture, a shelf and a decorative gift, and chose the gift. From there I sketched the jerseys by hand and digitally, tested the idea in paper and cardboard, then drew the final pieces in Illustrator, laser cut and engraved them, and layered and glued them together. The video at the end walks through the whole process.",
   "design-perspectives-britpop-jeans":

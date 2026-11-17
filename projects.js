@@ -220,7 +220,7 @@ const projects = [
       ["design", ["design-canko-1.jpg", "design-canko-2.jpg", "design-daniels-notes.jpg", "design-process.mp4"]],
       ["signatures", ["signatures.jpg"], "", "small"],
       ["laser cutting", ["cutting-offcut.jpg", "cutting-numbers.jpg"]],
-      ["the plaques", ["plaque-gennari.jpg", "plaque-daniels.jpg"]],
+      ["the plaques", ["plaque-gennari.jpg", "plaque-daniels.jpg", "plaque-canko.jpg"]],
     ],
     labels: {
       "design-canko-1.jpg": "Canko, version 1",

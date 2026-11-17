@@ -200,7 +200,8 @@ const projects = [
     folder: "senior-night-plaques",
     details: [
       ["made for", "the Northeastern Women's Volleyball seniors"],
-      ["process", "designed in Illustrator, then laser-cut from wood with vector cutting and raster engraving"],
+      ["process", "designed in Illustrator, laser-cut with vector cutting and raster engraving, glued, then sanded"],
+      ["materials", "1/4\" birch plywood, 1/8\" MDF (the Husky), wood glue, tacky glue, sandpaper"],
     ],
     crop: {
       "design-canko-1.jpg": "whole",
@@ -579,7 +580,7 @@ const colorWorlds = {
 // Short write-up shown on each project's page. Separate paragraphs with a blank line ("\n\n").
 const descriptions = {
   "senior-night-plaques":
-    "Senior Night gifts for the three seniors on Northeastern Women's Volleyball: Gennari, Daniels and Canko. Each plaque is built around the player's jersey number, with photos of her playing set inside the digits, her last name, her signature and the Husky.\n\nI designed them in Illustrator, then laser-cut them from wood, combining vector cutting and raster engraving: the numbers are cut out and raised off the board, and the photos are engraved into them, so the depth and shading come from the wood itself.",
+    "Senior Night gifts for the three seniors on Northeastern Women's Volleyball: Gennari, Daniels and Canko. Each plaque is built around the player's jersey number, with photos of her playing set inside the digits, her last name, her signature and the Husky.\n\nI designed them in Illustrator, then laser-cut them from wood, combining vector cutting and raster engraving: the numbers are cut out and raised off the board, and the photos are engraved into them, so the depth and shading come from the wood itself.\n\nMost of each plaque is 1/4\" birch plywood, with the Husky cut from 1/8\" MDF. I put the layers together with wood glue and tacky glue, then sanded the edges of each plaque.",
   "woodworking":
     "Three layered wood jerseys made for the Northeastern Women's Volleyball coaches, for the Objects project in my Making Things class. Each one carries a name and the Husky, built up in layers so the stripes and lettering stand out from the jersey.\n\nI started with proposal sketches for a wall fixture, a shelf and a decorative gift, and chose the gift. From there I sketched the jerseys by hand and digitally, tested the idea in paper and cardboard, then drew the final pieces in Illustrator, laser cut and engraved them, and layered and glued them together. The video at the end walks through the whole process.",
   "design-perspectives-britpop-jeans":

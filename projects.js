@@ -97,10 +97,12 @@ const projects = [
       "warped-gennari-jim29879.jpg": "whole",
       "reel-hunger-games.mp4": "whole",
       "reel-term-child.mp4": "whole",
+      "reel-coach-babysit-trust.mp4": "whole",
     },
     play: {
       "reel-hunger-games.mp4": "click",
       "reel-term-child.mp4": "click",
+      "reel-coach-babysit-trust.mp4": "click",
     },
     images: ["0p1a4392.jpg"],
     sections: [
@@ -109,7 +111,7 @@ const projects = [
       ["rule of thirds", ["callaway-thirdsgraphicjim13746.jpg", "daniels-thirdsgraphicjim14619.jpg", "king-thirdjim14226.jpg", "meirelles-thirdsgraphicjim14204.jpg"], "A series of player portraits I made for fun (they weren't posted), each composed on a rule-of-thirds grid so the athlete and the type share one structure. The original photos aren’t mine."],
       ["warped pixels", ["warped-callaway-jim13746.jpg", "warped-canko-jim13548.jpg", "warped-daniels-meirelles-celebration-jim26670-2.jpg", "warped-gennari-jim29879.jpg"], "Edits I made for fun in Photoshop (they weren’t posted), stretching part of each game photo into ribbons of its own colors. The original photos aren’t mine."],
       ["this is husky volley", ["foggy-windowgraphic.jpg"]],
-      ["reels", ["reel-hunger-games.mp4", "reel-term-child.mp4"], "Team reels I filmed and edited for the team’s Instagram. Press play for sound.", "small"],
+      ["reels", ["reel-hunger-games.mp4", "reel-term-child.mp4", "reel-coach-babysit-trust.mp4"], "Team reels I filmed and edited for the team’s Instagram. Press play for sound.", "small"],
     ],
   },
   {
@@ -548,9 +550,12 @@ const projects = [
   {
     title: "Jellycat Linocut",
     tag: "Elements of Visual Composition · Linocut",
-    details: [["course", "Elements of Visual Composition"]],
+    details: [
+      ["course", "Elements of Visual Composition (London)"],
+      ["materials", "linoleum block, linocut carving tool, acrylic paint"],
+    ],
     category: "Graphic & Interaction",
-    year: 2026,
+    year: 2025,
     folder: "linocut-jellycat",
     crop: { "the-block.jpg": "whole" },
     images: ["img-3442.jpg"],
@@ -623,7 +628,7 @@ const descriptions = {
   "ecoeats":
     "A service design project for Designing Interactive Experiences, in two subelements. It starts with a case study of food and packaging waste at London's street food markets, informed by Monmouth Coffee's reusable cup scheme and the V&A's Design and Disability exhibition, and becomes EcoEats: a market-wide reusable container deposit tent, developed through storyboards and a paper prototype film.",
   "linocut-jellycat":
-    "A linocut print of the word \"Jellycat\": the lettering is carved into a linoleum block, then the block is inked and printed in black on white paper.",
+    "A linocut print from Elements of Visual Composition, one of my first design classes at Northeastern, taken in London. We were learning about printmaking, and we had to bring in an object from home. Linocut wasn't an assignment of its own; it was a tool we could use for our final project.\n\nI did the lettering for \"Jellycat\" myself, carved it into the linoleum block with a linocut carving tool, then printed it with acrylic paint.",
   "graphics":
     "A poster for Dawn of the Mourning Son, a short play about grief, suicide and healing, written and produced by my friend Chris as his junior project. The play deals with teen depression, loss and suicide, and he asked me to design its poster.\n\nFour objects carry the play’s themes, so I built them into the title lettering itself: a wine glass for alcohol (pleasure), a book for philosophy, a rosary for spirituality and religion, and a noose, the symbol of suicide and a big part of the play’s ending.\n\nBelow the title, the son looks off into the dawn over the city, with the faded figure of the father he lost behind him. I think the colors work really well together. It’s a less than ordinary dawn: not a bright, happy sky of red, yellow and pink, but one with some darkness in it, which sets the tone for the play’s subject.",
   "tedx":

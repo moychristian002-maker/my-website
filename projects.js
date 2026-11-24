@@ -97,12 +97,18 @@ const projects = [
       "warped-gennari-jim29879.jpg": "whole",
       "reel-hunger-games.mp4": "whole",
       "reel-term-child.mp4": "whole",
-      "reel-coach-babysit-trust.mp4": "whole",
+      "reel-coach-babysit-trust-1.mp4": "whole",
+      "reel-coach-babysit-trust-2.mp4": "whole",
     },
     play: {
       "reel-hunger-games.mp4": "click",
       "reel-term-child.mp4": "click",
-      "reel-coach-babysit-trust.mp4": "click",
+      "reel-coach-babysit-trust-1.mp4": "click",
+      "reel-coach-babysit-trust-2.mp4": "click",
+    },
+    labels: {
+      "reel-coach-babysit-trust-1.mp4": "part 1",
+      "reel-coach-babysit-trust-2.mp4": "part 2",
     },
     images: ["0p1a4392.jpg"],
     sections: [
@@ -111,7 +117,7 @@ const projects = [
       ["rule of thirds", ["callaway-thirdsgraphicjim13746.jpg", "daniels-thirdsgraphicjim14619.jpg", "king-thirdjim14226.jpg", "meirelles-thirdsgraphicjim14204.jpg"], "A series of player portraits I made for fun (they weren't posted), each composed on a rule-of-thirds grid so the athlete and the type share one structure. The original photos aren’t mine."],
       ["warped pixels", ["warped-callaway-jim13746.jpg", "warped-canko-jim13548.jpg", "warped-daniels-meirelles-celebration-jim26670-2.jpg", "warped-gennari-jim29879.jpg"], "Edits I made for fun in Photoshop (they weren’t posted), stretching part of each game photo into ribbons of its own colors. The original photos aren’t mine."],
       ["this is husky volley", ["foggy-windowgraphic.jpg"]],
-      ["reels", ["reel-hunger-games.mp4", "reel-term-child.mp4", "reel-coach-babysit-trust.mp4"], "Team reels I filmed and edited for the team’s Instagram. Press play for sound.", "small"],
+      ["reels", ["reel-hunger-games.mp4", "reel-term-child.mp4", "reel-coach-babysit-trust-1.mp4", "reel-coach-babysit-trust-2.mp4"], "Team reels I filmed and edited for the team’s Instagram. Press play for sound.", "small"],
     ],
   },
   {

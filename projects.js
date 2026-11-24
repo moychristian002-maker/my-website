@@ -545,6 +545,20 @@ const projects = [
       "img-7767.jpg": "whole",
     },
   },
+  {
+    title: "Jellycat Linocut",
+    tag: "Elements of Visual Composition · Linocut",
+    details: [["course", "Elements of Visual Composition"]],
+    category: "Graphic & Interaction",
+    year: 2026,
+    folder: "linocut-jellycat",
+    crop: { "the-block.jpg": "whole" },
+    images: ["img-3442.jpg"],
+    sections: [
+      ["the block", ["the-block.jpg"], "The lettering is carved into the block in reverse, so it reads the right way round once it's printed."],
+      ["the prints", ["img-3441.jpg", "img-3443.jpg", "img-3444.jpg"]],
+    ],
+  },
 ];
 
 // Projects with `sections` list only their cover in `images`; the rest is filled in
@@ -569,6 +583,7 @@ const colorWorlds = {
   "designing-interactive-experiences": ["#0b0b10", "#a58cff"],
   "ecoeats": ["#232323", "#b9d98b"],
   "graphics": ["#2d2a35", "#f2a679"],
+  "linocut-jellycat": ["#161616", "#ececec"],
   "tedx": ["#111111", "#e62b1e"],
   "photography-sports": ["#c41414", "#ffffff"],
   "making-things-flanerie": ["#eceee6", "#3d4a1f"],
@@ -607,6 +622,8 @@ const descriptions = {
     "A design process portfolio for Designing Interactive Experiences, in three subelements. It begins with an accessibility case study of FocusEx, a reading tool for people with ADHD, then moves into design ideation for Deaf and Hard of Hearing film audiences, and ends with CineSense, a haptic wearable prototype that lets them feel every moment of a film.",
   "ecoeats":
     "A service design project for Designing Interactive Experiences, in two subelements. It starts with a case study of food and packaging waste at London's street food markets, informed by Monmouth Coffee's reusable cup scheme and the V&A's Design and Disability exhibition, and becomes EcoEats: a market-wide reusable container deposit tent, developed through storyboards and a paper prototype film.",
+  "linocut-jellycat":
+    "A linocut print of the word \"Jellycat\": the lettering is carved into a linoleum block, then the block is inked and printed in black on white paper.",
   "graphics":
     "A poster for Dawn of the Mourning Son, a short play about grief, suicide and healing, written and produced by my friend Chris as his junior project. The play deals with teen depression, loss and suicide, and he asked me to design its poster.\n\nFour objects carry the play’s themes, so I built them into the title lettering itself: a wine glass for alcohol (pleasure), a book for philosophy, a rosary for spirituality and religion, and a noose, the symbol of suicide and a big part of the play’s ending.\n\nBelow the title, the son looks off into the dawn over the city, with the faded figure of the father he lost behind him. I think the colors work really well together. It’s a less than ordinary dawn: not a bright, happy sky of red, yellow and pink, but one with some darkness in it, which sets the tone for the play’s subject.",
   "tedx":

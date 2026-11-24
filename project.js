@@ -105,12 +105,15 @@ groups.forEach(([label, files, text, style]) => {
     else rows.push({ files: pair, row });
   }
   if (last.length) rows.push({ files: last, single: true });
+  // A "line" section puts everything in one equal-height row (e.g. the volleyball reels).
+  if (style === "line") rows.splice(0, rows.length, { files, row: true });
   rows.forEach(({ files: group, row, single }) => {
     const natural = row || (single && p.fit === "natural");
     const gallery = document.createElement("div");
     gallery.className = single ? "article-gallery single" : "article-gallery";
     if (natural) gallery.classList.add("natural", single ? "natural-single" : "natural-row");
     if (style === "small") gallery.classList.add("small"); // e.g. phone-shaped reels, kept compact
+    if (style === "line") gallery.classList.add("line");
     group.forEach((file) => {
       const i = p.images.indexOf(file);
       // Long videos with sound (`play: { "file.mp4": "click" }`) don't autoplay: they show

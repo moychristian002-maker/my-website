@@ -377,6 +377,9 @@ main, .site-footer { transition: opacity 0.45s ease; }
 @media (max-width: 640px) {
   .article-gallery.natural-row { flex-direction: column; }
   .natural-row > button { flex: none !important; width: 100%; }
+  /* A "line" section wraps to two per row on phones instead of stacking */
+  .article-gallery.natural-row.line { flex-direction: row; flex-wrap: wrap; }
+  .natural-row.line > * { flex: 0 0 calc(50% - 0.625rem) !important; }
 }
 
 /* Project pages, in the landing page's language (each keeps its own color world):
